@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Anton Aseyev](https://up.htmlacademy.ru/htmlcss/24/user/833735).
-* Наставник: `Неизвестно`.
+* Наставник: [Денис Власов](https://htmlacademy.ru/profile/amaringo).
 
 ---
 
