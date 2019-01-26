@@ -4,8 +4,128 @@
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
   </head>
+  
   <body>
-
+    <header class="main-header"><!--должен содержать фон--> 
+      <div class="top-liner"><!--фон верхней линейки-->
+        <a class="main-header-logo">
+            <img src="img/index-logo.svg" width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">
+        </a>
+        Поиск <!--что это? поле ввода? вроде не видно его. Или кнопка, активирующая поле ввода? Как это должно работать? нужно ли размечать иконку?-->
+        Закладки:0 <!--Что это - текст? div? span? Что здесь вообще в счетчике считается?-->
+        Корзина:0 <!--Аналогично, что это - текст? div? span? -->
+        Оформить заказ <!--это кнопка или текст? Куда ведет?-->
+  
+      </div>
+      <div class="header-left-block">
+        <h1>Интернет-магазин строительных материалов и инструментов для ремонта</h1>
+      </div>
+      <div class="header-center-block">
+        <!---->
+        <div class="header-phone-call">
+          <p>+7 (812) 555-05-55</p>
+        </div>
+        <div class="header-address">
+          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+        </div>
+      </div>
+      <div class="header-right-block"><!--А если уже залогинен?-->
+          <a class="button" href="#">Войти</a>
+          <a class="button" href="#">Регистрация</a>
+      </div>
+      <nav class="main-navigation">
+          <ul class="site-navigation">
+            <li><a href="main.html">Главная</a></li>
+            <li><a href="company-info.html">Компания</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="news.html">Новости</a></li>
+            <li><a href="special-offers.html">Спецпредложения</a></li>
+            <li><a href="delivery.html">Доставка</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+      </nav>  
+    </header>
+    <main>
+      <section class="main-square-blocks">
+        <h2 class="visually-hidden">Какой-то блок</h2>
+        <!--очередные непонятные квадратики. 
+              Это рубрики? Разделы сайта? Кнопки? Картинки? Таблица? 
+              Их всегда 6 и они в таком порядке? Как оформляются, если их больше или меньше?
+              Они целиком на нажатие реагируют или там внутри отдельная кнопка со скругл.углами?
+        -->
+        <div class="materials new">
+          <h3>Материалы</h3><!--это подзаг или вообще что?-->
+          <span>на любой вкус</span><!--это кнопка или декор?-->
+        </div><!--уголок нью накладывается поверх или рисуется на самой картинке?-->
+        <div class="instruments">
+          <h3>Инструмент</h3><!--это подзаг или вообще что?-->
+          <span>на все случаи</span><!--это кнопка или декор?-->
+        </div>
+        <div class="technics">
+          <h3>Техника</h3><!--это подзаг или вообще что?-->
+          <span>для стройки</span><!--это кнопка или декор?-->
+        </div>
+        <div class="discounts">
+          <h3>Скидки 50%</h3><!--это подзаг или вообще что?-->
+          <span>на 350 товаров</span>
+          <!--это кнопка или декор? Откуда число 350 берется - вручную вписано или автоматом корректируется?-->
+        </div>
+        <div class="delivery">
+          <h3>Доставка</h3><!--это подзаг или вообще что?-->
+          <span>бесплатно</span><!--это кнопка или декор?-->
+        </div>
+        <div class="drills">
+          <h4>Дрели</h4><!--Ну а здесь что за текст?-->
+          <span>соседям на радость</span>
+          <figure class="drills-gallery">
+            <!--Что происходит при перемотке слайдера - разные дрели или еще что-то? В чем смысл этого блока?-->
+            <a href="#"><img src="img/drill.jpg" width="620" height="266" alt="дядя с дрелью"></a>
+          </figure>
+          <!--УРА! Здесь точно кнопки! Только я не знаю, как их размечать, если они НА картинке, поэтому оставлю в конце-->
+          <a class="drills-gallery-button-back">Назад</a>
+          <a class="drills-gallery-button-next">Вперед</a>
+          <a class="button" href="catalog-drills.html">Каталог</a>
+        </div>
+      </section>
+      <section class="popular-goods">
+        <div class="section-headline"><!--фончик -->
+          <h2>Популярные товары:</h2>
+          <a class="button" href="catalog-popular-goods.html">Все популярные товары</a>
+        </div>
+        <!--Тут будут карточки популярных товаров - список нумерованный или ul?-->
+      </section>
+      <section class="popular-brands">
+        <!--блоки логотипов в квадратиках-->
+      </section>
+      <section class="services">
+        <h2>Сервисы</h2>
+        <p>Хороший интернет-магазин... Текст не могу скопировать из ФШ - глючит</p>
+        <div class="services-left-block">
+          <ul class="services-list">
+            <li><a href="delivery.html">Доставка</a></li><!--куда и как делать ссылку, чтоб менялся services-right-block?-->
+            <li><a href="warranty.html">Гарантия</a></li>
+            <li><a href="credit.html">Кредит</a></li>
+          </ul>
+        </div>
+        <div class="services-right-block">
+          <p>Доставка, текст</p><!--очередной текст с то ли загом то ли нет-->
+          картинка
+        </div>
+      </section>
+      <section class="about-technomart">
+        Про компанию «Техномарт»
+        <a class="button" href="about-us.html">Подробнее о компании</a>
+      </section>
+      <section class="contacts-map">
+          <a class="button" href="email-us.html">Заблудились? Напишите нам</a><!--Куда делать ссылку?-->
+      </section>
+    </main>
+    <footer>
+      верхний футер
+      нижний футер
+    </footer>
+    
+    
     <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p>
 
   </body>
