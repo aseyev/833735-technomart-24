@@ -6,127 +6,188 @@
   </head>
   
   <body>
-    <header class="main-header"><!--должен содержать фон--> 
-      <div class="top-liner"><!--фон верхней линейки-->
-        <a class="main-header-logo">
-            <img src="img/index-logo.svg" width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">
+    <header class="main-header"><!--должен содержать серый фон--> 
+      <div class="top-liner"><!--синий фон верхней линейки-->
+        <a class="main-header-logo"><!--на всякий случай <img src="img/index-logo.svg" 
+            width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">-->
+            <p>ТЕХНОМАРТ</p>
         </a>
-        Поиск <!--что это? поле ввода? вроде не видно его. Или кнопка, активирующая поле ввода? Как это должно работать? нужно ли размечать иконку?-->
-        Закладки:0 <!--Что это - текст? div? span? Что здесь вообще в счетчике считается?-->
-        Корзина:0 <!--Аналогично, что это - текст? div? span? -->
-        Оформить заказ <!--это кнопка или текст? Куда ведет?-->
-  
+        <form>
+            <label for="search">Поиск</label><!--Как включить реакцию поля поиска на курсор?-->
+            <input type="search" name="search" id="search">
+        </form>
+        <a class="top-liner-bookmarks" href="#">Закладки: 0</a>
+        <a class="top-liner-basket" href="#">Корзина: 0</a>
+        <a class="top-liner-order" href="#">Оформить заказ</a>
       </div>
-      <div class="header-left-block">
+      <div class="header-left-block"><!--ДИВ не нужен, но для единообразия :)-->
         <h1>Интернет-магазин строительных материалов и инструментов для ремонта</h1>
       </div>
       <div class="header-center-block">
-        <!---->
-        <div class="header-phone-call">
-          <p>+7 (812) 555-05-55</p>
+        <div class="header-phone-call"><!--рамочка вокруг номера-->
+            <a href="tel:+71231234567"><span>+7 (812) 555-05-55</span></a>  
         </div>
-        <div class="header-address">
-          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-        </div>
+        <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </div>
-      <div class="header-right-block"><!--А если уже залогинен?-->
-          <a class="button" href="#">Войти</a>
-          <a class="button" href="#">Регистрация</a>
+      <div class="header-right-block"><!--Какое-то действие при логине-->
+          <a class="header-login" href="#">Войти</a>
+          <a class="header-registration" href="#">Регистрация</a>
       </div>
-      <nav class="main-navigation">
+      <nav class="main-navigation"><!--синяя полоска под меню-->
           <ul class="site-navigation">
-            <li><a href="main.html">Главная</a></li>
-            <li><a href="company-info.html">Компания</a></li>
-            <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="special-offers.html">Спецпредложения</a></li>
-            <li><a href="delivery.html">Доставка</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Компания</a></li>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Спецпредложения</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Контакты</a></li>
           </ul>
       </nav>  
     </header>
     <main>
-      <section class="main-square-blocks">
-        <h2 class="visually-hidden">Какой-то блок</h2>
-        <!--очередные непонятные квадратики. 
-              Это рубрики? Разделы сайта? Кнопки? Картинки? Таблица? 
-              Их всегда 6 и они в таком порядке? Как оформляются, если их больше или меньше?
-              Они целиком на нажатие реагируют или там внутри отдельная кнопка со скругл.углами?
-        -->
-        <div class="materials new">
-          <h3>Материалы</h3><!--это подзаг или вообще что?-->
-          <span>на любой вкус</span><!--это кнопка или декор?-->
+      <section class="categories">
+        <h2 class="visually-hidden">Рубрикатор сайта</h2>
+        <div class="category-item materials new">
+          <h3>Материалы</h3>
+          <a class="button" href="#">на любой вкус</a>
         </div><!--уголок нью накладывается поверх или рисуется на самой картинке?-->
-        <div class="instruments">
-          <h3>Инструмент</h3><!--это подзаг или вообще что?-->
-          <span>на все случаи</span><!--это кнопка или декор?-->
+        <div class="category-item instruments">
+          <h3>Инструмент</h3>
+          <a class="button" href="#">на все случаи</a>
         </div>
-        <div class="technics">
-          <h3>Техника</h3><!--это подзаг или вообще что?-->
-          <span>для стройки</span><!--это кнопка или декор?-->
+        <div class="category-item technics">
+          <h3>Техника</h3>
+          <a class="button" href="#">для стройки</a>
         </div>
-        <div class="discounts">
-          <h3>Скидки 50%</h3><!--это подзаг или вообще что?-->
-          <span>на 350 товаров</span>
-          <!--это кнопка или декор? Откуда число 350 берется - вручную вписано или автоматом корректируется?-->
+        <div class="category-item discounts">
+          <h3>Скидки 50%</h3>
+          <a class="button" href="#">на 350 товаров</a>
+          <span></span>
         </div>
-        <div class="delivery">
-          <h3>Доставка</h3><!--это подзаг или вообще что?-->
-          <span>бесплатно</span><!--это кнопка или декор?-->
+        <div class="category-item delivery">
+          <h3>Доставка</h3>
+          <a class="button" href="#">бесплатно</a>
         </div>
-        <div class="drills">
-          <h4>Дрели</h4><!--Ну а здесь что за текст?-->
-          <span>соседям на радость</span>
-          <figure class="drills-gallery">
-            <!--Что происходит при перемотке слайдера - разные дрели или еще что-то? В чем смысл этого блока?-->
-            <a href="#"><img src="img/drill.jpg" width="620" height="266" alt="дядя с дрелью"></a>
-          </figure>
-          <!--УРА! Здесь точно кнопки! Только я не знаю, как их размечать, если они НА картинке, поэтому оставлю в конце-->
-          <a class="drills-gallery-button-back">Назад</a>
-          <a class="drills-gallery-button-next">Вперед</a>
-          <a class="button" href="catalog-drills.html">Каталог</a>
+        <div class="category-item-slider">
+          <div class="category-item-drills">
+            <img src="drill.jpg" width="620" height="266" alt="дядя с дрелью">
+            <h3>Дрели</h3><!--Другой стиль h3-зага-->
+            <span>соседям на радость</span>
+            <a class="button" href="catalog.html">Открыть каталог</a>
+          </div>
+          <div class="category-item-perfs">
+            <img src="perf.jpg" width="620" height="266" alt="дядя с перфом">
+            <h3>Перфораторы</h3><!--Другой стиль h3-зага-->
+            <span>Настоящие мужские игрушки</span>
+            <a class="button" href="catalog.html">Открыть каталог</a>
+          </div>    
         </div>
       </section>
       <section class="popular-goods">
         <div class="section-headline"><!--фончик -->
           <h2>Популярные товары:</h2>
-          <a class="button" href="catalog-popular-goods.html">Все популярные товары</a>
+          <a class="button" href="#">все популярные товары</a>
         </div>
-        <!--Тут будут карточки популярных товаров - список нумерованный или ul?-->
+        <!--Тут будут карточки популярных товаров - пока велено пропустить, но дубликат на 2й странице-->
       </section>
       <section class="popular-brands">
-        <!--блоки логотипов в квадратиках-->
+        <div class="section-headline"><!--фончик как в секции выше-->
+          <h2>Популярные товары:</h2>
+          <a class="button" href="#">все производители</a>
+        </div>
+        <div class="brand-logo-border"><!--Догадываюсь, что рамочку можно к самой картинке цеплять, но вдруг там размеры лого разные?-->
+            <img src="bosch" width="220" height="145" alt="Bosch"><!--пока 1 из 8-->
+        </div>
       </section>
-      <section class="services">
+      <section class="services"><!--Серая плашка во всю ширину-высоту, НЕ так как у секций выше. И мб машинка.пнг тут же-->
         <h2>Сервисы</h2>
-        <p>Хороший интернет-магазин... Текст не могу скопировать из ФШ - глючит</p>
+        <p>Хороший интернет-магазин отличается от плохого не только ценами!</p><br>
+        <p>Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
         <div class="services-left-block">
-          <ul class="services-list">
-            <li><a href="delivery.html">Доставка</a></li><!--куда и как делать ссылку, чтоб менялся services-right-block?-->
+          <ul class="services-list"><!--как сделать связку между активным пунктом списка и следующим дивом - я еще не знаю)-->
+            <li><a href="delivery.html">Доставка</a></li>
             <li><a href="warranty.html">Гарантия</a></li>
             <li><a href="credit.html">Кредит</a></li>
           </ul>
         </div>
         <div class="services-right-block">
-          <p>Доставка, текст</p><!--очередной текст с то ли загом то ли нет-->
-          картинка
+          <h3>Доставка</h3>
+          <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! 
+             Ведь мы неплохо заработаем, поднимая его на ваш этаж </p>
         </div>
       </section>
       <section class="about-technomart">
-        Про компанию «Техномарт»
-        <a class="button" href="about-us.html">Подробнее о компании</a>
+          <h2>КОМПАНИЯ «Техномарт»</h2>
+          <p>Настоящий мужской шоппинг начинается здесь! 
+             Огромный выбор товаров для ремонта и строительства 
+             не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
+          <p>Мы можем доставить ваш товар в самые отдаленные точки России!
+                Техномарт работает со многими транспортными компаниями: </p>
+          <ul class="delivery-partners">
+              <li><b>Деловые линии</b></li>
+              <li><b>Автотрейдинг</b></li>
+              <li><b>ЖелДорЭкспедиция</b></li> 
+          </ul>
+          <a class="button" href="#">Подробнее о компании</a>
       </section>
       <section class="contacts-map">
-          <a class="button" href="email-us.html">Заблудились? Напишите нам</a><!--Куда делать ссылку?-->
-      </section>
+          <h2>Контакты</h2>
+          <p>Вы можете забрать товар сами, 
+                заехав в наш офис:</p>
+                <!--Тут оконце с картой-->
+          <a class="button" href="#">Заблудились? Напишите нам</a>
+      </section>      
     </main>
-    <footer>
-      верхний футер
-      нижний футер
+    <footer class="main-footer"><!--центровка?-->
+      <section class="footer-topliner"><!--светло-синий фон--> 
+        <section class="footer-topliner-left"><!--левая выключка-->
+            <a class="main-footer-logo"><!--на всякий случай <img src="img/index-logo.svg" 
+            width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">-->
+                <p>ТЕХНОМАРТ</p>
+            </a>
+            <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+            <p>+7 (812) 555-05-55</p>
+        </section>
+        <section class="top-footer-right"><!--выключка вправо-->
+            <ul class="footer-nav-site"><!--белый шрифт-->
+                <li><a href="#">Компания</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+            <ul class="footer-nav-offers"><!--желтый шрифт-->
+                <li><a href="#">Материалы</a></li>
+                <li><a href="#">Техника</a></li>
+                <li><a href="#">Инструмент</a></li>
+                <li><a href="#">Спецпредложения</a></li>
+            </ul>
+        </section>
+      </section>
+      <section class="footer-bottomliner"><!--Темно-синий фончик-->
+        <div class="footer-bottomliner-left"><!--Мелкий шрифт-->
+          <p>© 2010–2019 Компания «Техномарт»</p>
+          <p>Все права защищены</p>
+        </div>
+        <div class="footer-socials">
+            <ul>
+                <li><a class="vk" href="#">Техномарт ВКонтакте</a></li>
+                <li><a class="fb" href="#">Техномарт Facebook</a></li>
+                <li><a class="insta" href="#">Техномарт Instagram</a></li>
+            </ul>
+        </div>
+        <div class="footer-email">
+            <p>Обратная связь:</p>
+            <a class="footer-link" href="#"><p>mail@htmlacademy.ru</p></a><!--ссылка желтым-->
+        </div>
+        <div class="footer-email">
+            <p>Разработано —</p>
+            <a class="footer-link" href="https://htmlacademy.ru/intensive/htmlcss"><p>htmlacademy.ru</p></a><!--ссылка желтым-->
+        </div>
+      </section>
     </footer>
-    
-    
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p>
-
+    <!--эта ссылочка - выше <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе 
+        «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p>-->
   </body>
 </html>
