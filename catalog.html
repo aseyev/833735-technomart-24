@@ -46,12 +46,53 @@
       </nav>  
     </header>
     <main>
-      <section class="categories">
-        <h2 class="visually-hidden">Рубрикатор сайта</h2>
-        
+        <div class="breadcrumbs">
+            <ul>
+                <li><a href="index.html">На главную</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">Инструмент</a></li>
+                <li><a href="#">Перфораторы</a></li>
+            </ul>
+        </div>
+      <section class="catalog-perforators"><!--Нужен ли тут контейнер для центровки? Или тут можно плашку под подзаг сделать?-->
+        <h2>Перфораторы</h2>
+        <section class="filters-column">
+            <form action="">
+                <h3>ФИЛЬТР:</h3>
+                <div class="filter-type"><!--рамочка вокруг блока-->
+                    <h4>ЦЕНА:</h4>
+                    Потягушка
+                    мин.число
+                    макс.число
+                </div>
+                <div class="filter-type"><!--рамочка вокруг блока-->
+                    <h4>ПРОИЗВОДИТЕЛИ:</h4><!--список чекбоксов-->
+                    BOSCH
+                    ИНТЕРСКОЛ
+                    MAKITA
+                    DEWALT
+                    HITACHI
+                </div>
+                <div class="filter-type"><!--рамочка вокруг блока-->
+                    <h4>ПИТАНИЕ:</h4><!--список радиобаттонов-->
+                    АККУМУЛЯТОРНЫЕ
+                    СЕТЕВЫЕ
+                </div>
+                ПОКАЗАТЬ
+            </form>
+        </section>
+        <section><!--список товаров-->
+            <div>сортировка</div>
+            <div>9 карточек</div>
+            <div>переключатель страниц</div>
+
+        </section>
+        <section><!--серая плашка во всю ширину экрана-->
+            пара слов о перфораторах
+        </section>
 
 
-        
+
       </section>      
     </main>
     <footer class="main-footer"><!--центровка?-->
