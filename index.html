@@ -8,11 +8,11 @@
   <body>
     <header class="main-header"><!--должен содержать серый фон--> 
       <div class="top-liner"><!--синий фон верхней линейки-->
-        <a class="main-header-logo"><!--на всякий случай <img src="img/index-logo.svg" 
+        <a class="main-header-logo" href="#"><!--на всякий случай <img src="img/index-logo.svg" 
             width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">-->
             <p>ТЕХНОМАРТ</p>
         </a>
-        <form>
+        <form action="/echo" method="post">
             <label for="search">Поиск</label><!--Как включить реакцию поля поиска на курсор?-->
             <input type="search" name="search" id="search">
         </form>
@@ -29,9 +29,18 @@
         </div>
         <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </div>
-      <div class="header-right-block"><!--Какое-то действие при логине-->
-          <a class="header-login" href="#">Войти</a>
-          <a class="header-registration" href="#">Регистрация</a>
+      <div class="header-right-block">
+        <div><!--Какое-то действие при логине-->
+            <a class="header-login" href="#">Войти</a>
+            <a class="header-registration" href="#">Регистрация</a>
+        </div>
+        <div><!--Какое-то действие при нажатии кнопки Выйти-->
+            <!--Нужны ли тут спаны, или текст оформляется через классы ссылок?-->
+            <a class="user-name" href="#"><span>Равшан Джамшутович</span></a>
+            <a class="header-textlink" href="#"><span>Мои заказы</span></a>
+            <a class="header-textlink" href="#"><span>Личный кабинет</span></a>
+            <button class="header-logout"><span>Выйти</span></button>
+        </div>
       </div>
       <nav class="main-navigation"><!--синяя полоска под меню-->
           <ul class="site-navigation">

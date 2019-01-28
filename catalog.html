@@ -8,11 +8,11 @@
   <body>
     <header class="main-header"><!--должен содержать серый фон--> 
       <div class="top-liner"><!--синий фон верхней линейки-->
-        <a class="main-header-logo"><!--на всякий случай <img src="img/index-logo.svg" 
+        <a class="main-header-logo" href="index.html"><!--на всякий случай <img src="img/index-logo.svg" 
             width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">-->
             <p>ТЕХНОМАРТ</p>
         </a>
-        <form>
+        <form action="/echo" method="post">
             <label for="search">Поиск</label><!--Как включить реакцию поля поиска на курсор?-->
             <input type="search" name="search" id="search">
         </form>
@@ -30,8 +30,17 @@
         <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </div>
       <div class="header-right-block"><!--Какое-то действие при логине-->
-          <a class="header-login" href="#">Войти</a>
-          <a class="header-registration" href="#">Регистрация</a>
+        <div><!--Какое-то действие при логине-->
+            <a class="header-login" href="#">Войти</a>
+            <a class="header-registration" href="#">Регистрация</a>
+        </div>
+        <div><!--Какое-то действие при нажатии кнопки Выйти-->
+            <!--Нужны ли тут спаны, или текст оформляется через классы ссылок?-->
+            <a class="user-name" href="#"><span>Равшан Джамшутович</span></a>
+            <a class="header-textlink" href="#"><span>Мои заказы</span></a>
+            <a class="header-textlink" href="#"><span>Личный кабинет</span></a>
+            <button class="header-logout"><span>Выйти</span></button>
+        </div>
       </div>
       <nav class="main-navigation"><!--синяя полоска под меню-->
           <ul class="site-navigation">
@@ -47,52 +56,88 @@
     </header>
     <main>
         <div class="breadcrumbs">
-            <ul>
-                <li><a href="index.html">На главную</a></li>
-                <li><a href="#">Каталог</a></li>
-                <li><a href="#">Инструмент</a></li>
-                <li><a href="#">Перфораторы</a></li>
+            <ul><!--h3 ИЛИ span??? Стиль такой же, как у подзагов во всех секциях ниже-->
+                <li><a href="index.html"><h3>На главную</h3></a></li>
+                <li><a href="#"><h3>Каталог</h3></a></li>
+                <li><a href="#"><h3>Инструмент</h3></a></li>
+                <li><a href="#"><h3>Перфораторы</h3></a></li>
             </ul>
         </div>
       <section class="catalog-perforators"><!--Нужен ли тут контейнер для центровки? Или тут можно плашку под подзаг сделать?-->
         <h2>Перфораторы</h2>
         <section class="filters-column">
-            <form action="">
+            <form action="/echo" method="post">
                 <h3>ФИЛЬТР:</h3>
-                <div class="filter-type"><!--рамочка вокруг блока-->
-                    <h4>ЦЕНА:</h4>
-                    Потягушка
-                    мин.число
-                    макс.число
-                </div>
-                <div class="filter-type"><!--рамочка вокруг блока-->
-                    <h4>ПРОИЗВОДИТЕЛИ:</h4><!--список чекбоксов-->
-                    BOSCH
-                    ИНТЕРСКОЛ
-                    MAKITA
-                    DEWALT
-                    HITACHI
-                </div>
-                <div class="filter-type"><!--рамочка вокруг блока-->
-                    <h4>ПИТАНИЕ:</h4><!--список радиобаттонов-->
-                    АККУМУЛЯТОРНЫЕ
-                    СЕТЕВЫЕ
-                </div>
-                ПОКАЗАТЬ
+                <fieldset><!--рамочка вокруг блока-->
+                    <legend>ЦЕНА:</legend>
+                    <input type="range" id="filter-pricerange" name="pricerange"><!--ЗАМЕНИТЬ НА ДВОЙНУЮ!-->
+                    <input type="number" id="filter-minprice" name="minprice">
+                    <input type="number" id="filter-maxprice" name="maxprice">
+                </fieldset>
+                <fieldset>
+                    <legend>ПРОИЗВОДИТЕЛИ:</legend><!--список чекбоксов-->
+                    <ul>
+                        <li><input type="checkbox" name="BOSCH" id="filter-BOSCH" checked><label for="filter-BOSCH">BOSCH</label></li>
+                        <li><input type="checkbox" name="INTERSKOL" id="filter-INTERSKOL"><label for="filter-INTERSKOL">ИНТЕРСКОЛ</label></li>
+                        <li><input type="checkbox" name="MAKITA" id="filter-MAKITA"><label for="filter-MAKITA">MAKITA</label></li>
+                        <li><input type="checkbox" name="DEWALT" id="filter-DEWALT"><label for="filter-DEWALT">DEWALT</label></li>
+                        <li><input type="checkbox" name="HITACHI" id="filter-HITACHI"><label for="filter-HITACHI">HITACHI</label></li>
+                    </ul>
+                </fieldset>
+                <fieldset>
+                    <legend>ПИТАНИЕ:</legend><!--список? радиобаттонов-->
+                    <label><input type="radio" name="powersource" value="filter-battery" checked>АККУМУЛЯТОРНЫЕ</label>
+                    <label><input type="radio" name="powersource" value="filter-mainspower">СЕТЕВЫЕ</label>                                      
+                </fieldset>                
+                <div class="filter-button">
+                    <input type="submit" value="ПОКАЗАТЬ">
+                </div>                
             </form>
         </section>
         <section><!--список товаров-->
-            <div>сортировка</div>
-            <div>9 карточек</div>
-            <div>переключатель страниц</div>
-
+            <div class="catalog-sorting">
+                <h3>сортировка</h3>
+                <ul class="catalog-sorting-choice"><!--И ОПЯТЬ, чтоб не забыть: h3 ИЛИ span???-->
+                    <li><a href="#"><h3>ПО ЦЕНЕ</h3></a></li>
+                    <li><a href="#"><h3>ПО ТИПУ</h3></a></li>
+                    <li><a href="#"><h3>ПО ФУНКЦИОНАЛУ</h3></a></li>
+                    <li><a href="#"><h3>ПО ВОЗРАСТАНИЮ</h3></a></li>
+                    <li><a href="#"><h3>ПО УБЫВАНИЮ</h3></a></li>
+                </ul>
+            </div>
+            <div class="catalog-items">
+                <article class="catalog-item-card corner-new"><!--рамочки-уголочки-->
+                    <div class="card-hover"><!--отображение при наведении-->
+                        <a href="#" class="button-item-buy">КУПИТЬ</a>
+                        <a href="#" class="button-item-bookmark">В ЗАКЛАДКИ</a>
+                        <h4>Перфоратор BOSCH BFG 3000</h4>
+                        <span>СТАРАЯ ЦЕНА ЗАЧЕРКНУТАЯ</span>
+                        <span>НОВАЯ ЦЕНА С ЯРЛЫКОМ</span>
+                    </div>
+                    <div class="item-card"><!--типовое отображение-->
+                        <img src="#" alt="BOSCH BFG 3000">
+                        <h4>Перфоратор BOSCH BFG 3000</h4>
+                        <span>СТАРАЯ ЦЕНА ЗАЧЕРКНУТАЯ</span>
+                        <span>НОВАЯ ЦЕНА С ЯРЛЫКОМ</span>
+                    </div>
+                </article>
+            </div>
+            <div class="catalog-pages">
+                <ul class="catalog-page-numbers"><!--И последний раз, чтоб не забыть: h3 ИЛИ span???-->
+                    <li><a href="#"><span>1</span></a></li>
+                    <li><a href="#"><span>2</span></a></li>
+                    <li><a href="#"><span>3</span></a></li>
+                    <li><a href="#"><span>СЛЕДУЮЩАЯ</span></a></li>
+                </ul>
+            </div>
         </section>
-        <section><!--серая плашка во всю ширину экрана-->
-            пара слов о перфораторах
+        <section class="catalog-remark"><!--серая плашка во всю ширину экрана, переключение текста в соответствии с рубрикой?-->
+            <h2>ПАРА СЛОВ О ПЕРФОРАТОРАХ</h2>
+            <p>Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.<br>
+                    Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта 
+                    и отбойного молотка. В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток 
+                    и ударная дрель.</p>
         </section>
-
-
-
       </section>      
     </main>
     <footer class="main-footer"><!--центровка?-->
