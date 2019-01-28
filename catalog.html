@@ -10,7 +10,7 @@
       <div class="top-liner"><!--синий фон верхней линейки-->
         <a class="main-header-logo" href="index.html"><!--на всякий случай <img src="img/index-logo.svg" 
             width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">-->
-            <p>ТЕХНОМАРТ</p>
+            Техномарт
         </a>
         <form action="/echo" method="post">
             <label for="search">Поиск</label><!--Как включить реакцию поля поиска на курсор?-->
@@ -20,31 +20,28 @@
         <a class="top-liner-basket" href="#">Корзина: 0</a>
         <a class="top-liner-order" href="#">Оформить заказ</a>
       </div>
-      <div class="header-left-block"><!--ДИВ не нужен, но для единообразия :)-->
-        <h1>Интернет-магазин строительных материалов и инструментов для ремонта</h1>
-      </div>
+
+      <h1>Интернет-магазин строительных материалов и инструментов для ремонта</h1>
+      
       <div class="header-center-block">
-        <div class="header-phone-call"><!--рамочка вокруг номера-->
-            <a href="tel:+71231234567"><span>+7 (812) 555-05-55</span></a>  
-        </div>
+        <a href="tel:+78125550555"><span>+7 (812) 555-05-55</span></a>  
         <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </div>
-      <div class="header-right-block"><!--Какое-то действие при логине-->
-        <div><!--Какое-то действие при логине-->
-            <a class="header-login" href="#">Войти</a>
-            <a class="header-registration" href="#">Регистрация</a>
-        </div>
-        <div><!--Какое-то действие при нажатии кнопки Выйти-->
+      <div class="header-user-block">
+          <a class="header-login" href="#">Войти</a>
+          <a class="header-registration" href="#">Регистрация</a>
+          <div><!--Какое-то действие при нажатии кнопки Выйти-->
             <!--Нужны ли тут спаны, или текст оформляется через классы ссылок?-->
             <a class="user-name" href="#"><span>Равшан Джамшутович</span></a>
+            <button class="header-logout"><span>Выйти</span></button>
             <a class="header-textlink" href="#"><span>Мои заказы</span></a>
             <a class="header-textlink" href="#"><span>Личный кабинет</span></a>
-            <button class="header-logout"><span>Выйти</span></button>
-        </div>
+
+          </div>
       </div>
       <nav class="main-navigation"><!--синяя полоска под меню-->
           <ul class="site-navigation">
-            <li><a href="#">Главная</a></li>
+            <li><a href="index.html">Главная</a></li>
             <li><a href="#">Компания</a></li>
             <li><a href="#">Каталог</a></li>
             <li><a href="#">Новости</a></li>
@@ -55,27 +52,26 @@
       </nav>  
     </header>
     <main>
-        <div class="breadcrumbs">
-            <ul><!--h3 ИЛИ span??? Стиль такой же, как у подзагов во всех секциях ниже-->
-                <li><a href="index.html"><h3>На главную</h3></a></li>
-                <li><a href="#"><h3>Каталог</h3></a></li>
-                <li><a href="#"><h3>Инструмент</h3></a></li>
-                <li><a href="#"><h3>Перфораторы</h3></a></li>
-            </ul>
+        <ul class="breadcrumbs"><!--стили текста?-->
+                <li><a href="index.html">На главную</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">Инструмент</a></li>
+                <li><a href="#">Перфораторы</a></li>
+        </ul>
         </div>
-      <section class="catalog-perforators"><!--Нужен ли тут контейнер для центровки? Или тут можно плашку под подзаг сделать?-->
+      <section class="catalog-perforators"><!--тут можно плашку под подзаг сделать-->
         <h2>Перфораторы</h2>
         <section class="filters-column">
             <form action="/echo" method="post">
-                <h3>ФИЛЬТР:</h3>
+                <h3>Фильтр:</h3>
                 <fieldset><!--рамочка вокруг блока-->
-                    <legend>ЦЕНА:</legend>
+                    <legend>Цена:</legend>
                     <input type="range" id="filter-pricerange" name="pricerange"><!--ЗАМЕНИТЬ НА ДВОЙНУЮ!-->
                     <input type="number" id="filter-minprice" name="minprice">
                     <input type="number" id="filter-maxprice" name="maxprice">
                 </fieldset>
                 <fieldset>
-                    <legend>ПРОИЗВОДИТЕЛИ:</legend><!--список чекбоксов-->
+                    <legend>Производители:</legend><!--список чекбоксов-->
                     <ul>
                         <li><input type="checkbox" name="BOSCH" id="filter-BOSCH" checked><label for="filter-BOSCH">BOSCH</label></li>
                         <li><input type="checkbox" name="INTERSKOL" id="filter-INTERSKOL"><label for="filter-INTERSKOL">ИНТЕРСКОЛ</label></li>
@@ -85,49 +81,44 @@
                     </ul>
                 </fieldset>
                 <fieldset>
-                    <legend>ПИТАНИЕ:</legend><!--список? радиобаттонов-->
-                    <label><input type="radio" name="powersource" value="filter-battery" checked>АККУМУЛЯТОРНЫЕ</label>
-                    <label><input type="radio" name="powersource" value="filter-mainspower">СЕТЕВЫЕ</label>                                      
+                    <legend>Питание:</legend><!--список? радиобаттонов-->
+                    <label><input type="radio" name="powersource" value="filter-battery" checked>Аккумуляторные</label>
+                    <label><input type="radio" name="powersource" value="filter-mainspower">Сетевые</label>                                      
                 </fieldset>                
-                <div class="filter-button">
-                    <input type="submit" value="ПОКАЗАТЬ">
-                </div>                
+                <input type="submit" class="filter-button" value="ПОКАЗАТЬ">
             </form>
         </section>
         <section><!--список товаров-->
             <div class="catalog-sorting">
                 <h3>сортировка</h3>
                 <ul class="catalog-sorting-choice"><!--И ОПЯТЬ, чтоб не забыть: h3 ИЛИ span???-->
-                    <li><a href="#"><h3>ПО ЦЕНЕ</h3></a></li>
-                    <li><a href="#"><h3>ПО ТИПУ</h3></a></li>
-                    <li><a href="#"><h3>ПО ФУНКЦИОНАЛУ</h3></a></li>
-                    <li><a href="#"><h3>ПО ВОЗРАСТАНИЮ</h3></a></li>
-                    <li><a href="#"><h3>ПО УБЫВАНИЮ</h3></a></li>
+                    <li><a href="#">По цене</a></li>
+                    <li><a href="#">По типу</a></li>
+                    <li><a href="#">По функционалу</a></li>
+                    <li><a href="#">По возрастанию</a></li>
+                    <li><a href="#">По убыванию</a></li>
                 </ul>
             </div>
             <div class="catalog-items">
                 <article class="catalog-item-card corner-new"><!--рамочки-уголочки-->
                     <div class="card-hover"><!--отображение при наведении-->
-                        <a href="#" class="button-item-buy">КУПИТЬ</a>
-                        <a href="#" class="button-item-bookmark">В ЗАКЛАДКИ</a>
-                        <h4>Перфоратор BOSCH BFG 3000</h4>
-                        <span>СТАРАЯ ЦЕНА ЗАЧЕРКНУТАЯ</span>
-                        <span>НОВАЯ ЦЕНА С ЯРЛЫКОМ</span>
+                        <a href="#" class="button-item-buy">Купить</a>
+                        <a href="#" class="button-item-bookmark">В закладки</a>
                     </div>
                     <div class="item-card"><!--типовое отображение-->
                         <img src="#" alt="BOSCH BFG 3000">
                         <h4>Перфоратор BOSCH BFG 3000</h4>
-                        <span>СТАРАЯ ЦЕНА ЗАЧЕРКНУТАЯ</span>
-                        <span>НОВАЯ ЦЕНА С ЯРЛЫКОМ</span>
+                        <span>22500 Р.</span>
+                        <span>15500 Р.</span>
                     </div>
                 </article>
             </div>
             <div class="catalog-pages">
                 <ul class="catalog-page-numbers"><!--И последний раз, чтоб не забыть: h3 ИЛИ span???-->
-                    <li><a href="#"><span>1</span></a></li>
-                    <li><a href="#"><span>2</span></a></li>
-                    <li><a href="#"><span>3</span></a></li>
-                    <li><a href="#"><span>СЛЕДУЮЩАЯ</span></a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">Следующая</a></li>
                 </ul>
             </div>
         </section>
@@ -142,15 +133,15 @@
     </main>
     <footer class="main-footer"><!--центровка?-->
       <section class="footer-topliner"><!--светло-синий фон--> 
-        <section class="footer-topliner-left"><!--левая выключка-->
+        <div class="footer-topliner-left"><!--левая выключка-->
             <a class="main-footer-logo"><!--на всякий случай <img src="img/index-logo.svg" 
             width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">-->
                 <p>ТЕХНОМАРТ</p>
             </a>
             <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
             <p>+7 (812) 555-05-55</p>
-        </section>
-        <section class="top-footer-right"><!--выключка вправо-->
+        </div>
+        <div class="top-footer-right"><!--выключка вправо-->
             <ul class="footer-nav-site"><!--белый шрифт-->
                 <li><a href="#">Компания</a></li>
                 <li><a href="#">Новости</a></li>
@@ -164,31 +155,28 @@
                 <li><a href="#">Инструмент</a></li>
                 <li><a href="#">Спецпредложения</a></li>
             </ul>
-        </section>
+        </div>
       </section>
       <section class="footer-bottomliner"><!--Темно-синий фончик-->
         <div class="footer-bottomliner-left"><!--Мелкий шрифт-->
           <p>© 2010–2019 Компания «Техномарт»</p>
           <p>Все права защищены</p>
         </div>
-        <div class="footer-socials">
-            <ul>
+        <ul class="footer-socials">
                 <li><a class="vk" href="#">Техномарт ВКонтакте</a></li>
                 <li><a class="fb" href="#">Техномарт Facebook</a></li>
                 <li><a class="insta" href="#">Техномарт Instagram</a></li>
-            </ul>
-        </div>
+        </ul>
         <div class="footer-email">
             <p>Обратная связь:</p>
             <a class="footer-link" href="#"><p>mail@htmlacademy.ru</p></a><!--ссылка желтым-->
         </div>
         <div class="footer-email">
-            <p>Разработано —</p>
+            <p>Разработано — </p>
             <a class="footer-link" href="https://htmlacademy.ru/intensive/htmlcss"><p>htmlacademy.ru</p></a><!--ссылка желтым-->
         </div>
       </section>
     </footer>
-    <!--эта ссылочка - выше <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе 
-        «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p>-->
+
   </body>
 </html>
