@@ -43,7 +43,7 @@
           <ul class="site-navigation">
             <li><a href="#">Главная</a></li>
             <li><a href="#">Компания</a></li>
-            <li><a href="#">Каталог</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
             <li><a href="#">Новости</a></li>
             <li><a href="#">Спецпредложения</a></li>
             <li><a href="#">Доставка</a></li>
@@ -93,6 +93,57 @@
       <section class="popular-goods">
         <div class="section-headline"><!--фончик -->
           <h2>Популярные товары:</h2>
+          <article class="catalog-item-card"><!--рамочки-уголочки BOSCH BFG 9000-->
+            <div class="card-hover"><!--отображение при наведении-->
+                <a href="#" class="button-item-buy">Купить</a>
+                <a href="#" class="button-item-bookmark">В закладки</a>
+            </div>
+            <div class="item-card"><!--типовое отображение-->
+                <img src="#" class="item-card-img" width="218" height="170" alt="BOSCH BFG 9000">
+                <h4>Перфоратор BOSCH 
+                    BFG 9000</h4>
+                <span class="item-old-price">32500 Р.</span>
+                <span class="item-new-price">25500 Р.</span>
+            </div>
+          </article>
+          <article class="catalog-item-card"><!--рамочки-уголочки BOSCH BFG 3000-->
+            <div class="card-hover"><!--отображение при наведении-->
+                <a href="#" class="button-item-buy">Купить</a>
+                <a href="#" class="button-item-bookmark">В закладки</a>
+            </div>
+            <div class="item-card"><!--типовое отображение-->
+                <img src="#" class="item-card-img" width="218" height="170" alt="BOSCH BFG 3000">
+                <h4>Перфоратор BOSCH 
+                    BFG 3000</h4>
+                <span class="item-old-price">22500 Р.</span>
+                <span class="item-new-price">15500 Р.</span>
+            </div>
+          </article>
+          <article class="catalog-item-card"><!--рамочки-уголочки BOSCH BFG 6000-->
+            <div class="card-hover"><!--отображение при наведении-->
+                <a href="#" class="button-item-buy">Купить</a>
+                <a href="#" class="button-item-bookmark">В закладки</a>
+            </div>
+            <div class="item-card"><!--типовое отображение-->
+                <img src="#" class="item-card-img" width="218" height="170" alt="BOSCH BFG 6000">
+                <h4>Перфоратор BOSCH 
+                    BFG 6000</h4>
+                <span class="item-old-price">30500 Р.</span>
+                <span class="item-new-price">25500 Р.</span>
+            </div>
+          </article>
+          <article class="catalog-item-card corner-new"><!--рамочки-уголочки BOSCH BFG 2000-->
+            <div class="card-hover"><!--отображение при наведении-->
+                <a href="#" class="button-item-buy">Купить</a>
+                <a href="#" class="button-item-bookmark">В закладки</a>
+            </div>
+            <div class="item-card"><!--типовое отображение-->
+                <img src="#" class="item-card-img" width="218" height="170" alt="BOSCH BFG 2000">
+                <h4>Перфоратор BOSCH
+                    BFG 2000</h4>
+                <span class="item-new-price">12500 Р.</span>
+            </div>
+          </article>
           <a class="button" href="#">все популярные товары</a>
         </div>
         <!--Тут будут карточки популярных товаров - пока велено пропустить, но дубликат на 2й странице-->
@@ -102,9 +153,16 @@
             <h2>Популярные производители:</h2>
             <a class="button" href="#">все производители</a>
         </div>
-        <div class="brand-logo-border"><!--Догадываюсь, что рамочку можно к самой картинке цеплять, но вдруг там размеры лого разные?-->
-            <img src="bosch" width="220" height="145" alt="Bosch"><!--пока 1 из 8-->
-        </div>
+        <ul>
+          <li><a href="#"><img src="img/bosch-logo.png" width="220" height="145" alt="Bosch"></a></li>
+          <li><a href="#"><img src="img/makita-logo.png" width="220" height="145" alt="Makita"></a></li>
+          <li><a href="#"><img src="img/de-walt-logo.png" width="220" height="145" alt="de-Walt"></a></li>
+          <li><a href="#"><img src="img/interskol-logo.png" width="220" height="145" alt="Интерскол"></a></li>
+          <li><a href="#"><img src="img/hitachi-logo.png" width="220" height="145" alt="Hitachi"></a></li>
+          <li><a href="#"><img src="img/lg-logo.png" width="220" height="145" alt="LG"></a></li>
+          <li><a href="#"><img src="img/aeg-logo.png" width="220" height="145" alt="AEG"></a></li>
+          <li><a href="#"><img src="img/metabo-logo.png" width="220" height="145" alt="Metabo"></a></li>
+        </ul>        
       </section>
       <section class="services"><!--Серая плашка во всю ширину-высоту, НЕ так как у секций выше. И мб машинка.пнг тут же-->
         <h2>Сервисы</h2>
@@ -164,7 +222,7 @@
           <h2>Контакты</h2>
           <p>Вы можете забрать товар сами, 
                 заехав в наш офис:</p>
-                <!--Тут оконце с картой-->
+                <a href="#"><img src="img/map.png" width="286" height="164" alt="Карта"></a>
           <a class="button" href="#">Заблудились? Напишите нам</a>
       </section>      
     </main>
@@ -182,7 +240,7 @@
             <ul class="footer-nav-site"><!--белый шрифт-->
                 <li><a href="#">Компания</a></li>
                 <li><a href="#">Новости</a></li>
-                <li><a href="#">Каталог</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
                 <li><a href="#">Доставка</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
@@ -211,7 +269,7 @@
             <a class="footer-link" href="#">mail@htmlacademy.ru</a><!--ссылка желтым-->
         </div>
         <div class="footer-email">
-            <p>Разработано —</p>
+            <p>Разработано — </p>
             <a class="footer-link" href="https://htmlacademy.ru/intensive/htmlcss"><p>htmlacademy.ru</p></a><!--ссылка желтым-->
         </div>
       </section>
