@@ -15,7 +15,7 @@
 				<img src="img/logo-technomart.svg" 
 				width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">
 			</a>
-			<form action="/echo" method="post">
+			<form action="https://echo.htmlacademy.ru" method="post">
 				<label for="search">Поиск</label>
 				<!--Как включить реакцию поля поиска на курсор?-->
 				<input type="search" name="search" id="search">
@@ -32,7 +32,7 @@
 			<p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
 		</div>
 		<div class="header-user-block">
-			<a class="header-login" href="#">Войти</a>
+			<a class="header-login" href="login.html">Войти</a>
 			<a class="header-registration" href="#">Регистрация</a>
 			<!--
                 <div>
@@ -92,8 +92,9 @@
 					<!--Другой стиль h3-зага-->
 					<span>Настоящие мужские игрушки</span>
 					<a class="button" href="catalog.html">Открыть каталог</a>
-
 				</div>
+				<button class="button slider-button-back" type="button">Назад</button>
+				<button class="button slider-button-next" type="button">Вперед</button>
 			</div>
 		</section>
 		<section class="popular-goods">
@@ -225,7 +226,7 @@
 			</div>
 		</section>
 		<section class="about-technomart">
-			<h2>КОМПАНИЯ «Техномарт»</h2>
+			<h2>Компания «Техномарт»</h2>
 			<p>Настоящий мужской шоппинг начинается здесь!
 				Огромный выбор товаров для ремонта и строительства
 				не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
@@ -242,12 +243,35 @@
 			<h2>Контакты</h2>
 			<p>Вы можете забрать товар сами,
 				заехав в наш офис:</p>
-			<a href="#"><img src="img/map.png" width="286" height="164" alt="Карта"></a>
+			<a href="#"><img src="img/map.png" width="286" height="164" 
+				alt="Карта проезда к офису компании по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
+			</a>
 			<a class="button" href="#">Заблудились? Напишите нам</a>
 		</section>
+		<!--ОКНО с ГУГЛ-Картой-->
+		<div class="googlemap-link">
+			<a href="#"><img src="img/map.png" width="286" height="164" 
+				alt="Гугл-карта проезда к офису компании по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
+			</a>
+			<button class="modal-close" type="button">Закрыть</button>
+		</div>
+		<!--ОКНО с Письмом-->
+		<form action="https://echo.htmlacademy.ru" method="post" class="form-emailus-window">
+			<fieldset>
+				<legend>Заблудились? Напишите нам</legend><!--убрать, переделать в подзаг, или сделать виз-хидден?-->
+				<button class="modal-close" type="button">Закрыть</button>	
+				<label for="emailus-username-surname">Ваше имя: </label>
+				<input type="text" id="emailus-username-surname" name="username" placeholder="Имя Фамилия">	
+				<label for="emailus-user-email">Ваш e-mail: </label>
+				<input type="email" id="emailus-user-email" name="useremail" placeholder="email@example.com">				
+				<label for="emailus-letter-text">Текст письма: </label>
+				<textarea id="emailus-letter-text" name="letter" rows="3">В свободной форме</textarea>	
+				<button class="button form-button" type="submit">Отправить</button>
+			</fieldset>			
+		</form>
 	</main>
 	<footer class="main-footer">
-		<!--центровка?-->
+		<!--центровка-->
 		<section class="footer-topliner">
 			<!--светло-синий фон-->
 			<section class="footer-topliner-left">
@@ -296,10 +320,8 @@
 				<!--ссылка желтым-->
 			</div>
 			<div class="footer-email">
-				<p>Разработано — </p>
-				<a class="footer-link" href="https://htmlacademy.ru/intensive/htmlcss">
-					<p>htmlacademy.ru</p>
-				</a>
+				<p>Разработано — <a class="footer-link" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
+				</p>
 				<!--ссылка желтым-->
 			</div>
 		</section>

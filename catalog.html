@@ -15,7 +15,7 @@
 				<img src="img/logo-technomart.svg" 
 				width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">				
 			</a>
-			<form action="/echo" method="post">
+			<form action="https://echo.htmlacademy.ru" method="post">
 				<label for="search">Поиск</label>
 				<!--Как включить реакцию поля поиска на курсор?-->
 				<input type="search" name="search" id="search">
@@ -59,7 +59,6 @@
 	</header>
 	<main>
 		<ul class="breadcrumbs">
-			<!--стили текста?-->
 			<li><a href="index.html">На главную</a></li>
 			<li><a href="#">Каталог</a></li>
 			<li><a href="#">Инструмент</a></li>
@@ -70,20 +69,22 @@
 			<!--тут можно плашку под подзаг сделать-->
 			<h2>Перфораторы</h2>
 			<section class="filters-column">
-				<form action="/echo" method="post">
+				<form action="https://echo.htmlacademy.ru" method="get" class="form-filters-catalog">
 					<h3>Фильтр:</h3>
 					<fieldset>
 						<!--рамочка вокруг блока-->
 						<legend>Цена:</legend>
+						<label for="filter-pricerange">Искать в ценовом диапазоне: </label>
 						<input type="range" id="filter-pricerange" name="pricerange">
 						<!--ЗАМЕНИТЬ НА ДВОЙНУЮ!-->
-						<input type="number" id="filter-minprice" name="minprice">
-						<input type="number" id="filter-maxprice" name="maxprice">
+						<label for="filter-minprice">Искать товары с ценой от: </label>
+						<input type="number" id="filter-minprice" name="minprice" placeholder="0">
+						<label for="filter-maxprice">Искать товары с ценой до: </label>
+						<input type="number" id="filter-maxprice" name="maxprice" placeholder="30000">
 					</fieldset>
 					<fieldset>
 						<legend>Производители:</legend>
-						<!--список чекбоксов-->
-						<ul>
+						<ul class="filter-brands-checkboxes">
 							<li><input type="checkbox" name="BOSCH" id="filter-BOSCH" checked><label for="filter-BOSCH">BOSCH</label></li>
 							<li><input type="checkbox" name="INTERSKOL" id="filter-INTERSKOL"><label for="filter-INTERSKOL">ИНТЕРСКОЛ</label></li>
 							<li><input type="checkbox" name="MAKITA" id="filter-MAKITA"><label for="filter-MAKITA">MAKITA</label></li>
@@ -93,30 +94,30 @@
 					</fieldset>
 					<fieldset>
 						<legend>Питание:</legend>
-						<!--список? радиобаттонов-->
-						<label><input type="radio" name="powersource" value="filter-battery" checked>Аккумуляторные</label>
-						<label><input type="radio" name="powersource" value="filter-mainspower">Сетевые</label>
+						<ul class="filter-powersource-flags">
+							<li><label><input type="radio" name="powersource" value="filter-battery" checked>Аккумуляторные</label></li>
+							<li><label><input type="radio" name="powersource" value="filter-mainspower">Сетевые</label></li>
+						</ul>
 					</fieldset>
-					<button class="button" type="submit">ПОКАЗАТЬ</button>
-					<input type="submit" class="filter-button" value="ПОКАЗАТЬ">
+					<button class="button form-button" type="submit">ПОКАЗАТЬ</button>
 				</form>
 			</section>
 			<section>
 				<!--список товаров-->
 				<div class="catalog-sorting">
 					<h3>сортировка</h3>
-					<ul class="catalog-sorting-choice">
-						<!--И ОПЯТЬ, чтоб не забыть: h3 ИЛИ span???-->
+					<ul class="catalog-sorting-type">
 						<li><a href="#">По цене</a></li>
 						<li><a href="#">По типу</a></li>
 						<li><a href="#">По функционалу</a></li>
+					</ul>
+					<ul class="catalog-sorting-direction">
 						<li><a href="#">По возрастанию</a></li>
 						<li><a href="#">По убыванию</a></li>
 					</ul>
 				</div>
 				<div class="catalog-items">
 					<article class="catalog-item-card">
-						<!--рамочки-уголочки BOSCH BFG 3000-->
 						<div class="card-hover">
 							<!--отображение при наведении-->
 							<a href="#" class="button-item-buy">Купить</a>
@@ -131,8 +132,7 @@
 							<span class="item-new-price">15500 Р.</span>
 						</div>
 					</article>
-					<article class="catalog-item-card">
-						<!--рамочки-уголочки BOSCH BFG 6000-->
+					<article class="catalog-item-cards">
 						<div class="card-hover">
 							<!--отображение при наведении-->
 							<a href="#" class="button-item-buy">Купить</a>
@@ -148,7 +148,6 @@
 						</div>
 					</article>
 					<article class="catalog-item-card corner-new">
-						<!--рамочки-уголочки BOSCH BFG 2000-->
 						<div class="card-hover">
 							<!--отображение при наведении-->
 							<a href="#" class="button-item-buy">Купить</a>
@@ -163,7 +162,6 @@
 						</div>
 					</article>
 					<article class="catalog-item-card">
-						<!--рамочки-уголочки BOSCH BFG 3000-->
 						<div class="card-hover">
 							<!--отображение при наведении-->
 							<a href="#" class="button-item-buy">Купить</a>
@@ -179,7 +177,6 @@
 						</div>
 					</article>
 					<article class="catalog-item-card corner-new">
-						<!--рамочки-уголочки BOSCH BFG 6000-->
 						<div class="card-hover">
 							<!--отображение при наведении-->
 							<a href="#" class="button-item-buy">Купить</a>
@@ -195,7 +192,6 @@
 						</div>
 					</article>
 					<article class="catalog-item-card">
-						<!--рамочки-уголочки BOSCH BFG 2000-->
 						<div class="card-hover">
 							<!--отображение при наведении-->
 							<a href="#" class="button-item-buy">Купить</a>
@@ -210,7 +206,6 @@
 						</div>
 					</article>
 					<article class="catalog-item-card corner-new">
-						<!--рамочки-уголочки BOSCH BFG 3000-->
 						<div class="card-hover">
 							<!--отображение при наведении-->
 							<a href="#" class="button-item-buy">Купить</a>
@@ -226,7 +221,6 @@
 						</div>
 					</article>
 					<article class="catalog-item-card">
-						<!--рамочки-уголочки BOSCH BFG 6000-->
 						<div class="card-hover">
 							<!--отображение при наведении-->
 							<a href="#" class="button-item-buy">Купить</a>
@@ -242,7 +236,6 @@
 						</div>
 					</article>
 					<article class="catalog-item-card">
-						<!--рамочки-уголочки BOSCH BFG 2000-->
 						<div class="card-hover">
 							<!--отображение при наведении-->
 							<a href="#" class="button-item-buy">Купить</a>
@@ -259,7 +252,6 @@
 				</div>
 				<div class="catalog-pages">
 					<ul class="catalog-page-numbers">
-						<!--И последний раз, чтоб не забыть: h3 ИЛИ span???-->
 						<li><a href="#">1</a></li>
 						<li><a href="#">2</a></li>
 						<li><a href="#">3</a></li>
@@ -267,6 +259,13 @@
 					</ul>
 				</div>
 			</section>
+			<!--ОКНО О Добавлении Товара В Корзину-->
+			<div class="window window-order">
+				<h2>Товар добавлен в корзину!</h2>
+				<button class="modal-close" type="button">Закрыть</button>
+				<a href="#" class="button-window-buy">ОФОРМИТЬ ЗАКАЗ</a> <!--Кнопка или ссылка?-->
+				<a href="#" class="button-window-next">ПРОДОЛЖИТЬ ПОКУПКИ</a> <!--Еще одно закрыть окно? Сделать кнопкой?-->
+			</div>
 			<section class="catalog-remark">
 				<!--серая плашка во всю ширину экрана, переключение текста в соответствии с рубрикой?-->
 				<h2>ПАРА СЛОВ О ПЕРФОРАТОРАХ</h2>
@@ -330,8 +329,8 @@
 				<!--ссылка желтым-->
 			</div>
 			<div class="footer-email">
-				<p>Разработано — </p>
-				<a class="footer-link" href="https://htmlacademy.ru/intensive/htmlcss"><p>htmlacademy.ru</p></a>
+				<p>Разработано — <a class="footer-link" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
+				</p>
 				<!--ссылка желтым-->
 			</div>
 		</section>
