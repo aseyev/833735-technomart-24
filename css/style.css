@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+  
+    font-family: "Cuprum", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 18px;/**/
+    font-weight: normal;
+    color: #ffffff; /*на осн. сайте белый пока!*/
+    /*text-transform: uppercase; */
+    /* background-color: #000000; */
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /*ХЭДЕР, серая плашка*/
+  .main-header {
+    background-color: #f4f7f9;
+    color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
+    /*центровка?*/
+  }
+  /*верхняя линия хэдера, темный фон*/
+  .top-liner {
+    background-color: #293449;
+    color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
+  } 
+  .top-liner a,
+  .top-liner form {
+      color: #ffffff;
+  }
+/*средняя линия хэдера, светло-серый фон, блок заголовка (левый) */
+  h1 {
+    font-family: Cuprum;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 23px;
+    text-align: left;
+    color: #ee3643;
+    /*font-stretch: normal; letter-spacing: normal; font-weight: normal;*/
+}
+/*средняя линия хэдера, светло-серый фон, блок адреса (центр) */
+.header-center-block {}
+/*средняя линия хэдера, светло-серый фон, блок адреса (центр), кнопка телефона */
+  .header-center-block a {
+      width: 270px;
+      height: 45px;
+      border: 3px solid #ffffff;
+      color: #ee3643;
+      font-size: 21px;
+      line-height: 21px;
+      text-align: center;      
+  }
+  .header-phone-button {}/*как делать кнопку телефона, ну и все остальные кнопки?))*/
+/*средняя линия хэдера, светло-серый фон, блок адреса (центр), адрес */
+  .header-center-block p {
+      color: #32425c;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+}
+/*средняя линия хэдера, светло-серый фон, блок личного кабинета (правый) */
+.header-user-block a {
+    color: #000000;
+      font-size: 21px;
+      line-height: 21px;
+}
+
+/*нижняя линия хэдера, синяя полоска, список ссылок. А зачем тут вообще нужна обертка .main-navigation для списка .site-navigation?  */  
+  .main-navigation {
+    width: 940px;
+    height: 60px;
+    box-shadow: inset 0px -5px 0 0 #293449;
+    background-color: #32425c;
+    color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
+    line-height: 17px; /*остальной текст вроде такой же*/
+  }
+
+  .site-navigation {
+    list-style: none;
+  }
+
+  .site-navigation a {
+    color: #ffffff;
+  }
+  
