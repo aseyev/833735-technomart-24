@@ -1,86 +1,245 @@
 body {
-    margin: 0;
-  
-    font-family: "Cuprum", Arial, sans-serif;
-    font-size: 17px;
-    line-height: 18px;/**/
-    font-weight: normal;
-    color: #ffffff; /*на осн. сайте белый пока!*/
-    /*text-transform: uppercase; */
-    /* background-color: #000000; */
-  }
+	margin: 0;
+	
+	font-family: "Cuprum", Arial, sans-serif;
+	font-size: 17px;
+	line-height: 18px;/**/
+	font-weight: normal;
+	color: #ffffff; /*на осн. сайте белый пока!*/
+	/*text-transform: uppercase; */
+	/* background-color: #000000; */
+}
 
-  a {
-    text-decoration: none;
-  }
+a {
+	text-decoration: none;
+}
 
-  /*ХЭДЕР, серая плашка*/
-  .main-header {
-    background-color: #f4f7f9;
-    color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
-    /*центровка?*/
-  }
-  /*верхняя линия хэдера, темный фон*/
-  .top-liner {
-    background-color: #293449;
-    color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
-  } 
-  .top-liner a,
-  .top-liner form {
-      color: #ffffff;
-  }
+	/*ХЭДЕР, серая плашка*/
+.main-header {
+	background-color: #f4f7f9;
+	color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
+	/*центровка?*/
+}
+	/*верхняя линия хэдера, темный фон*/
+.top-liner {
+	background-color: #293449;
+	color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
+} 
+
+.top-liner a,
+.top-liner form {
+	color: #ffffff;
+}
+
 /*средняя линия хэдера, светло-серый фон, блок заголовка (левый) */
-  h1 {
-    font-family: Cuprum;
-    font-size: 16px;
-    font-style: italic;
-    line-height: 23px;
-    text-align: left;
-    color: #ee3643;
-    /*font-stretch: normal; letter-spacing: normal; font-weight: normal;*/
+h1 {
+	font-family: Cuprum;
+	font-size: 16px;
+	font-style: italic;
+	line-height: 23px;
+	text-align: left;
+	color: #ee3643;
+	/*font-stretch: normal; letter-spacing: normal; font-weight: normal;*/
 }
-/*средняя линия хэдера, светло-серый фон, блок адреса (центр) */
-.header-center-block {}
+
+/*.header-center-block {} средняя линия хэдера, светло-серый фон, блок адреса (центр) */
+
+.button {
+	display: inline-block;
+	padding: 5px 20px;
+	font: inherit;  
+	text-align: center;
+	color: #000000;
+	vertical-align: middle;
+	border: none;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 18px;
+	}
+
 /*средняя линия хэдера, светло-серый фон, блок адреса (центр), кнопка телефона */
-  .header-center-block a {
-      width: 270px;
-      height: 45px;
-      border: 3px solid #ffffff;
-      color: #ee3643;
-      font-size: 21px;
-      line-height: 21px;
-      text-align: center;      
-  }
-  .header-phone-button {}/*как делать кнопку телефона, ну и все остальные кнопки?))*/
+.phone-button {
+	width: 270px;
+	border: 3px solid #ffffff;
+	color: #ee3643;
+	font-size: 21px;
+	line-height: 21px;      
+	}
+
+/*0. не получается сделать кнопку, не могу разобраться, куда задавать размеры-параметры: в a, в классы а, или в спан*/
+/*1 (вроде понял). В 22.30: не могу сделать кнопки, и по этой причине не знаю, как им же делать состояния*/
+/*втупляю и не могу провести аналогию от барбершопа ААААААА.... 1.55. display: inline-block, канеш, в барбершопе его нет.*/
+/*2. вОПРОС в 23.00: где прописан класс visually-hidden? я помню, где-то было упоминание, но не помню, где искать*/
+/*3. вОПРОС в 23.30: вообще не понимаю как оформлять слайдер. ВООБЩЕ. Так что ставлю 1 картинку в класс наугад. Да, сам вопрос вот:
+где можно понятно почитать про оформление слайдеров? Лекция про барбершоп не вариант*/
+/*4. вОПРОС в 23.55: как и где определять h2, h3 и тд? они могут между страницами отличаться, но можно ли глобально осн.стиль задать?*/
+/*5. вОПРОС в 01.00: а где все картинки?*/
+/*6. вОПРОС в 01.30: ---*/
+
 /*средняя линия хэдера, светло-серый фон, блок адреса (центр), адрес */
-  .header-center-block p {
-      color: #32425c;
-      font-size: 14px;
-      line-height: 24px;
-      text-align: center;
+.header-center-block p {
+	color: #32425c;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: left;
 }
+
 /*средняя линия хэдера, светло-серый фон, блок личного кабинета (правый) */
 .header-user-block a {
-    color: #000000;
-      font-size: 21px;
-      line-height: 21px;
+	color: #000000;
+	font-size: 21px;
+	line-height: 21px;
+	text-transform: none;
+}
+.header-user-block a {
+	background-color: #ffffff;
 }
 
 /*нижняя линия хэдера, синяя полоска, список ссылок. А зачем тут вообще нужна обертка .main-navigation для списка .site-navigation?  */  
-  .main-navigation {
-    width: 940px;
-    height: 60px;
-    box-shadow: inset 0px -5px 0 0 #293449;
-    background-color: #32425c;
-    color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
-    line-height: 17px; /*остальной текст вроде такой же*/
-  }
+.main-navigation {
+	width: 940px;
+	height: 60px;
+	box-shadow: inset 0px -5px 0 0 #293449;
+	background-color: #32425c;
+	color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
+	line-height: 17px; /*остальной текст вроде такой же*/
+	}
 
-  .site-navigation {
-    list-style: none;
-  }
+.site-navigation {
+	list-style: none;
+	}
 
-  .site-navigation a {
-    color: #ffffff;
-  }
-  
+.site-navigation a {
+	color: #ffffff;
+	}
+
+h2 {
+	font-size: 30px;
+	line-height: 30px;
+	text-transform: uppercase;
+	text-align: left;
+	color: #32425c;
+}
+	
+/**/
+.category-item {
+	width: 300px;
+	height: 123px;	
+}
+.category-item .button{
+	background-color: rgba(0, 0, 0, 0.1); /*там еще углы скруглены? как проверить?*/
+	color: #ffffff;
+}
+.category-item h3{
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 30px;
+	text-align: left;
+}
+
+.materials {
+	background-color: #ffbf47;
+	background-image: url("img/icon-1.svg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
+	background-position: 0 0;
+}
+.instruments {
+	background-color: #3bbce3;
+	background-image: url("img/icon-2.svg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
+	background-position: 0 0;
+}
+.technics {
+	background-color: #dc91d8;
+	background-image: url("img/icon-3.svg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
+	background-position: 0 0;
+}
+.discounts {
+	background-color: #8ed78f;
+	background-image: url("img/icon-4.svg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
+	background-position: 0 0;
+}
+.delivery {
+	background-color: #ffc047;
+	background-image: url("img/icon-5.svg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
+	background-position: 0 0;
+}
+.category-item-slider {	
+	width: 620px;
+	height: 266px;
+	background-color: #222222;
+}
+.category-item-slider a{
+	background-color: #ee3643;
+	color: #ffffff;
+}
+.category-item-slider h3{
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 36px;	
+	text-transform: uppercase;
+}
+.category-item-slider p{
+	font-size: 18px;
+	line-height: 24px;	
+}
+.category-item-slider .slider-button-back{
+	background-color: #ffffff;
+	color: #00ffff;
+}
+.category-item-slider .slider-button-next{
+	background-color: #ffffff;
+	color: #00ffff;
+}
+.category-item-drills {
+	display: block;
+	background-image: url("img/drillman.jpg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
+}
+.category-item-perfs {
+	background-image: url("img/perfman.jpg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
+}
+
+.section-headline h2{
+	width: 940px;
+	height: 89px;
+	background-color: #f9f5f0;
+}
+
+.section-headline a {
+	background-color: #ee3643;
+	color: #ffffff;
+}
+.catalog-item-card {
+	border: 1px solid #eaeaea;
+	width: 220px;
+	height: 318px;
+}
+.catalog-item-card h4{
+	font-family: "PTSans", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 20px;
+	text-align: center;
+	background-color: #ffffff;
+	color: #000000;
+}
+.catalog-item-card .item-old-price {
+	font-family: "PTSans", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 18px;
+	text-align: center;/*почему не выравнивается?*/
+	background-color: #ffffff;
+	color: #a9a9a9;
+	text-decoration: line-through;
+	display: block;
+}/**/
+.catalog-item-card .item-new-price {
+	font-family: "PTSans", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 18px;
+	text-align: center;/*почему не выравнивается?*/
+	background-color: #ee3643;
+	color: #ffffff;	
+	text-transform: uppercase;
+	display: block;
+}
