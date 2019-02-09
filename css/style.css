@@ -1,80 +1,104 @@
+/*ГЛОБАЛЬНОЕ*/
 body {
 	margin: 0;
 	
 	font-family: "Cuprum", Arial, sans-serif;
 	font-size: 17px;
-	line-height: 18px;/**/
+	line-height: 18px;
 	font-weight: normal;
 	color: #ffffff; /*на осн. сайте белый пока!*/
-	/*text-transform: uppercase; */
-	/* background-color: #000000; */
 }
 
 a {
 	text-decoration: none;
 }
 
-	/*ХЭДЕР, серая плашка*/
-.main-header {
-	background-color: #f4f7f9;
-	color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
-	/*центровка?*/
-}
-	/*верхняя линия хэдера, темный фон*/
-.top-liner {
-	background-color: #293449;
-	color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
-} 
-
-.top-liner a,
-.top-liner form {
-	color: #ffffff;
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 }
 
-/*средняя линия хэдера, светло-серый фон, блок заголовка (левый) */
-h1 {
+h1 { /*. Слоган в середине хедера, слева на сером фоне */
 	font-family: Cuprum;
 	font-size: 16px;
 	font-style: italic;
 	line-height: 23px;
 	text-align: left;
 	color: #ee3643;
-	/*font-stretch: normal; letter-spacing: normal; font-weight: normal;*/
 }
 
-/*.header-center-block {} средняя линия хэдера, светло-серый фон, блок адреса (центр) */
-
-.button {
+.button {   /* типовая красная кнопка с белым капс-текстом */
 	display: inline-block;
-	padding: 5px 20px;
 	font: inherit;  
 	text-align: center;
-	color: #000000;
-	vertical-align: middle;
-	border: none;
+	vertical-align: middle; /*. ПОЧЕМУ НЕ РАВНЯЕТ ПО ВЫСОТЕ??? */
 	text-transform: uppercase;
 	font-size: 14px;
 	line-height: 18px;
-	}
+	color: #ffffff;
+	background-color: #ee3643;
+	/* padding: 0 30px; */
+	border: none;
+	border-radius: 12px;
+	min-height: 38px;
+}
 
-/*средняя линия хэдера, светло-серый фон, блок адреса (центр), кнопка телефона */
+/*--------ХЕДЕР--------------------------------------------------------*/
+.main-header {/*серая плашка под ВЕСЬ хедер. центровка тут делается?*/
+	background-color: #f4f7f9;
+	color: #ffffff; /* дублирование пар цветов по инструкции из лекции. буду делать для больших блоков */	
+	min-height: 320px;
+}
+.top-liner { /*верхняя линия хэдера, темный фон*/
+	background-color: #293449;
+	min-height: 42px;
+} 
+.logo-background {
+	width: 220px;
+	height: 68px;
+	box-shadow: inset 0px -5px 0 0 rgba(0, 0, 0, 0.24);
+	background-color: #ee3643;
+}
+.top-liner a,
+.top-liner form {
+	color: #ffffff;	/* размер и цвет шрифта заданы в боди */
+}
+.top-liner a {/* НЕ ДЕЛАЮ им класс button, тк при наведении цвет меняется по высоте плашки. размер и цвет шрифта заданы в боди */
+	display: inline-block;
+	font: inherit;
+}
+.top-liner form {
+	background: url("../img/icon-search.svg") no-repeat;
+	
+}
+.top-liner-bookmarks {
+	background: url("../img/icon-bookmark.svg") no-repeat;
+}
+.top-liner-basket {
+	background: url("../img/icon-cart.svg") no-repeat #ee3643;
+}
+.top-liner-order {
+	background-color: #63a63e;
+}
+
+/* Левая колонка с текстом h1 ПЕРЕЕХАЛА зачем-то в верх этого файла. 
+А тут - сразу средняя линия хэдера, кнопка телефона и блок адреса (центр) на светло-сером фоне */
 .phone-button {
 	width: 270px;
-	border: 3px solid #ffffff;
+	background: url("../img/icon-phone.svg") no-repeat transparent;
+	border: 3px solid #ffffff; /*. КАК СДЕЛАТЬ РАМКУ ВНУТРЬ??? */
+	border-radius: 0;
+	min-height: 45px;
 	color: #ee3643;
 	font-size: 21px;
 	line-height: 21px;      
-	}
-
-/*0. не получается сделать кнопку, не могу разобраться, куда задавать размеры-параметры: в a, в классы а, или в спан*/
-/*1 (вроде понял). В 22.30: не могу сделать кнопки, и по этой причине не знаю, как им же делать состояния*/
-/*втупляю и не могу провести аналогию от барбершопа ААААААА.... 1.55. display: inline-block, канеш, в барбершопе его нет.*/
-/*2. вОПРОС в 23.00: где прописан класс visually-hidden? я помню, где-то было упоминание, но не помню, где искать*/
-/*3. вОПРОС в 23.30: вообще не понимаю как оформлять слайдер. ВООБЩЕ. Так что ставлю 1 картинку в класс наугад. Да, сам вопрос вот:
-где можно понятно почитать про оформление слайдеров? Лекция про барбершоп не вариант*/
-/*4. вОПРОС в 23.55: как и где определять h2, h3 и тд? они могут между страницами отличаться, но можно ли глобально осн.стиль задать?*/
-/*5. вОПРОС в 01.00: а где все картинки?*/
-/*6. вОПРОС в 01.30: ---*/
+}
 
 /*средняя линия хэдера, светло-серый фон, блок адреса (центр), адрес */
 .header-center-block p {
@@ -90,29 +114,29 @@ h1 {
 	font-size: 21px;
 	line-height: 21px;
 	text-transform: none;
-}
-.header-user-block a {
 	background-color: #ffffff;
+	border-radius: 0;
 }
-
-/*нижняя линия хэдера, синяя полоска, список ссылок. А зачем тут вообще нужна обертка .main-navigation для списка .site-navigation?  */  
+.header-login {
+	background: url("../img/icon-login.svg") no-repeat;
+}
+/*нижняя линия хэдера, синяя полоска, список ссылок. 
+А зачем тут вообще нужна обертка .main-navigation для списка .site-navigation?  */  
 .main-navigation {
 	width: 940px;
-	height: 60px;
+	min-height: 60px;
 	box-shadow: inset 0px -5px 0 0 #293449;
 	background-color: #32425c;
 	color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
 	line-height: 17px; /*остальной текст вроде такой же*/
-	}
-
+}
 .site-navigation {
 	list-style: none;
-	}
-
+}
 .site-navigation a {
 	color: #ffffff;
-	}
-
+}
+/* стили разделу main страницы index */
 h2 {
 	font-size: 30px;
 	line-height: 30px;
@@ -120,14 +144,13 @@ h2 {
 	text-align: left;
 	color: #32425c;
 }
-	
-/**/
+/* стили раздела рубрикатор */
 .category-item {
 	width: 300px;
 	height: 123px;	
 }
 .category-item .button{
-	background-color: rgba(0, 0, 0, 0.1); /*там еще углы скруглены? как проверить?*/
+	background-color: rgba(0, 0, 0, 0.1);
 	color: #ffffff;
 }
 .category-item h3{
@@ -136,82 +159,79 @@ h2 {
 	line-height: 30px;
 	text-align: left;
 }
-
+/* Рубрикатор сайта, блоки */
 .materials {
-	background-color: #ffbf47;
-	background-image: url("img/icon-1.svg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
-	background-position: 0 0;
+	background: url("../img/icon-1.svg") no-repeat #ffbf47 200px 40px;
 }
 .instruments {
-	background-color: #3bbce3;
-	background-image: url("img/icon-2.svg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
-	background-position: 0 0;
+	background: url("../img/icon-2.svg") no-repeat #3bbce3 200px 40px;
 }
 .technics {
-	background-color: #dc91d8;
-	background-image: url("img/icon-3.svg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
-	background-position: 0 0;
+	background: url("../img/icon-3.svg") no-repeat #dc91d8 200px 40px;
 }
 .discounts {
-	background-color: #8ed78f;
-	background-image: url("img/icon-4.svg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
-	background-position: 0 0;
+	background: url("../img/icon-4.svg") no-repeat #8ed78f 200px 40px;
 }
 .delivery {
-	background-color: #ffc047;
-	background-image: url("img/icon-5.svg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
-	background-position: 0 0;
+	background: url("../img/icon-5.svg") no-repeat #ffc047 200px 40px;
 }
 .category-item-slider {	
 	width: 620px;
 	height: 266px;
-	background-color: #222222;
-}
-.category-item-slider a{
-	background-color: #ee3643;
-	color: #ffffff;
 }
 .category-item-slider h3{
+	margin: 0;
 	font-weight: bold;
 	font-size: 36px;
-	line-height: 36px;	
+	line-height: 1;	
 	text-transform: uppercase;
 }
 .category-item-slider p{
 	font-size: 18px;
-	line-height: 24px;	
+	line-height: 24px;
+	margin: 0;	
 }
-.category-item-slider .slider-button-back{
-	background-color: #ffffff;
-	color: #00ffff;
+.slider-button-back{
+	background: url("../img/icon-left.svg") no-repeat blue;
 }
-.category-item-slider .slider-button-next{
-	background-color: #ffffff;
-	color: #00ffff;
+.slider-button-next{
+	background: url("../img/icon-right.svg") no-repeat blue;
 }
 .category-item-drills {
-	display: block;
-	background-image: url("img/drillman.jpg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
+	background: url("../img/drillman.jpg") no-repeat #222222;
 }
 .category-item-perfs {
-	background-image: url("img/perfman.jpg");/*ПОЧЕМУ НЕ ПОЯВЛЯЕТСЯ???*/
+	background: url("../img/perfman.jpg") no-repeat #222222;
 }
 
+/* ПОДЗАГИ С ПЛАШКАМИ для 2х секций на index */
 .section-headline h2{
 	width: 940px;
-	height: 89px;
+	min-height: 89px;
 	background-color: #f9f5f0;
 }
 
-.section-headline a {
-	background-color: #ee3643;
-	color: #ffffff;
-}
+/* Секция ПОПУЛЯРНЫЕ ТОВАРЫ */
 .catalog-item-card {
 	border: 1px solid #eaeaea;
 	width: 220px;
 	height: 318px;
 }
+.catalog-item-buy {
+	color: #ffffff;
+	background: url("../img/icon-cart.svg") no-repeat #63a63e;
+	width: 135px;
+	min-height: 38px;
+	box-shadow: inset 0px -3px 0 0 #367315;
+}
+.catalog-item-bookmark {
+	color: #32425c;
+	background-color: transparent;
+	width: 135px;
+	min-height: 38px;
+	border: 3px solid #63a63e; /*. КАК СДЕЛАТЬ РАМКУ ВНУТРЬ??? */
+}
+/* Все шрифты ПТСанс на index, надо ли делать отдельный подкласс? */
 .catalog-item-card h4{
 	font-family: "PTSans", Arial, sans-serif;
 	font-weight: bold;
@@ -231,7 +251,7 @@ h2 {
 	color: #a9a9a9;
 	text-decoration: line-through;
 	display: block;
-}/**/
+}
 .catalog-item-card .item-new-price {
 	font-family: "PTSans", Arial, sans-serif;
 	font-weight: bold;
@@ -243,3 +263,124 @@ h2 {
 	text-transform: uppercase;
 	display: block;
 }
+/* Секция популярные брэнды: как оформлять блоки с логотипами - не знаю... */
+.logo-blocks li {
+	border: 1px solid #eaeaea; 
+	/*. КАК логотипы фирм разместить внутри рамки, и какого размера делать? */
+}
+/* Секция Сервисы. На серой плашке во всю ширину */
+.services {
+	background-color: #f4f7f9;
+	min-height: 522px;
+}
+.services h2,
+.about-technomart h2 {
+	color: #000000;
+}
+.services h3 {
+	font-size: 36px;
+	line-height: 36px;
+	text-transform: uppercase;
+	text-align: left;
+	color: #32425c;
+}
+.services p,
+.about-technomart p {
+	font-family: "PTSans", Arial, sans-serif;
+	font-size: 13px;
+	line-height: 24px;
+	color: #000000;
+}
+.services ul {
+	display: inline-block;
+	list-style: none;
+}
+.services-list a {	
+	font-weight: bold;
+	font-size: 21px;
+	line-height: 30px;
+	text-align: left;
+	vertical-align: middle; /*. ПОЧЕМУ НЕ РАВНЯЕТ ПО ВЫСОТЕ??? */
+	background-color: #32425c;
+	color: #ffffff;
+}
+.service-selected a {
+	background-color: #ffffff;
+	color: #32425c;	
+}
+.services-right-block-delivery {
+	background: url("../img/back-delivery.png") no-repeat;
+}
+.services-right-block-warranty {
+	background: url("../img/back-warranty.png") no-repeat;
+}
+.services-right-block-credit {
+	background: url("../img/back-credit.png") no-repeat;
+}
+/* секция про Техномарт, все взял из предыдущей секции, тут только список */
+.about-technomart ul {
+	list-style: none;
+	color: #000000;
+	font-size: 18px;
+	line-height: 20px;
+}
+.form-emailus-window {
+	font-size: 18px;
+	line-height: 18px;
+	text-align: left;
+	color: #000000;
+	background-color: #ffffff;
+	width: 620px;
+	height: 430px;
+	box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
+}
+.button-gray-background {
+	width: 620px;
+	height: 112px;
+	background-color: #f4f4f4;
+}
+.form-emailus-window input, 
+.form-emailus-window textarea {
+	font-family: "PTSans", Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	color: #a9a9a9;
+	border: 2px solid #dee3e4;
+}
+.main-footer {
+	font-size: 18px;
+	line-height: 24px;
+	text-align: left;
+	color: #ffffff;
+}
+.main-footer ul {
+	list-style: none;
+}
+.main-footer a {
+	color: #ffd180;
+}
+.footer-topliner {
+	/* width: 1200px; */
+	min-height: 300px;
+	background-color: #32425c;	
+}
+.footer-nav-site a {
+	color: #ffffff;
+}
+.footer-bottomliner {
+	min-height: 107px;
+	background-color: #293449;
+	font-size: 16px;
+	line-height: 18px;
+}
+.footer-socials .vk {
+	background: url("../img/icon-vk.svg") no-repeat;
+}
+.footer-socials .fb {
+	background: url("../img/icon-fb.svg") no-repeat;
+}
+.footer-socials .insta {
+	background: url("../img/icon-insta.svg") no-repeat;
+}
+
+
