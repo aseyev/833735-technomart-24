@@ -11,12 +11,10 @@
 
 <body>
 	<header class="main-header">
-		<!--должен содержать серый фон-->
 		<div class="top-liner">
-			<!--синий фон верхней линейки-->
-			<a class="main-header-logo" href="index.html">
+			<a class="logo-background" href="#">
 				<img src="img/logo-technomart.svg" 
-				width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">				
+				width="138" height="23" alt="Логотип Интернет-магазина «Техномарт»">
 			</a>
 			<form action="https://echo.htmlacademy.ru" method="post">
 				<label for="search">Поиск</label>
@@ -31,7 +29,7 @@
 		<h1>Интернет-магазин строительных материалов и инструментов для ремонта</h1>
 
 		<div class="header-center-block">
-			<a href="tel:+78125550555" class="button"><span>+7 (812) 555-05-55</span></a>
+			<a href="tel:+78125550555" class="button phone-button"><span class="header-phone-button">+7 (812) 555-05-55</span></a>
 			<p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
 		</div>
 		<div class="header-user-block">
@@ -39,20 +37,20 @@
 			<a class="header-registration" href="#">Регистрация</a>
 			<div>
 				<!--Какое-то действие при нажатии кнопки Выйти-->
-
+		
 				<a class="user-name" href="#">Равшан Джамшутович</a>
 				<button class="header-logout">Выйти</button>
 				<a class="header-textlink" href="#">Мои заказы</a>
 				<a class="header-textlink" href="#">Личный кабинет</a>
-
+		
 			</div>
 		</div>
+
 		<nav class="main-navigation">
-			<!--синяя полоска под меню-->
 			<ul class="site-navigation">
-				<li><a href="index.html">Главная</a></li>
+				<li><a href="#">Главная</a></li>
 				<li><a href="#">Компания</a></li>
-				<li><a href="#">Каталог</a></li>
+				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#">Новости</a></li>
 				<li><a href="#">Спецпредложения</a></li>
 				<li><a href="#">Доставка</a></li>
@@ -287,26 +285,26 @@
 		</section>
 	</main>
 	<footer class="main-footer">
-		<!--центровка?-->
+		<!--центровка-->
 		<section class="footer-topliner">
 			<!--светло-синий фон-->
-			<div class="footer-topliner-left">
+			<section class="footer-topliner-left">
 				<!--левая выключка-->
-				<a class="main-footer-logo">
-					<img src="img/logo-technomart.svg" 
-					width="220" height="47" alt="Логотип Интернет-магазина «Техномарт»">
-				</a>
+				<a href="#" class="logo-background">
+					<img src="img/logo-technomart.svg"					
+					width="138" height="23" alt="Логотип Интернет-магазина «Техномарт»">
+				</a> <!-- почему этот лого мелкий?? -->
 				<p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
-				+7 (812) 555-05-55
+					+7 (812) 555-05-55
 				</p>
-			</div>
-			<div class="top-footer-right">
+			</section>
+			<section class="top-footer-right">
 				<!--выключка вправо-->
 				<ul class="footer-nav-site">
 					<!--белый шрифт-->
 					<li><a href="#">Компания</a></li>
 					<li><a href="#">Новости</a></li>
-					<li><a href="#">Каталог</a></li>
+					<li><a href="catalog.html">Каталог</a></li>
 					<li><a href="#">Доставка</a></li>
 					<li><a href="#">Контакты</a></li>
 				</ul>
@@ -317,7 +315,7 @@
 					<li><a href="#">Инструмент</a></li>
 					<li><a href="#">Спецпредложения</a></li>
 				</ul>
-			</div>
+			</section>
 		</section>
 		<section class="footer-bottomliner">
 			<!--Темно-синий фончик-->
@@ -333,15 +331,12 @@
 			</ul>
 			<div class="footer-email">
 				<p>Обратная связь:</p>
-				<a class="footer-link" href="#">
-					<p>mail@htmlacademy.ru</p>
-				</a>
+				<a class="footer-link" href="#">mail@htmlacademy.ru</a>
 				<!--ссылка желтым-->
 			</div>
-			<div class="footer-email">
+			<div class="footer-email"><!--сама ссылка желтым-->
 				<p>Разработано — <a class="footer-link" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
 				</p>
-				<!--ссылка желтым-->
 			</div>
 		</section>
 	</footer>

@@ -33,7 +33,7 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	color: #ee3643;
 }
 
-.button {   /* типовая красная кнопка с белым капс-текстом */
+.button:link {   /* типовая красная кнопка с белым капс-текстом */
 	display: inline-block;
 	font: inherit;  
 	text-align: center;
@@ -48,7 +48,12 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	border-radius: 12px;
 	min-height: 38px;
 }
-
+.button:hover {
+	background-color: #ca2c37;
+}
+.button:active {
+	background-color: #ba2732;
+}
 /*--------ХЕДЕР--------------------------------------------------------*/
 .main-header {/*серая плашка под ВЕСЬ хедер. центровка тут делается?*/
 	background-color: #f4f7f9;
@@ -59,42 +64,68 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	background-color: #293449;
 	min-height: 42px;
 } 
-.logo-background {
+.logo-background:link {
 	width: 220px;
 	height: 68px;
 	box-shadow: inset 0px -5px 0 0 rgba(0, 0, 0, 0.24);
 	background-color: #ee3643;
 }
+.logo-background:hover {
+	background-color: #ca2c37;
+}
+.logo-background:active {
+	background-color: #ba2732;
+}
 .top-liner a,
 .top-liner form {
 	color: #ffffff;	/* размер и цвет шрифта заданы в боди */
 }
-.top-liner a {/* НЕ ДЕЛАЮ им класс button, тк при наведении цвет меняется по высоте плашки. размер и цвет шрифта заданы в боди */
+.top-liner form:link,
+.top-liner-bookmarks a:link,
+.top-liner-basket a:link {
+	background-color: #293449;
+}
+.top-liner input:hover,
+.top-liner-bookmarks:hover,
+.top-liner-basket a:hover {
+	background-color: #212a3a;
+}
+.top-liner form:active,
+.top-liner-bookmarks a:active,
+.top-liner-basket a:active {
+	background-color: #161d29;
+}
+
+
+.top-liner form:focus {
+	color: #ffffff;	/* размер и цвет шрифта заданы в боди */
+}
+/* .top-liner a {
 	display: inline-block;
 	font: inherit;
 }
 .top-liner form {
 	background: url("../img/icon-search.svg") no-repeat;
 	
-}
-.top-liner-bookmarks {
-	background: url("../img/icon-bookmark.svg") no-repeat;
-}
-.top-liner-basket {
-	background: url("../img/icon-cart.svg") no-repeat #ee3643;
-}
-.top-liner-order {
-	background-color: #63a63e;
-}
+	}
+	.top-liner-bookmarks {
+		background: url("../img/icon-bookmark.svg") no-repeat;
+	}
+	.top-liner-basket {
+		background: url("../img/icon-cart.svg") no-repeat #ee3643;
+	}
+	.top-liner-order {
+		background-color: #63a63e;
+	} */
 
 /* Левая колонка с текстом h1 ПЕРЕЕХАЛА зачем-то в верх этого файла. 
 А тут - сразу средняя линия хэдера, кнопка телефона и блок адреса (центр) на светло-сером фоне */
-.phone-button {
+.phone-button:link {
 	width: 270px;
 	background: url("../img/icon-phone.svg") no-repeat transparent;
 	border: 3px solid #ffffff; /*. КАК СДЕЛАТЬ РАМКУ ВНУТРЬ??? */
 	border-radius: 0;
-	min-height: 45px;
+	min-height: 38px;
 	color: #ee3643;
 	font-size: 21px;
 	line-height: 21px;      
@@ -117,8 +148,9 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	background-color: #ffffff;
 	border-radius: 0;
 }
-.header-login {
-	background: url("../img/icon-login.svg") no-repeat;
+.header-login:link {
+	background: url("../img/icon-login.svg") no-repeat #ffffff;
+	color: black;
 }
 /*нижняя линия хэдера, синяя полоска, список ссылок. 
 А зачем тут вообще нужна обертка .main-navigation для списка .site-navigation?  */  
