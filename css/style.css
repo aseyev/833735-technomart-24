@@ -33,7 +33,7 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	color: #ee3643;
 }
 
-.button:link {   /* типовая красная кнопка с белым капс-текстом */
+.button {   /* типовая красная кнопка с белым капс-текстом */
 	display: inline-block;
 	font: inherit;  
 	text-align: center;
@@ -45,7 +45,7 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	background-color: #ee3643;
 	/* padding: 0 30px; */
 	border: none;
-	border-radius: 12px;
+	border-radius: 3px;
 	min-height: 38px;
 }
 .button:hover {
@@ -64,7 +64,7 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	background-color: #293449;
 	min-height: 42px;
 } 
-.logo-background:link {
+.logo-background {
 	width: 220px;
 	height: 68px;
 	box-shadow: inset 0px -5px 0 0 rgba(0, 0, 0, 0.24);
@@ -80,25 +80,32 @@ h1 { /*. Слоган в середине хедера, слева на серо
 .top-liner form {
 	color: #ffffff;	/* размер и цвет шрифта заданы в боди */
 }
-.top-liner form:link,
-.top-liner-bookmarks a:link,
-.top-liner-basket a:link {
+.top-liner input,
+.top-liner-bookmarks,
+.top-liner-basket {
 	background-color: #293449;
+	border: none;
+}
+.top-liner-order {
+	background-color: #63a63e;
 }
 .top-liner input:hover,
 .top-liner-bookmarks:hover,
-.top-liner-basket a:hover {
+.top-liner-basket:hover {
 	background-color: #212a3a;
 }
-.top-liner form:active,
-.top-liner-bookmarks a:active,
-.top-liner-basket a:active {
+.top-liner-order:hover {
+	background-color: #5fbb2d;
+}
+.top-liner input:focus {
+	background-color: #ffffff;	/* размер и цвет шрифта заданы в боди */
+}
+.top-liner-bookmarks:active,
+.top-liner-basket:active {
 	background-color: #161d29;
 }
-
-
-.top-liner form:focus {
-	color: #ffffff;	/* размер и цвет шрифта заданы в боди */
+.top-liner-order:active {
+	background-color: #518534;
 }
 /* .top-liner a {
 	display: inline-block;
@@ -120,7 +127,7 @@ h1 { /*. Слоган в середине хедера, слева на серо
 
 /* Левая колонка с текстом h1 ПЕРЕЕХАЛА зачем-то в верх этого файла. 
 А тут - сразу средняя линия хэдера, кнопка телефона и блок адреса (центр) на светло-сером фоне */
-.phone-button:link {
+.phone-button {
 	width: 270px;
 	background: url("../img/icon-phone.svg") no-repeat transparent;
 	border: 3px solid #ffffff; /*. КАК СДЕЛАТЬ РАМКУ ВНУТРЬ??? */
@@ -148,9 +155,60 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	background-color: #ffffff;
 	border-radius: 0;
 }
-.header-login:link {
+.header-login {
 	background: url("../img/icon-login.svg") no-repeat #ffffff;
-	color: black;
+	color: #000000;
+}
+.header-login:hover {
+	background: url("../img/icon-login.svg") no-repeat #ffffff;
+	color: #ee3643;
+}
+.header-login:active {
+	background: url("../img/icon-login.svg") no-repeat #ffffff;
+	color: rgba(0, 0, 0, 0.3);
+}
+.header-registration {
+	background: #ffffff;
+	color: #000000;
+}
+.header-registration:hover {
+	background: #ffffff;
+	color: #ee3643;
+}
+.header-registration:active {
+	background: #ffffff;
+	color: rgba(0, 0, 0, 0.3);
+}
+.user-name {
+	width: 299px;
+	min-height: 45px;
+	background: url("../img/icon-user.svg") no-repeat #ffffff;
+	color: #000000; 
+	font-size: 21px;
+	line-height: 21px; 
+}
+.header-logout {
+	background: url("../img/icon-logout.svg") no-repeat #ffffff;
+}
+/* место под раскрашенную иконку. и кнопку? */
+.user-name:hover {
+	background: url("../img/icon-user.svg") no-repeat #ffffff;
+}
+.user-name:active {
+	opacity: 0.3;
+}
+a.header-textlink {
+	font-size: 16px;
+	line-height: 18px;
+	text-decoration: underline;
+	color: #32425c;
+	background: transparent;
+}
+.header-textlink:hover {
+	color: #ee3643;
+}
+.header-textlink:active {
+	color: rgba(50, 66, 92, 0.3);
 }
 /*нижняя линия хэдера, синяя полоска, список ссылок. 
 А зачем тут вообще нужна обертка .main-navigation для списка .site-navigation?  */  
@@ -159,14 +217,21 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	min-height: 60px;
 	box-shadow: inset 0px -5px 0 0 #293449;
 	background-color: #32425c;
-	color: #ffffff; /*дублирование пар цветов по инструкции из лекции*/
-	line-height: 17px; /*остальной текст вроде такой же*/
+	color: #ffffff; 
+	line-height: 17px; 
 }
 .site-navigation {
 	list-style: none;
 }
 .site-navigation a {
 	color: #ffffff;
+}
+.site-navigation a:hover {
+	background: #1d2739;
+}
+.site-navigation a:active {
+	background: #1d2739;
+	color: rgba(255, 255, 255, 0.5);
 }
 /* стили разделу main страницы index */
 h2 {
@@ -181,9 +246,15 @@ h2 {
 	width: 300px;
 	height: 123px;	
 }
-.category-item .button{
+.category-item .button {
 	background-color: rgba(0, 0, 0, 0.1);
 	color: #ffffff;
+}
+.category-item .button:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.category-item .button:active {
+	background-color: rgba(0, 0, 0, 0.3);
 }
 .category-item h3{
 	font-weight: bold;
@@ -256,12 +327,29 @@ h2 {
 	min-height: 38px;
 	box-shadow: inset 0px -3px 0 0 #367315;
 }
+.catalog-item-buy:hover {
+	background: url("../img/icon-cart.svg") no-repeat #5fbb2d;
+}
+.catalog-item-buy:active {
+	background: url("../img/icon-cart.svg") no-repeat #518534;
+}
 .catalog-item-bookmark {
 	color: #32425c;
 	background-color: transparent;
 	width: 135px;
 	min-height: 38px;
-	border: 3px solid #63a63e; /*. КАК СДЕЛАТЬ РАМКУ ВНУТРЬ??? */
+	border: 3px solid #63a63e; 
+}
+.catalog-item-bookmark:hover {
+	color: #32425c;
+	background-color: transparent;
+	border: 3px solid #32425c; 
+}
+.catalog-item-bookmark:active {
+	color: #32425c;
+	background-color: transparent;
+	border: 3px solid #63a63e;
+	opacity: 0.3; 
 }
 /* Все шрифты ПТСанс на index, надо ли делать отдельный подкласс? */
 .catalog-item-card h4{
@@ -278,7 +366,7 @@ h2 {
 	font-weight: bold;
 	font-size: 17px;
 	line-height: 18px;
-	text-align: center;/*почему не выравнивается?*/
+	text-align: center;
 	background-color: #ffffff;
 	color: #a9a9a9;
 	text-decoration: line-through;
@@ -289,16 +377,24 @@ h2 {
 	font-weight: bold;
 	font-size: 17px;
 	line-height: 18px;
-	text-align: center;/*почему не выравнивается?*/
+	text-align: center;
 	background-color: #ee3643;
 	color: #ffffff;	
 	text-transform: uppercase;
 	display: block;
 }
-/* Секция популярные брэнды: как оформлять блоки с логотипами - не знаю... */
-.logo-blocks li {
+/* Бокс-рамку вложить в список, как обертку для ссылки? */
+.logo-blocks a {
 	border: 1px solid #eaeaea; 
-	/*. КАК логотипы фирм разместить внутри рамки, и какого размера делать? */
+	width: 220px;
+	min-height: 145px; 
+}
+.logo-blocks a:hover {
+	box-shadow: 0px 10px 25px 0 rgba(41, 52, 73, 0.5);
+}
+.logo-blocks a:active {
+	box-shadow: 0px 10px 25px 0 rgba(41, 52, 73, 0.5);
+	opacity: 0.3;
 }
 /* Секция Сервисы. На серой плашке во всю ширину */
 .services {
@@ -332,11 +428,14 @@ h2 {
 	font-size: 21px;
 	line-height: 30px;
 	text-align: left;
-	vertical-align: middle; /*. ПОЧЕМУ НЕ РАВНЯЕТ ПО ВЫСОТЕ??? */
+	vertical-align: middle; 
 	background-color: #32425c;
 	color: #ffffff;
 }
-.service-selected a {
+.services-list a:hover {
+	background-color: #293449;
+}
+.services-list a:active {
 	background-color: #ffffff;
 	color: #32425c;	
 }
@@ -356,7 +455,7 @@ h2 {
 	font-size: 18px;
 	line-height: 20px;
 }
-.form-emailus-window {
+.modal-window {
 	font-size: 18px;
 	line-height: 18px;
 	text-align: left;
@@ -366,18 +465,26 @@ h2 {
 	height: 430px;
 	box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
 }
-.button-gray-background {
+.modal-window-bottom {
 	width: 620px;
 	height: 112px;
 	background-color: #f4f4f4;
 }
-.form-emailus-window input, 
-.form-emailus-window textarea {
+.form-emailus input, 
+.form-emailus textarea {
 	font-family: "PTSans", Arial, sans-serif;
 	font-size: 13px;
 	line-height: 18px;
 	color: #a9a9a9;
 	border: 2px solid #dee3e4;
+}
+.form-emailus input:hover, 
+.form-emailus textarea:hover {
+	border: 2px solid #b5b5b5;
+}
+.modal-window input:focus, 
+.modal-window textarea:focus {
+	border: 2px solid #ee3643;
 }
 .main-footer {
 	font-size: 18px;
@@ -391,6 +498,9 @@ h2 {
 .main-footer a {
 	color: #ffd180;
 }
+.main-footer a:hover {
+	text-decoration: underline;
+}
 .footer-topliner {
 	/* width: 1200px; */
 	min-height: 300px;
@@ -398,6 +508,9 @@ h2 {
 }
 .footer-nav-site a {
 	color: #ffffff;
+}
+.top-footer-right a:active {
+	opacity: 0.5;
 }
 .footer-bottomliner {
 	min-height: 107px;
@@ -414,5 +527,149 @@ h2 {
 .footer-socials .insta {
 	background: url("../img/icon-insta.svg") no-repeat;
 }
+.footer-socials a:hover,
+.footer-socials a:active {
+	background-color: #ee3643;
+}
+.footer-email a:active {
+	color: #ee3643;
+	text-decoration: none;
+}
+/* ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ CATALOG */
+.catalog-styles {
+	background: white;
+	color: #000000;
+	padding: none;
+	margin: none;
+}
+.catalog-styles ul {
+	list-style: none;
+}
 
-
+.breadcrumbs {
+	color: #000000;
+}
+.catalog-ptsans {
+	font-family: "PTSans", Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;	
+	font-weight: normal;
+	color: #000000;
+	text-transform: uppercase;
+}
+.catalog-ptsans a {
+	color: #000000;
+}
+.back-grey h2{
+	width: 940px;
+	min-height: 89px;
+	background-color: #f2f6f8;
+}
+.back-beige {
+	width: 220px;
+	min-height: 38px;
+	background-color: #f7f3ec;
+}
+.filters-column fieldset {
+	border: none;
+}
+.filters-column legend {
+	font-size: 17px;
+	line-height: 30px;	
+	font-weight: bold;
+}
+.filters-column input{
+	border: none;
+	background-color: #f7f3ec;	
+	font-size: 17px;
+	line-height: 18px;	
+	text-align: center;
+}
+fieldset.bottom-line {
+	border-bottom: 1px solid #d7dcde;
+}
+.filters-column .double-scroll-pad {
+	width: 220px;
+	min-height: 80px;
+	background-color: #f7f3ec;
+}
+button.filter-button {
+	width: 140px;
+	min-height: 38px;
+	border: 1px solid #e5e5e5;
+	background: transparent;
+}
+/* СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! */
+input[type="radio"]:checked {
+    display: none;
+}
+/* СОРТИРОВОЧНАЯ ЛИНЕЙКА */
+.catalog-sorting h3,
+.catalog-sorting a {
+	font-family: "PTSans", Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;	
+	font-weight: normal;
+	color: #000000;
+	text-transform: uppercase;	
+}
+.catalog-sorting a {
+	text-decoration: underline red;
+	color: rgba(0, 0, 0, 0.3);
+}
+.catalog-sorting a:hover {
+	text-decoration: underline red;
+	color: rgba(0, 0, 0, 1);
+}
+.catalog-sorting a:active {
+	text-decoration: none;
+	color: #ee3643;
+}
+/* ПЕРЕКЛЮЧАТЕЛЬ СТРАНИЦ */
+.catalog-pages a {
+	font-family: "PTSans", Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;	
+	font-weight: normal;
+	color: #000000;
+	text-transform: uppercase;
+	/* min-width: 38px;	min-height: 38px; */
+	border: 1px solid #e5e5e5;
+}
+.catalog-pages a:hover {
+	border: 1px solid #bdc6ca;
+}
+.catalog-pages a:active {
+	border: 1px solid #ee3643;
+}
+a.catalog-current-page {
+	color: #ffffff;
+	background: #ee3643;
+	border: none;
+}
+/* МОДАЛЬНОЕ ОКНО ПОДТВЕРЖДЕНИЯ ЗАКАЗА */
+.window-order h2 {
+	font-size: 30px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 30px;
+	text-align: center;
+	color: #000000;
+	text-transform: none;
+}
+.window-order .order-close {
+	background: #ffffff;
+	color: #000000;
+}
+/* ПАРА СЛОВ О ПЕРФОРАТОРАХ */
+.catalog-remark {
+	background: #f4f7f9;
+}
+.catalog-remark h2 {
+	color: #000000;
+}
+.catalog-remark p {
+	font-family: "PTSans", Arial, sans-serif;
+	font-size: 13px;
+	line-height: 24px;	
+}
