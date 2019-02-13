@@ -66,7 +66,7 @@ h1 { /*. Слоган в середине хедера, слева на серо
 } 
 .logo-background {
 	width: 220px;
-	height: 68px;
+	min-height: 68px;
 	box-shadow: inset 0px -5px 0 0 rgba(0, 0, 0, 0.24);
 	background-color: #ee3643;
 }
@@ -213,7 +213,6 @@ a.header-textlink {
 /*нижняя линия хэдера, синяя полоска, список ссылок. 
 А зачем тут вообще нужна обертка .main-navigation для списка .site-navigation?  */  
 .main-navigation {
-	width: 940px;
 	min-height: 60px;
 	box-shadow: inset 0px -5px 0 0 #293449;
 	background-color: #32425c;
@@ -244,7 +243,7 @@ h2 {
 /* стили раздела рубрикатор */
 .category-item {
 	width: 300px;
-	height: 123px;	
+	min-height: 123px;	
 }
 .category-item .button {
 	background-color: rgba(0, 0, 0, 0.1);
@@ -280,7 +279,7 @@ h2 {
 }
 .category-item-slider {	
 	width: 620px;
-	height: 266px;
+	min-height: 266px;
 }
 .category-item-slider h3{
 	margin: 0;
@@ -309,7 +308,6 @@ h2 {
 
 /* ПОДЗАГИ С ПЛАШКАМИ для 2х секций на index */
 .section-headline h2{
-	width: 940px;
 	min-height: 89px;
 	background-color: #f9f5f0;
 }
@@ -318,7 +316,7 @@ h2 {
 .catalog-item-card {
 	border: 1px solid #eaeaea;
 	width: 220px;
-	height: 318px;
+	min-height: 318px;
 }
 .catalog-item-buy {
 	color: #ffffff;
@@ -462,12 +460,12 @@ h2 {
 	color: #000000;
 	background-color: #ffffff;
 	width: 620px;
-	height: 430px;
+	min-height: 430px;
 	box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
 }
 .modal-window-bottom {
 	width: 620px;
-	height: 112px;
+	min-height: 112px;
 	background-color: #f4f4f4;
 }
 .form-emailus input, 
@@ -561,7 +559,6 @@ h2 {
 	color: #000000;
 }
 .back-grey h2{
-	width: 940px;
 	min-height: 89px;
 	background-color: #f2f6f8;
 }
