@@ -307,7 +307,7 @@ h2 {
 }
 
 /* ПОДЗАГИ С ПЛАШКАМИ для 2х секций на index */
-.section-headline h2{
+.headline-background {
 	min-height: 89px;
 	background-color: #f9f5f0;
 }
@@ -545,8 +545,14 @@ h2 {
 }
 
 .breadcrumbs {
+	font-family: "PTSans", Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;	
+	font-weight: normal;
 	color: #000000;
+	text-transform: uppercase;
 }
+/* НА УДАЛЕНИЕ, сохраню пока для поиска вылезших косяков
 .catalog-ptsans {
 	font-family: "PTSans", Arial, sans-serif;
 	font-size: 13px;
@@ -557,13 +563,24 @@ h2 {
 }
 .catalog-ptsans a {
 	color: #000000;
+} */
+.form-filters-catalog h3 {
+	font-family: "PTSans", Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;	
+	font-weight: normal;
+	color: #000000;
+	text-transform: uppercase;
 }
-.back-grey h2{
+/* .back-grey h2{
 	min-height: 89px;
 	background-color: #f2f6f8;
+} */
+.catalog-perforators .headline-background{
+	background-color: #f2f6f8;
 }
-.back-beige {
-	width: 220px;
+.form-filters-catalog .headline-background,
+.catalog-sorting .headline-background {
 	min-height: 38px;
 	background-color: #f7f3ec;
 }
@@ -595,6 +612,12 @@ button.filter-button {
 	min-height: 38px;
 	border: 1px solid #e5e5e5;
 	background: transparent;
+	font-family: "PTSans", Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;	
+	font-weight: normal;
+	color: #000000;
+	text-transform: uppercase;
 }
 /* СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! */
 input[type="radio"]:checked {
