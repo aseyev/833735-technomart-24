@@ -61,6 +61,7 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	background-color: #f4f7f9;
 	color: #ffffff; /* дублирование пар цветов по инструкции из лекции. буду делать для больших блоков */	
 	min-height: 320px;
+	/* margin-bottom: 59px; не работает на странице каталога! */
 }
 .top-liner { /*верхняя линия хэдера, темный фон НА ВЕСЬ ЭКРАН*/
 	background-color: #293449;
@@ -68,8 +69,8 @@ h1 { /*. Слоган в середине хедера, слева на серо
 } 
 .logo-background {
 	width: 220px;
-	min-height: 68px;
-	box-shadow: inset 0px -5px 0 0 rgba(0, 0, 0, 0.24);
+	min-height: 42px;
+	box-shadow: 0px 5px 0 0 rgba(0, 0, 0, 0.24);
 	background-color: #ee3643;
 }
 .logo-background:hover {
@@ -223,6 +224,8 @@ a.header-textlink {
 }
 .site-navigation {
 	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
 .site-navigation a {
 	color: #ffffff;
@@ -699,6 +702,64 @@ a.catalog-current-page {
 .container {
 	width: 940px;
 	margin: 0 auto;
-	/* как узнать, какой паддинг нужен? пока ставлю 0 */
-	padding: 0;
+	padding: 0 10px;
+}
+.top-liner .container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.container .middle-liner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center; /* по идее надо оставить стретч для плашек. Но он не выравнивает. Почему? */
+}
+.container .site-navigation {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.categories.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.popular-goods.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.popular-brands.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.services .container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.about-technomart.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+/* .footer-topliner .container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between; 
+} */
+
+.footer-bottomliner .container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.container .footer-topliner-left,
+.container .top-footer-right {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
