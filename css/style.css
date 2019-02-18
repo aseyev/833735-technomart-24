@@ -35,17 +35,14 @@ h1 { /*. Слоган в середине хедера, слева на серо
 
 .button {   /* типовая красная кнопка с белым капс-текстом */
 	display: inline-block;
-	font: inherit;  
-	text-align: center;
-	vertical-align: middle; /*. ПОЧЕМУ НЕ РАВНЯЕТ ПО ВЫСОТЕ??? */
+	/* font: inherit;   */
 	text-transform: uppercase;
 	font-size: 14px;
 	line-height: 18px;
 	color: #ffffff;
 	background-color: #ee3643;
-	/* padding: 0 30px; */
 	border: none;
-	border-radius: 3px;
+	border-radius: 13px;
 	min-height: 38px;
 }
 .button:hover {
@@ -110,10 +107,7 @@ h1 { /*. Слоган в середине хедера, слева на серо
 .top-liner-order:active {
 	background-color: #518534;
 }
-/* .top-liner a {
-	display: inline-block;
-	font: inherit;
-}
+
 .top-liner form {
 	background: url("../img/icon-search.svg") no-repeat;
 	
@@ -228,7 +222,10 @@ a.header-textlink {
 	padding: 0px;
 }
 .site-navigation a {
+	display: block;
 	color: #ffffff;
+	min-height: 60px;
+	padding: 0 30px;
 }
 .site-navigation a:hover {
 	background: #1d2739;
@@ -247,10 +244,19 @@ h2 {
 }
 /* стили раздела рубрикатор */
 .category-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 	width: 300px;
 	min-height: 123px;	
 }
 .category-item .button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 135px;
+	min-height: 38px;
 	background-color: rgba(0, 0, 0, 0.1);
 	color: #ffffff;
 }
@@ -285,6 +291,7 @@ h2 {
 .category-item-slider {	
 	width: 620px;
 	min-height: 266px;
+	margin: 20px 20px 0 0;
 }
 .category-item-slider h3{
 	margin: 0;
@@ -306,6 +313,7 @@ h2 {
 }
 .category-item-drills {
 	background: url("../img/drillman.jpg") no-repeat #222222;
+	min-height: 266px;
 }
 .category-item-perfs {
 	background: url("../img/perfman.jpg") no-repeat #222222;
@@ -315,6 +323,20 @@ h2 {
 .headline-background {
 	min-height: 89px;
 	background-color: #f9f5f0;
+	width: 100%;
+	margin: 20px 0;
+	padding-left: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.headline-background .button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 253px;
+	margin-right: 25px;
+
 }
 
 /* Секция ПОПУЛЯРНЫЕ ТОВАРЫ */
@@ -354,7 +376,6 @@ h2 {
 	border: 3px solid #63a63e;
 	opacity: 0.3; 
 }
-/* Все шрифты ПТСанс на index, надо ли делать отдельный подкласс? */
 .catalog-item-card h4{
 	font-family: "PTSans", Arial, sans-serif;
 	font-weight: bold;
@@ -388,7 +409,6 @@ h2 {
 }
 /* Бокс-рамку вложить в список, как обертку для ссылки? */
 .logo-blocks a {
-	border: 1px solid #eaeaea; 
 	width: 220px;
 	min-height: 145px; 
 }
@@ -402,11 +422,14 @@ h2 {
 /* Секция Сервисы. На серой плашке во всю ширину */
 .services {
 	background-color: #f4f7f9;
-	min-height: 522px;
+	min-height: 222px;
+	padding: 68px 0;
+	margin: 80px 0;
 }
 .services h2,
 .about-technomart h2 {
 	color: #000000;
+	margin: 0;
 }
 .services h3 {
 	font-size: 36px;
@@ -414,6 +437,7 @@ h2 {
 	text-transform: uppercase;
 	text-align: left;
 	color: #32425c;
+	margin: 0;
 }
 .services p,
 .about-technomart p {
@@ -442,14 +466,17 @@ h2 {
 	background-color: #ffffff;
 	color: #32425c;	
 }
-.services-right-block-delivery {
+.services-background-delivery {
 	background: url("../img/back-delivery.png") no-repeat;
+	width: 600px;
 }
-.services-right-block-warranty {
+.services-background-warranty {
 	background: url("../img/back-warranty.png") no-repeat;
+	width: 600px;
 }
-.services-right-block-credit {
+.services-background-credit {
 	background: url("../img/back-credit.png") no-repeat;
+	width: 600px;
 }
 /* секция про Техномарт, все взял из предыдущей секции, тут только список */
 .about-technomart ul {
@@ -557,18 +584,7 @@ h2 {
 	color: #000000;
 	text-transform: uppercase;
 }
-/* НА УДАЛЕНИЕ, сохраню пока для поиска вылезших косяков
-.catalog-ptsans {
-	font-family: "PTSans", Arial, sans-serif;
-	font-size: 13px;
-	line-height: 18px;	
-	font-weight: normal;
-	color: #000000;
-	text-transform: uppercase;
-}
-.catalog-ptsans a {
-	color: #000000;
-} */
+
 .form-filters-catalog h3 {
 	font-family: "PTSans", Arial, sans-serif;
 	font-size: 13px;
@@ -577,10 +593,7 @@ h2 {
 	color: #000000;
 	text-transform: uppercase;
 }
-/* .back-grey h2{
-	min-height: 89px;
-	background-color: #f2f6f8;
-} */
+
 .catalog-perforators .headline-background{
 	background-color: #f2f6f8;
 }
@@ -698,63 +711,274 @@ a.catalog-current-page {
 	font-size: 13px;
 	line-height: 24px;	
 }
-/* ФЛЕКСЫ, КОНТЕЙНЕРЫ, ЛЕКЦИЯ 6 */
+/* _________________________FLEX CONTAINERS________________________________- */
+/* __________________ФЛЕКСЫ, КОНТЕЙНЕРЫ, ЛЕКЦИЯ 6___________________________ */
 .container {
 	width: 940px;
 	margin: 0 auto;
 	padding: 0 10px;
 }
+
+/*_________________________FLEX HEADER _________________________*/
 .top-liner .container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
-	margin: auto;
+	justify-content: center;
 }
-
+.top-liner a,
+.top-liner form,
+.top-liner input {
+	display: flex;
+	align-items: center;
+	min-width: 150px;
+	justify-content: center;
+	margin-left: 0; /* почему не удаляются поля у кнопок? */
+	margin-right: 0;
+}
+.top-liner form {
+	margin-right: auto;
+	margin-left: 10px;
+}
+.top-liner input {
+	align-self: stretch;
+}
 .container .middle-liner {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
-	 /* align-items: center;по идее надо оставить стретч для плашек. Но он не выравнивает. Почему? */
+	min-height: 158px;
+	align-items: center;
+	margin: none;
+}
+.middle-liner h1 {
+	display: flex;
+	flex-wrap: wrap;
+	width: 204px;
+	margin-left: 53px;
+}
+.middle-liner .header-center-block {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+.middle-liner .phone-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container .header-user-block {
+	min-width: 282px;
+	display: flex;
+}
+.header-user-block .header-login,
+.header-user-block .header-registration {
+	min-height: 45px;
+	padding-left: 25px;
+	padding-right: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.header-user-block .header-login {
+	min-width: 48px;
+	margin-right: 10px;	
+	padding-left: 48px;
+}
+.header-user-block .header-registration {
+	min-width: 100px;
+}
+.container .main-navigation {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .container .site-navigation {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
-	align-content: center;
-	align-items: center;
+	justify-content: space-around;
 }
+/* .site-navigation a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.main-navigation li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} */
+/*_________________________FLEX MAIN PAGE _________________________*/
 .categories.container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	margin-top: 59px;
 }
-.popular-goods.container {
+.popular-goods {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-.popular-brands.container {
+/* .catalog-item-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+} */
+.item-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.popular-brands {
+	display: flex;
+	flex-wrap: wrap;
+}
+.popular-brands ul {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	align-items: space-between;
+	margin: 0;
+	padding: 0;
+}
+.logo-blocks a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
+	min-width: 220px;
+	min-height: 145px;
+	border: 1px solid #05ff65; /* #eaeaea */
+}
+.category-item-drills {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.category-item-slider a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 195px;
 }
 .services .container {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	justify-content: space-between;
 }
-.about-technomart.container {
+.services ul {
+	margin: 0;
+	padding: 0;
+}
+.services p {
+	width: 430px;
+	margin-bottom: 75px;
+}
+.services-list-block {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.services-list a {
+	display: flex;
+	align-items: center;
+	width: 217px;
+	min-height: 61px;
+	padding-left: 23px;
+}
+.services-right-block {
+	margin-left: 80px;
+}
+.services-right-block p {
+	width: 295px;
+}
+.about-technomart {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	margin-bottom: 86px;
 }
-/* .footer-topliner .container {
+.about-technomart h2,
+.about-technomart p {
+	margin: 0;
+	margin-bottom: 20px;
+}
+.about-left-column,
+.about-right-column {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between; 
+	flex-direction: column;
+	justify-content: space-between;	
+}
+.about-left-column {
+	width: 550px;
+	align-items: flex-start;	
+}
+/* .about-left-column .wideblock {
+	width: 530px;	
 } */
+.about-left-column .narrowblock {
+	align-self: flex-start;
+	width: 420px;
+}
+.about-left-column ul {
+	margin: 0;
+	padding: 0;
+}
+.about-left-column li {
+	margin-bottom: 15px;
+}
+.about-left-column .button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 220px;
+}
+.about-right-column {
+	align-items: stretch;
+}
+.about-right-column p {
+	align-self: flex-start;
+	width: 200px;
+}
+.about-right-column .button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 40px;
+}
 
+.footer-topliner .container {
+	display: flex;
+	justify-content: space-between;	
+	flex-wrap: wrap;
+}
+.footer-topliner ul {
+	margin: 0;
+	padding: 0;
+}
+.footer-topliner-left {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 400px;
+}
+.footer-topliner .top-footer-right {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	width: 400px;
+}
+.top-footer-right .footer-nav-site,
+.top-footer-right .footer-nav-offers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
 .footer-bottomliner .container {
 	display: flex;
 	flex-wrap: wrap;
@@ -766,6 +990,25 @@ a.catalog-current-page {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+/* ___________________________MARKER__________________________________ */
 div,section,a,ul,li,p,footer,header{
 	outline: 1px solid red;
-	}
+}
+.card-hover,
+.googlemap-window,
+.form-emailus,
+.category-item-perfs,
+.slider-button-back,
+.slider-button-next,
+.services-background-warranty,
+.services-background-credit
+  {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
