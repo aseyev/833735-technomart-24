@@ -708,18 +708,21 @@ a.catalog-current-page {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	align-items: center;
+	margin: auto;
 }
+
 .container .middle-liner {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	align-items: center; /* по идее надо оставить стретч для плашек. Но он не выравнивает. Почему? */
+	 /* align-items: center;по идее надо оставить стретч для плашек. Но он не выравнивает. Почему? */
 }
 .container .site-navigation {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	align-content: center;
+	align-items: center;
 }
 .categories.container {
 	display: flex;
@@ -763,3 +766,6 @@ a.catalog-current-page {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+div,section,a,ul,li,p,footer,header{
+	outline: 1px solid red;
+	}
