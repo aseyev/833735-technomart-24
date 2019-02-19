@@ -67,7 +67,7 @@ h1 { /*. Слоган в середине хедера, слева на серо
 .logo-background {
 	width: 220px;
 	min-height: 42px;
-	box-shadow: 0px 5px 0 0 rgba(0, 0, 0, 0.24);
+	box-shadow: 0px 5px 0 0 #b72930;
 	background-color: #ee3643;
 }
 .logo-background:hover {
@@ -124,7 +124,7 @@ h1 { /*. Слоган в середине хедера, слева на серо
 
 /* Левая колонка с текстом h1 ПЕРЕЕХАЛА зачем-то в верх этого файла. 
 А тут - сразу средняя линия хэдера, кнопка телефона и блок адреса (центр) на светло-сером фоне */
-.phone-button {
+.header-phone-button {
 	width: 270px;
 	background: url("../img/icon-phone.svg") no-repeat transparent;
 	border: 3px solid #ffffff; /*. КАК СДЕЛАТЬ РАМКУ ВНУТРЬ??? */
@@ -532,8 +532,7 @@ h2 {
 	text-decoration: underline;
 }
 .footer-topliner {
-	/* width: 1200px; */
-	min-height: 300px;
+	min-height: 193px;
 	background-color: #32425c;	
 }
 .footer-nav-site a {
@@ -598,7 +597,7 @@ h2 {
 	background-color: #f2f6f8;
 }
 .form-filters-catalog .headline-background,
-.catalog-sorting .headline-background {
+.catalog-sorting.headline-background {
 	min-height: 38px;
 	background-color: #f7f3ec;
 }
@@ -963,15 +962,22 @@ a.catalog-current-page {
 .footer-topliner-left {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	flex-wrap: wrap;
 	width: 400px;
+}
+.logo-background {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .footer-topliner .top-footer-right {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: center;
-	width: 400px;
+	align-items: flex-end;
+	width: 500px;
 }
 .top-footer-right .footer-nav-site,
 .top-footer-right .footer-nav-offers {
@@ -984,11 +990,60 @@ a.catalog-current-page {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-.container .footer-topliner-left,
-.container .top-footer-right {
+.container .footer-topliner-left {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+}
+.footer-socials {
+	display: flex;
+}
+/* ___________________________________STYLES FOR CATALOG MAIN____________________________________ */
+.breadcrumbs {
+	display: flex;
+	justify-content: flex-start;
+	margin: 22px 0;
+	padding: 0;
+}
+.breadcrumbs li {
+	margin-right: 20px;
+}
+.catalog-styles {
+	display: flex;
+	flex-wrap: wrap;
+}
+.filters-column {
+	width: 220px;
+	margin-right: 20px;
+}
+.column-catalog-perforators {
+	width: 680px;
+	/* должно быть 700 */
+}
+.catalog-sorting-type,
+.catalog-sorting-direction {
+	display: flex;
+}
+.catalog-sorting,
+.catalog-sorting-type,
+.catalog-sorting-direction,
+.catalog-sorting ul,
+.catalog-sorting li,
+.catalog-sorting a {
+	margin: 0;
+	padding: 0;
+}
+.catalog-sorting a {
+	margin-left: 30px;
+}
+.catalog-items {
+	display: flex;
+	flex-wrap: wrap;
+}
+.catalog-page-numbers {
+	display: flex;
+	margin: 0;
+	padding: 0;
 }
 /* ___________________________MARKER__________________________________ */
 div,section,a,ul,li,p,footer,header{
@@ -1001,7 +1056,8 @@ div,section,a,ul,li,p,footer,header{
 .slider-button-back,
 .slider-button-next,
 .services-background-warranty,
-.services-background-credit
+.services-background-credit,
+.window-order
   {
 	position: absolute;
 	width: 1px;
