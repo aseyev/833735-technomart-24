@@ -344,6 +344,7 @@ h2 {
 	border: 1px solid #eaeaea;
 	width: 220px;
 	min-height: 318px;
+	margin-bottom: 20px;
 }
 .catalog-item-buy {
 	color: #ffffff;
@@ -600,6 +601,17 @@ h2 {
 .catalog-sorting.headline-background {
 	min-height: 38px;
 	background-color: #f7f3ec;
+	padding: 0 18px;
+	margin: 0;
+}
+.form-filters-catalog .headline-background {
+	width: 184px;
+}
+.catalog-sorting.headline-background {
+	width: 664px;
+}
+.headline-background h3 {
+	margin-left: 0px;
 }
 .filters-column fieldset {
 	border: none;
@@ -615,6 +627,11 @@ h2 {
 	font-size: 17px;
 	line-height: 18px;	
 	text-align: center;
+}
+.filters-column fieldset,
+.filters-column ul {
+	margin: 10px 0;
+	padding: 0;
 }
 fieldset.bottom-line {
 	border-bottom: 1px solid #d7dcde;
@@ -701,6 +718,7 @@ a.catalog-current-page {
 /* ПАРА СЛОВ О ПЕРФОРАТОРАХ */
 .catalog-remark {
 	background: #f4f7f9;
+	min-height: 193px;
 }
 .catalog-remark h2 {
 	color: #000000;
@@ -731,7 +749,7 @@ a.catalog-current-page {
 	align-items: center;
 	min-width: 150px;
 	justify-content: center;
-	margin-left: 0; /* почему не удаляются поля у кнопок? */
+	margin-left: 0; 
 	margin-right: 0;
 }
 .top-liner form {
@@ -829,6 +847,7 @@ a.catalog-current-page {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 20px;
 }
 
 .popular-brands {
@@ -836,6 +855,7 @@ a.catalog-current-page {
 	flex-wrap: wrap;
 }
 .popular-brands ul {
+	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -949,7 +969,10 @@ a.catalog-current-page {
 	align-items: center;
 	margin-top: 40px;
 }
-
+.footer-bottomliner {
+	display: flex;
+	align-items: center;
+}
 .footer-topliner .container {
 	display: flex;
 	justify-content: space-between;	
@@ -995,6 +1018,14 @@ a.catalog-current-page {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+.footer-bottomliner-left,
+.footer-email {
+	margin: auto 0;
+
+}
+.footer-bottomliner p {
+	margin: 0;
+}
 .footer-socials {
 	display: flex;
 }
@@ -1012,23 +1043,28 @@ a.catalog-current-page {
 	display: flex;
 	flex-wrap: wrap;
 }
+.catalog-perforators {
+	display: flex;
+	flex-wrap: wrap;
+}
 .filters-column {
 	width: 220px;
 	margin-right: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	list-style: none;
+	padding: 0;
 }
 .column-catalog-perforators {
-	width: 680px;
-	/* должно быть 700 */
+	width: 700px;
 }
 .catalog-sorting-type,
 .catalog-sorting-direction {
 	display: flex;
 }
-.catalog-sorting,
-.catalog-sorting-type,
-.catalog-sorting-direction,
 .catalog-sorting ul,
-.catalog-sorting li,
 .catalog-sorting a {
 	margin: 0;
 	padding: 0;
@@ -1039,6 +1075,7 @@ a.catalog-current-page {
 .catalog-items {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
 .catalog-page-numbers {
 	display: flex;
