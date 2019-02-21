@@ -1,7 +1,7 @@
 /*ГЛОБАЛЬНОЕ*/
 body {
 	margin: 0;
-	
+	min-width: 960px;
 	font-family: "Cuprum", Arial, sans-serif;
 	font-size: 17px;
 	line-height: 18px;
@@ -120,11 +120,11 @@ h1 { /*. Слоган в середине хедера, слева на серо
 	}
 	.top-liner-order {
 		background-color: #63a63e;
-	} */
+	}
 
 /* Левая колонка с текстом h1 ПЕРЕЕХАЛА зачем-то в верх этого файла. 
 А тут - сразу средняя линия хэдера, кнопка телефона и блок адреса (центр) на светло-сером фоне */
-.header-phone-button {
+a.phone-button {
 	width: 270px;
 	background: url("../img/icon-phone.svg") no-repeat transparent;
 	border: 3px solid #ffffff; /*. КАК СДЕЛАТЬ РАМКУ ВНУТРЬ??? */
@@ -569,8 +569,8 @@ h2 {
 .catalog-styles {
 	background: white;
 	color: #000000;
-	padding: none;
-	margin: none;
+	padding: 0;
+	margin: 0;
 }
 .catalog-styles ul {
 	list-style: none;
@@ -764,7 +764,7 @@ a.catalog-current-page {
 	justify-content: space-between;
 	min-height: 158px;
 	align-items: center;
-	margin: none;
+	margin: 0;
 }
 .middle-liner h1 {
 	display: flex;
@@ -859,7 +859,6 @@ a.catalog-current-page {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	align-items: space-between;
 	margin: 0;
 	padding: 0;
 }
@@ -1039,10 +1038,10 @@ a.catalog-current-page {
 .breadcrumbs li {
 	margin-right: 20px;
 }
-.catalog-styles {
+/* .catalog-styles {
 	display: flex;
 	flex-wrap: wrap;
-}
+} */
 .catalog-perforators {
 	display: flex;
 	flex-wrap: wrap;
