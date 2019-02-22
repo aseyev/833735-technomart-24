@@ -222,7 +222,8 @@ a.header-textlink {
 	padding: 0px;
 }
 .site-navigation a {
-	display: block;
+	display: flex;
+	align-items: center;
 	color: #ffffff;
 	min-height: 60px;
 	padding: 0 30px;
@@ -342,9 +343,10 @@ h2 {
 /* Секция ПОПУЛЯРНЫЕ ТОВАРЫ */
 .catalog-item-card {
 	border: 1px solid #eaeaea;
-	width: 220px;
-	min-height: 318px;
+	width: 218px;
+	min-height: 316px;
 	margin-bottom: 20px;
+	position: relative;
 }
 .catalog-item-buy {
 	color: #ffffff;
@@ -395,7 +397,12 @@ h2 {
 	background-color: #ffffff;
 	color: #a9a9a9;
 	text-decoration: line-through;
-	display: block;
+	min-height: 20px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	
+	color: #999;
+	text-decoration: line-through;
 }
 .catalog-item-card .item-new-price {
 	font-family: "PTSans", Arial, sans-serif;
@@ -405,8 +412,16 @@ h2 {
 	text-align: center;
 	background-color: #ee3643;
 	color: #ffffff;	
-	text-transform: uppercase;
-	display: block;
+	text-transform: uppercase; 
+	position: relative;
+	width: 80px;
+	margin: 10px auto;
+	margin-bottom: 20px;
+	padding: 10px 30px;
+	
+	color: white;
+	background: #ee3643;
+	border-radius: 3px;
 }
 /* Бокс-рамку вложить в список, как обертку для ссылки? */
 .logo-blocks a {
@@ -576,7 +591,7 @@ h2 {
 	list-style: none;
 }
 
-.breadcrumbs {
+.breadcrumbs a {
 	font-family: "PTSans", Arial, sans-serif;
 	font-size: 13px;
 	line-height: 18px;	
@@ -602,13 +617,15 @@ h2 {
 	min-height: 38px;
 	background-color: #f7f3ec;
 	padding: 0 18px;
-	margin: 0;
+	margin: 0;	
 }
 .form-filters-catalog .headline-background {
 	width: 184px;
+	margin-bottom: 13px;
 }
 .catalog-sorting.headline-background {
 	width: 664px;
+	margin-bottom: 20px;
 }
 .headline-background h3 {
 	margin-left: 0px;
@@ -620,26 +637,36 @@ h2 {
 	font-size: 17px;
 	line-height: 30px;	
 	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 14px;
 }
 .filters-column input{
 	border: none;
-	background-color: #f7f3ec;	
+	background-color: #f7f3ec;
+	font-family: "PTSans", Arial, sans-serif;
 	font-size: 17px;
 	line-height: 18px;	
 	text-align: center;
 }
 .filters-column fieldset,
 .filters-column ul {
-	margin: 10px 0;
+	margin: 0;
 	padding: 0;
 }
 fieldset.bottom-line {
 	border-bottom: 1px solid #d7dcde;
+	margin-bottom: 22px;
+	padding-bottom: 25px;
 }
 .filters-column .double-scroll-pad {
-	width: 220px;
+	/* width: 220px; */
+	width: 100%;
 	min-height: 80px;
 	background-color: #f7f3ec;
+	margin-bottom: 9px;
+}
+.price-gap {
+	font-size: 16px;
 }
 button.filter-button {
 	width: 140px;
@@ -814,16 +841,6 @@ a.catalog-current-page {
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
-/* .site-navigation a {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.main-navigation li {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-} */
 /*_________________________FLEX MAIN PAGE _________________________*/
 .categories.container {
 	display: flex;
@@ -836,18 +853,12 @@ a.catalog-current-page {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-/* .catalog-item-card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-} */
+	
 .item-card {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	margin-bottom: 20px;
 }
 
 .popular-brands {
@@ -1038,15 +1049,12 @@ a.catalog-current-page {
 .breadcrumbs li {
 	margin-right: 20px;
 }
-/* .catalog-styles {
-	display: flex;
-	flex-wrap: wrap;
-} */
 .catalog-perforators {
 	display: flex;
 	flex-wrap: wrap;
 }
 .filters-column {
+	font-family: "PTSans", Arial, sans-serif;
 	width: 220px;
 	margin-right: 20px;
 	display: flex;
@@ -1055,6 +1063,19 @@ a.catalog-current-page {
 	align-items: flex-start;
 	list-style: none;
 	padding: 0;
+}
+.pricerange-field {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.filter-minprice,
+.filter-maxprice {
+	width: 95px;
+	min-height: 38px;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
 }
 .column-catalog-perforators {
 	width: 700px;
@@ -1076,15 +1097,26 @@ a.catalog-current-page {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+.catalog-item-card .corner-new {
+	position: absolute;
+	top: -1px;
+	right: -1px;	
+	width: 60px;
+	height: 60px;	
+	/* text-indent: -1000px;
+	overflow: hidden; */
+	z-index: 20;
+	background: url("..img/new-flag.png") no-repeat 0 0;
+  }
 .catalog-page-numbers {
 	display: flex;
 	margin: 0;
 	padding: 0;
 }
 /* ___________________________MARKER__________________________________ */
-div,section,a,ul,li,p,footer,header{
+/* div,section,a,ul,li,p,footer,header{
 	outline: 1px solid red;
-}
+} */
 .card-hover,
 .googlemap-window,
 .form-emailus,
