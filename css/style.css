@@ -23,9 +23,8 @@ a {
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
-.hidden-decorated:not(:focus):not(:active),
-input [type="checkbox"].hidden-decorated,
-input [type="radio"].hidden-decorated {
+input[type="checkbox"].hidden-decorated,
+input[type="radio"].hidden-decorated {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -92,8 +91,12 @@ img {
 	background-color: #ba2732;
 }
 .top-liner a,
-.top-liner form {
+.top-liner form,
+.top-liner label,
+.top-liner input {
 	color: #ffffff;	/* размер и цвет шрифта заданы в боди */
+	margin: 0;
+	padding: 0;
 }
 .top-liner input,
 .top-liner-bookmarks,
@@ -126,10 +129,15 @@ img {
 .top-liner form {
 	background: url("../img/icon-search.svg") no-repeat;
 }
+.search-field svg {
+	position: absolute;
+	left: 40px;
+}
 .top-liner-bookmarks {
 	background: url("../img/icon-bookmark.svg") no-repeat;
 }
-.top-liner-basket {
+a.top-liner-basket {
+	padding-left: 20px;
 	background: url("../img/icon-cart.svg") no-repeat #ee3643;
 }
 .top-liner-order {
@@ -759,22 +767,32 @@ fieldset.bottom-line {
 .filters-column li:last-child {
 	margin-bottom: 0;
 }
-input[type="checkbox"]:disabled + label {
-	opacity: 0.4;
-}
-
-input[type="checkbox"] + label::before {
+input[type="checkbox"] + label::before,
+input[type="radio"] + label::before {
 	content: '';
 	position: absolute;
 	top: -3px;
-	left: -35px;	
+	left: -35px;
+	z-index: 10;	
+	opacity: 0.78;
+}
+input[type="checkbox"] + label::before {
 	width: 26px;
 	height: 23px;
-	z-index: 10;
 	background: url("../img/checkbox-off.svg") no-repeat 0 0;
 }
-input[type="checkbox"]:hover + label::before {
-	opacity: 0.5;
+input[type="radio"] + label::before {
+	width: 25px;
+	height: 25px;
+	background: url("../img/radio-off.svg") no-repeat 0 0;
+}
+input[type="checkbox"]:hover + label::before,
+input[type="radio"]:hover + label::before {
+	opacity: 1;
+}
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label {
+	opacity: 0.4;
 }
 input[type="checkbox"]:checked + label::before {
 	content: '';
@@ -785,6 +803,16 @@ input[type="checkbox"]:checked + label::before {
 	height: 23px;
 	z-index: 10;
 	background: url("../img/checkbox-on.svg") no-repeat 0 0;
+}
+input[type="radio"]:checked + label::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -35px;	
+	width: 25px;
+	height: 25px;
+	z-index: 10;
+	background: url("../img/radio-on.svg") no-repeat 0 0;
 }
 button.filter-button {
 	width: 140px;
@@ -891,15 +919,18 @@ a.catalog-current-page {
 	align-items: center;
 	min-width: 150px;
 	justify-content: center;
-	margin-left: 0; 
-	margin-right: 0;
 }
 .top-liner form {
-	margin-right: auto;
-	margin-left: 10px;
+	position: relative;
+	flex-grow: 2;
+}
+.top-liner label {
+	position: absolute;
+	left: 50px;
 }
 .top-liner input {
 	align-self: stretch;
+	width: 100%;
 }
 .container .middle-liner {
 	display: flex;
@@ -912,6 +943,8 @@ a.catalog-current-page {
 	display: flex;
 	flex-wrap: wrap;
 	width: 204px;
+	margin-top: 7px;
+	margin-bottom: 0;
 	margin-left: 53px;
 }
 .middle-liner .header-center-block {
