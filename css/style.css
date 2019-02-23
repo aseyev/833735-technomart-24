@@ -13,7 +13,7 @@ a {
 	text-decoration: none;
 }
 
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active) {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -23,7 +23,18 @@ a {
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
-
+.hidden-decorated:not(:focus):not(:active),
+input [type="checkbox"].hidden-decorated,
+input [type="radio"].hidden-decorated {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
 h1 { /*. Слоган в середине хедера, слева на сером фоне */
 	font-family: Cuprum;
 	font-size: 16px;
@@ -50,6 +61,10 @@ h1 { /*. Слоган в середине хедера, слева на серо
 }
 .button:active {
 	background-color: #ba2732;
+}
+img {
+	max-width: 100%;
+	height: auto;
 }
 /*--------ХЕДЕР--------------------------------------------------------*/
 .main-header {
@@ -110,17 +125,16 @@ h1 { /*. Слоган в середине хедера, слева на серо
 
 .top-liner form {
 	background: url("../img/icon-search.svg") no-repeat;
-	
-	}
-	.top-liner-bookmarks {
-		background: url("../img/icon-bookmark.svg") no-repeat;
-	}
-	.top-liner-basket {
-		background: url("../img/icon-cart.svg") no-repeat #ee3643;
-	}
-	.top-liner-order {
-		background-color: #63a63e;
-	}
+}
+.top-liner-bookmarks {
+	background: url("../img/icon-bookmark.svg") no-repeat;
+}
+.top-liner-basket {
+	background: url("../img/icon-cart.svg") no-repeat #ee3643;
+}
+.top-liner-order {
+	background-color: #63a63e;
+}
 
 /* Левая колонка с текстом h1 ПЕРЕЕХАЛА зачем-то в верх этого файла. 
 А тут - сразу средняя линия хэдера, кнопка телефона и блок адреса (центр) на светло-сером фоне */
@@ -325,7 +339,7 @@ h2 {
 	min-height: 89px;
 	background-color: #f9f5f0;
 	width: 100%;
-	margin: 20px 0;
+	margin-bottom: 20px;
 	padding-left: 30px;
 	display: flex;
 	align-items: center;
@@ -342,18 +356,36 @@ h2 {
 
 /* Секция ПОПУЛЯРНЫЕ ТОВАРЫ */
 .catalog-item-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+
 	border: 1px solid #eaeaea;
 	width: 218px;
 	min-height: 316px;
 	margin-bottom: 20px;
 	position: relative;
+
+	font-family: "PTSans", Arial, sans-serif;
+	text-align: center;
+	font-weight: bold;
 }
 .catalog-item-buy {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 7px;
+	padding: 7px 0;
+	font-family: "Cuprum", Arial, sans-serif;
+	font-weight: normal;
+	font-size: 14px;
 	color: #ffffff;
 	background: url("../img/icon-cart.svg") no-repeat #63a63e;
 	width: 135px;
-	min-height: 38px;
-	box-shadow: inset 0px -3px 0 0 #367315;
+	background-color: #63a63e;
+	border: 3px solid #63a63e;
+	border-bottom-color: #367315;
+	border-radius:3px;
 }
 .catalog-item-buy:hover {
 	background: url("../img/icon-cart.svg") no-repeat #5fbb2d;
@@ -362,6 +394,9 @@ h2 {
 	background: url("../img/icon-cart.svg") no-repeat #518534;
 }
 .catalog-item-bookmark {
+	font-family: "Cuprum", Arial, sans-serif;
+	font-weight: normal;
+	font-size: 14px;
 	color: #32425c;
 	background-color: transparent;
 	width: 135px;
@@ -379,41 +414,31 @@ h2 {
 	border: 3px solid #63a63e;
 	opacity: 0.3; 
 }
-.catalog-item-card h4{
-	font-family: "PTSans", Arial, sans-serif;
-	font-weight: bold;
+.catalog-item-card h4 {
 	font-size: 18px;
 	line-height: 20px;
-	text-align: center;
 	background-color: #ffffff;
 	color: #000000;
+	margin-top: 12px;
+	margin-bottom: 18px;
 }
 .catalog-item-card .item-old-price {
-	font-family: "PTSans", Arial, sans-serif;
-	font-weight: bold;
 	font-size: 17px;
 	line-height: 18px;
-	text-align: center;
 	background-color: #ffffff;
 	color: #a9a9a9;
 	text-decoration: line-through;
+	width: 100%;
 	min-height: 20px;
-	margin-top: 15px;
+	margin-top: 0px;
 	margin-bottom: 10px;
-	
-	color: #999;
-	text-decoration: line-through;
 }
 .catalog-item-card .item-new-price {
-	font-family: "PTSans", Arial, sans-serif;
-	font-weight: bold;
 	font-size: 17px;
 	line-height: 18px;
-	text-align: center;
 	background-color: #ee3643;
 	color: #ffffff;	
-	text-transform: uppercase; 
-	position: relative;
+	text-transform: uppercase;
 	width: 80px;
 	margin: 10px auto;
 	margin-bottom: 20px;
@@ -422,6 +447,31 @@ h2 {
 	color: white;
 	background: #ee3643;
 	border-radius: 3px;
+	margin-top: auto;
+
+	position: relative;
+}
+.catalog-item-card .item-new-price:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -19px;	
+	width: 0;
+	height: 0;	
+	border: 19px solid white;
+	border-left-color: #ee3643;
+}
+.catalog-item-card .card-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	width: 218px;
+	height: 88px;
+	padding: 40px 0;
+	
+	background-color: rgba(255,255,255,0.9);
+	z-index: 10;
 }
 /* Бокс-рамку вложить в список, как обертку для ссылки? */
 .logo-blocks a {
@@ -599,16 +649,16 @@ h2 {
 	color: #000000;
 	text-transform: uppercase;
 }
-
-.form-filters-catalog h3 {
+.form-filters-catalog {
 	font-family: "PTSans", Arial, sans-serif;
+	text-transform: uppercase;
+	color: #000000;
+}
+.form-filters-catalog h3 {
 	font-size: 13px;
 	line-height: 18px;	
 	font-weight: normal;
-	color: #000000;
-	text-transform: uppercase;
 }
-
 .catalog-perforators .headline-background{
 	background-color: #f2f6f8;
 }
@@ -617,7 +667,8 @@ h2 {
 	min-height: 38px;
 	background-color: #f7f3ec;
 	padding: 0 18px;
-	margin: 0;	
+	margin: 0;
+	border-radius: 3px;	
 }
 .form-filters-catalog .headline-background {
 	width: 184px;
@@ -637,16 +688,15 @@ h2 {
 	font-size: 17px;
 	line-height: 30px;	
 	font-weight: bold;
-	text-transform: uppercase;
 	margin-bottom: 14px;
 }
 .filters-column input{
 	border: none;
 	background-color: #f7f3ec;
-	font-family: "PTSans", Arial, sans-serif;
 	font-size: 17px;
 	line-height: 18px;	
 	text-align: center;
+	border-radius: 23px;
 }
 .filters-column fieldset,
 .filters-column ul {
@@ -659,14 +709,82 @@ fieldset.bottom-line {
 	padding-bottom: 25px;
 }
 .filters-column .double-scroll-pad {
-	/* width: 220px; */
-	width: 100%;
-	min-height: 80px;
+	position: relative;
+	/* width: 100%; */
 	background-color: #f7f3ec;
 	margin-bottom: 9px;
+	border-bottom-left-radius: 23px;
+	border-bottom-right-radius: 23px;
+	padding: 39px 20px;
+}
+.scale {
+	height: 2px;
+	background: #d7dcde;
+}
+.bar {
+	width: 70%;
+	height: 2px;
+	background: #00ca74;
+}
+.toggle {
+	position: absolute;
+	top: 31px;
+	left: 0;
+	width: 4px;
+	height: 4px;
+	padding: 0;
+	border: 8px solid #ffffff;
+	background-color: #ababab;
+	border-radius: 50%;
+	box-shadow: 0 2px 1px 0 #cfcfcf;
+	cursor: pointer;
+}
+.toggle-min {
+	left: 18px;
+}
+.toggle-max {
+	left: 140px;
 }
 .price-gap {
 	font-size: 16px;
+}
+.filters-column ul {
+	margin-left: 35px;
+}
+.filters-column li {
+	margin-bottom: 25px;
+	position: relative;
+}
+
+.filters-column li:last-child {
+	margin-bottom: 0;
+}
+input[type="checkbox"]:disabled + label {
+	opacity: 0.4;
+}
+
+input[type="checkbox"] + label::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -35px;	
+	width: 26px;
+	height: 23px;
+	z-index: 10;
+	background: url("../img/checkbox-off.svg") no-repeat 0 0;
+}
+input[type="checkbox"]:hover + label::before {
+	opacity: 0.5;
+}
+input[type="checkbox"]:checked + label::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -35px;	
+	width: 26px;
+	height: 23px;
+	z-index: 10;
+	background: url("../img/checkbox-on.svg") no-repeat 0 0;
 }
 button.filter-button {
 	width: 140px;
@@ -679,10 +797,7 @@ button.filter-button {
 	font-weight: normal;
 	color: #000000;
 	text-transform: uppercase;
-}
-/* СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! СКРЫТЬ ЧЕКБОКСЫ И РАДИО!!! */
-input[type="radio"]:checked {
-    display: none;
+	margin-top: 80px;
 }
 /* СОРТИРОВОЧНАЯ ЛИНЕЙКА */
 .catalog-sorting h3,
@@ -854,12 +969,12 @@ a.catalog-current-page {
 	justify-content: space-between;
 }
 	
-.item-card {
+/* .item-card {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-}
+} */
 
 .popular-brands {
 	display: flex;
@@ -1097,17 +1212,17 @@ a.catalog-current-page {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-.catalog-item-card .corner-new {
+.corner-new::after {
+	content: 'новинка';
+	font-size: 0;
 	position: absolute;
 	top: -1px;
 	right: -1px;	
 	width: 60px;
-	height: 60px;	
-	/* text-indent: -1000px;
-	overflow: hidden; */
+	height: 60px;
 	z-index: 20;
-	background: url("..img/new-flag.png") no-repeat 0 0;
-  }
+	background: url("../img/new-flag.png") no-repeat 0 0;
+}
 .catalog-page-numbers {
 	display: flex;
 	margin: 0;
@@ -1117,7 +1232,7 @@ a.catalog-current-page {
 /* div,section,a,ul,li,p,footer,header{
 	outline: 1px solid red;
 } */
-.card-hover,
+/* .card-hover, */
 .googlemap-window,
 .form-emailus,
 .category-item-perfs,
