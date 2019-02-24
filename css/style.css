@@ -67,9 +67,9 @@ img {
 }
 /*--------ХЕДЕР--------------------------------------------------------*/
 .main-header {
-	/* серая плашка НА ВЕСЬ ЭКРАН, под ВЕСЬ хедер, включая синюю полоску. там наложение, или синий отталкивает эту плашку вниз?  */
-	/* ПОСМОТРЕТЬ, как взаимодействуют между собой дивы внутри этих плашек */
+	/* серая плашка НА ВЕСЬ ЭКРАН, под ВЕСЬ хедер, включая синюю полоску.  */
 	background-color: #f4f7f9;
+	/* background-color: #6fff6a; */
 	color: #ffffff; /* дублирование пар цветов по инструкции из лекции. буду делать для больших блоков */	
 	min-height: 320px;
 	/* margin-bottom: 59px; не работает на странице каталога! */
@@ -206,16 +206,8 @@ img {
 
 /* Левая колонка с текстом h1 ПЕРЕЕХАЛА зачем-то в верх этого файла. 
 А тут - сразу средняя линия хэдера, кнопка телефона и блок адреса (центр) на светло-сером фоне */
-.header-center-block {
-	padding-left: 0px;
-	padding-top: 10px;
-	padding-right: 5px;
-}
 .phone-button,
 .user-name {
-	/* display: block; */
-	/* width: 264px; */
-	/* min-height: 39px; */
 	position: relative;
 	border: 3px solid #ffffff; 
 	border-radius: 0;
@@ -233,7 +225,7 @@ a.phone-button::before {
 	position: absolute;
 	width: 19px;
 	height: 19px;
-	top: 12px;
+	top: 11px;
 	left: 12px;
 	z-index: 10;
 	background: url("../img/icon-phone.svg") no-repeat transparent;
@@ -248,6 +240,16 @@ a.phone-button::before {
 	margin-bottom: 0;
 }
 /*средняя линия хэдера, светло-серый фон, блок личного кабинета (правый) */
+.user-logged {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: flex-start;
+	width: 300px;
+}
+.header-user-block {
+	position: relative;
+}
 .header-user-block a {
 	color: #000000;
 	font-size: 21px;
@@ -256,16 +258,37 @@ a.phone-button::before {
 	background-color: #ffffff;
 	border-radius: 0;
 }
+.header-user-block .header-login,
+.header-user-block .header-registration {
+	min-height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+	margin-right: 10px;	
+}
+.header-user-block .header-login {
+	min-width: 48px;
+	padding-left: 48px;
+	padding-right: 25px;
+}
+.header-user-block .icon-login {
+	position: absolute;
+	top: 13px;
+	left: 13px;
+	z-index: 10;
+}
+.header-user-block .header-registration {
+	min-width: 100px;	
+	padding-left: 25px;
+	padding-right: 25px;
+}
 .header-login {
-	background: url("../img/icon-login.svg") no-repeat #ffffff;
 	color: #000000;
 }
 .header-login:hover {
-	background: url("../img/icon-login.svg") no-repeat #ffffff;
 	color: #ee3643;
 }
 .header-login:active {
-	background: url("../img/icon-login.svg") no-repeat #ffffff;
 	color: rgba(0, 0, 0, 0.3);
 }
 .header-registration {
@@ -281,10 +304,12 @@ a.phone-button::before {
 	color: rgba(0, 0, 0, 0.3);
 }
 .header-user-block .user-name {
-	/* width: 299px; */
-	/* min-height: 45px; */
 	color: #000000;
-	border: 3px solid  black;
+	border: 0;
+	padding-top: 12.2px;
+	padding-bottom: 12px;	
+	padding-left: 46px;
+	padding-right: 28px;
 }
 .user-name .icon-user {
 	position: absolute;
@@ -292,16 +317,37 @@ a.phone-button::before {
 	left: 12px;
 	z-index: 10;
 }
+.header-user-block .user-name:active {
+	opacity: 0.3;
+}
+.user-name:hover .icon-user path {
+	fill: #32425c;
+}
 .header-logout {
-	position: absolute;
-	top: 0px;
-	left: 12px;
-	z-index: 10;
-	
+	min-height: 45px;
+	width: 40px;
 	font-size: 0;
 	border: 0;
 	padding: 0;
-	background: none;
+	background: white;
+}
+.header-logout:hover .icon-logout path {
+	fill: #32425c;
+}
+.logged-functions {
+	position: relative;
+	margin-top: 7px;
+	padding-right: 45px;
+}
+.logged-functions::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 90px;
+    width: 4px;
+    height: 4px;
+    background-color: #32425c;
+    border-radius: 50%;
 }
 a.header-textlink {
 	font-size: 16px;
@@ -309,7 +355,9 @@ a.header-textlink {
 	text-decoration: underline;
 	color: #32425c;
 	background: transparent;
+	padding-right: 28px;
 }
+
 .header-textlink:hover {
 	color: #ee3643;
 }
@@ -319,8 +367,7 @@ a.header-textlink {
 /*нижняя линия хэдера, синяя полоска, список ссылок. 
 А зачем тут вообще нужна обертка .main-navigation для списка .site-navigation?  */  
 .main-navigation {
-	min-height: 60px;
-	box-shadow: inset 0px -5px 0 0 #293449;
+	box-shadow: 0px 5px 0 0 #293449;
 	background-color: #32425c;
 	color: #ffffff; 
 	line-height: 17px; 
@@ -329,14 +376,18 @@ a.header-textlink {
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
+	padding-left: 5px;
 }
 .site-navigation a {
 	display: flex;
 	align-items: center;
 	color: #ffffff;
-	min-height: 60px;
-	padding: 0 30px;
+	/* padding: 19.5px 31px 18.5px 31px; */
+	padding: 20px 31px 18px 31px;
 }
+/* .site-navigation li:last-child a {
+	padding-right: 38px;
+} */
 .site-navigation a:hover {
 	background: #1d2739;
 }
@@ -735,7 +786,21 @@ h2 {
 .catalog-styles ul {
 	list-style: none;
 }
-
+.breadcrumbs {
+	display: flex;
+	justify-content: flex-start;
+	margin: 0;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	padding: 0;
+}
+.breadcrumbs li {
+	margin-right: 40px;
+	position: relative;
+}
+.breadcrumbs li:first-child {
+	margin-right: 52px;
+}
 .breadcrumbs a {
 	font-family: "PTSans", Arial, sans-serif;
 	font-size: 13px;
@@ -743,6 +808,29 @@ h2 {
 	font-weight: normal;
 	color: #000000;
 	text-transform: uppercase;
+}
+.breadcrumbs li:first-child a {
+	font-size: 0;
+}
+.breadcrumbs li:first-child a::before {
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 12px;
+	top: 2px;
+	left: 0px;
+	z-index: 10;
+	background: url("../img/icon-home.svg") no-repeat;
+}
+.breadcrumbs li:not(:first-child) a::before {
+	content: '';
+	position: absolute;
+	width: 8px;
+	height: 12px;
+	top: 3px;
+	left: -24px;
+	z-index: 10;
+	background: url("../img/icon-right-small.svg") no-repeat;
 }
 .form-filters-catalog {
 	font-family: "PTSans", Arial, sans-serif;
@@ -925,7 +1013,7 @@ button.filter-button {
 	text-transform: uppercase;	
 }
 .catalog-sorting a {
-	text-decoration: underline red;
+	border-bottom: 1px red dotted;
 	color: rgba(0, 0, 0, 0.3);
 }
 .catalog-sorting a:hover {
@@ -935,6 +1023,9 @@ button.filter-button {
 .catalog-sorting a:active {
 	text-decoration: none;
 	color: #ee3643;
+}
+.catalog-sorting-direction a {
+	font-size: 0;
 }
 /* ПЕРЕКЛЮЧАТЕЛЬ СТРАНИЦ */
 .catalog-pages a {
@@ -1020,16 +1111,16 @@ a.catalog-current-page {
 .container .middle-liner {
 	display: flex;
 	justify-content: space-between;
-	min-height: 158px;
-	align-items: center;
+	min-height: 111px;
+	align-items: flex-start;
+	padding-top: 47px;
 	margin: 0;
 }
 .middle-liner h1 {
 	display: flex;
 	flex-wrap: wrap;
-	width: 204px;
-	margin-top: 7px;
-	margin-bottom: 0;
+	width: 215px;
+	margin-top: 2px;
 	margin-left: 53px;
 }
 .middle-liner .header-center-block {
@@ -1047,23 +1138,6 @@ a.catalog-current-page {
 	min-width: 282px;
 	display: flex;
 	justify-content: flex-end;
-}
-.header-user-block .header-login,
-.header-user-block .header-registration {
-	min-height: 45px;
-	padding-left: 25px;
-	padding-right: 25px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.header-user-block .header-login {
-	min-width: 48px;
-	margin-right: 10px;	
-	padding-left: 48px;
-}
-.header-user-block .header-registration {
-	min-width: 100px;
 }
 
 .container .main-navigation {
@@ -1275,15 +1349,7 @@ a.catalog-current-page {
 	display: flex;
 }
 /* ___________________________________STYLES FOR CATALOG MAIN____________________________________ */
-.breadcrumbs {
-	display: flex;
-	justify-content: flex-start;
-	margin: 22px 0;
-	padding: 0;
-}
-.breadcrumbs li {
-	margin-right: 20px;
-}
+
 .catalog-perforators {
 	display: flex;
 	flex-wrap: wrap;
