@@ -19,7 +19,7 @@
 					width="110" height="18" alt="Логотип Интернет-магазина «Техномарт»">
 				</a>
 				<form class="search-field" action="https://echo.htmlacademy.ru" method="post">					
-					<input type="search" name="search" id="search" placeholder="Поиск:">
+					<input class="search-panel" type="search" name="search" id="search" placeholder="Поиск:">
 					<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
 						<path fill="#ffffff" d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 
 						7.5 0 1 0 7.5 15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 
@@ -131,11 +131,26 @@
 						<fieldset class="bottom-line">
 							<legend>Производители:</legend>
 							<ul class="filter-brands-checkboxes">
-								<li><input class="hidden-decorated" type="checkbox" name="BOSCH" id="filter-BOSCH" checked><label for="filter-BOSCH">BOSCH</label></li>
-								<li><input class="hidden-decorated" type="checkbox" name="INTERSKOL" id="filter-INTERSKOL"><label for="filter-INTERSKOL">ИНТЕРСКОЛ</label></li>
-								<li><input class="hidden-decorated" type="checkbox" name="MAKITA" id="filter-MAKITA"><label for="filter-MAKITA">MAKITA</label></li>
-								<li><input class="hidden-decorated" type="checkbox" name="DEWALT" id="filter-DEWALT"><label for="filter-DEWALT">DEWALT</label></li>
-								<li><input class="hidden-decorated" type="checkbox" name="HITACHI" id="filter-HITACHI" disabled><label for="filter-HITACHI">HITACHI</label></li>
+								<li>
+									<input class="hidden-decorated" type="checkbox" name="BOSCH" id="filter-BOSCH" checked>
+									<label for="filter-BOSCH">BOSCH</label>
+								</li>
+								<li>
+									<input class="hidden-decorated" type="checkbox" name="INTERSKOL" id="filter-INTERSKOL">
+									<label for="filter-INTERSKOL">ИНТЕРСКОЛ</label>
+								</li>
+								<li>
+									<input class="hidden-decorated" type="checkbox" name="MAKITA" id="filter-MAKITA">
+									<label for="filter-MAKITA">MAKITA</label>
+								</li>
+								<li>
+									<input class="hidden-decorated" type="checkbox" name="DEWALT" id="filter-DEWALT">
+									<label for="filter-DEWALT">DEWALT</label>
+								</li>
+								<li>
+									<input class="hidden-decorated" type="checkbox" name="HITACHI" id="filter-HITACHI" disabled>
+									<label for="filter-HITACHI">HITACHI</label>
+								</li>
 							</ul>
 						</fieldset>
 						<fieldset>
@@ -159,20 +174,23 @@
 					<div class="catalog-sorting headline-background">					
 						<h3>сортировка</h3>
 						<ul class="catalog-sorting-type">
-							<li><a href="#">По цене</a></li>
+							<li><a class="selected-type" href="#">По цене</a></li>
 							<li><a href="#">По типу</a></li>
 							<li><a href="#">По функционалу</a></li>
 						</ul>
 						<ul class="catalog-sorting-direction">							
-							<li><a href="#">По возрастанию</a>
-								<svg class="up-dir" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
-									<path fill="#231F20" d="M5.5 0L0 10h11z"/>
-								</svg>
+							<li><a href="#">По возрастанию
+									<svg class="up-dir selected-direction" xmlns="http://www.w3.org/2000/svg" 
+									width="11" height="10" viewBox="0 0 11 10">
+										<path fill="#231F20" d="M5.5 0L0 10h11z"/>
+									</svg>
+								</a>								
 							</li>
-							<li><a href="#">По убыванию</a>
-								<svg class="down-dir" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
-									<path fill="#231F20" d="M5.5 10L0 0h11"/>
-								</svg>
+							<li><a href="#">По убыванию
+									<svg class="down-dir" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+										<path fill="#231F20" d="M5.5 10L0 0h11"/>
+									</svg>
+								</a>								
 							</li>
 						</ul>					
 					</div>
@@ -185,7 +203,7 @@
 							</div>
 							<!--типовое отображение-->
 							<img src="img/BOSCH-BFG3000.jpg" class="item-card-img" width="218" height="170" alt="BOSCH BFG 3000">
-							<h4>Перфоратор BOSCH
+							<h4>Перфоратор BOSCH 
 								BFG 3000</h4>
 							<span class="item-old-price">22500 Р.</span>
 							<span class="item-new-price">15500 Р.</span>
