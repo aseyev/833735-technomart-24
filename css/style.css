@@ -509,7 +509,6 @@ h2 {
     
     margin-right: 20px;
     margin-bottom: 20px;
-    /* padding: 23px 0 23px 25px; */
 }
 .slider-bullits {
     position: absolute;
@@ -556,7 +555,7 @@ h2 {
     justify-content: space-between;
     align-items: flex-start;
     min-height: 221px;
-    /* padding: 23px 0 23px 25px; */
+    padding: 23px 0 23px 25px;
 }
 .slider-page {
     display: none;
