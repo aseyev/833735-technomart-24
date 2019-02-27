@@ -509,21 +509,20 @@ h2 {
     
     margin-right: 20px;
     margin-bottom: 20px;
-    padding: 23px 0 23px 25px;
+    /* padding: 23px 0 23px 25px; */
 }
-.slider-controls {
+.slider-bullits {
     position: absolute;
     left: 50%;
     bottom: 34px;
-    z-index: 100;
+    z-index: 10;
     
     width: 160px;
     height: 18px;
     text-align: center;
     font-size: 0;
-    transform: translateX(-50%);
   }
-.slider-controls i {
+.slider-bullits label {
     position: relative;
     display: inline-block;
     width: 10px;
@@ -531,10 +530,9 @@ h2 {
     padding: 4px;
     border-radius: 50%;
     cursor: pointer;
-    /* background-color: red; */
     margin: 1px;
 }
-.slider-controls i::after {
+.slider-bullits label::after {
     content: "";
     position: absolute;
     top: 4px;
@@ -546,7 +544,42 @@ h2 {
     background: #ffffff;
     border-radius: 50%;
 }
-.slider-controls .active::before {
+
+.slider-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.slider-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 221px;
+    /* padding: 23px 0 23px 25px; */
+}
+.slider-page {
+    display: none;
+    /* скрыть все слайды  */
+}
+.slider-page:nth-child(1) {
+    background-image: url("../img/perfman.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.slider-page:nth-child(2) {
+    background-image: url("../img/drillman.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+#product-1:checked ~ .slider-list .slider-page:nth-child(1) {
+    display: flex;
+}
+#product-2:checked ~ .slider-list .slider-page:nth-child(2) {
+    display: flex;
+}
+#product-1:checked ~ .slider-bullits .slider-radio-bullit--1::before,
+#product-2:checked ~ .slider-bullits .slider-radio-bullit--2::before {
     content: "";
     position: absolute;
     left: 12px;
@@ -561,31 +594,6 @@ h2 {
     border-radius: 50%;
 }
 
-.slider-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.slider-page {
-    display: none;
-}
-.slider-page:nth-child(1) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    min-height: 221px;
-}
-.slider-page:nth-child(1) {
-    background-image: url("../img/perfman.jpg");
-    background-repeat: no-repeat;
-    background-position: -25px -23px;
-}
-.slider-page:nth-child(2) {
-    background-image: url("../img/drillman.jpg");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-}
 .category-item-slider h3{
     margin: 0;
     margin-bottom: 2px;
@@ -1243,7 +1251,8 @@ button.filter-button {
 .catalog-remark p {
 	font-family: "PTSans", Arial, sans-serif;
 	font-size: 13px;
-	line-height: 24px;	
+    line-height: 24px;
+    margin-bottom: 0;	
 }
 /* _________________________FLEX CONTAINERS________________________________- */
 /* __________________ФЛЕКСЫ, КОНТЕЙНЕРЫ, ЛЕКЦИЯ 6___________________________ */
