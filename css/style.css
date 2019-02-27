@@ -464,7 +464,8 @@ h2 {
 	justify-content: center;
 	align-items: flex-start;
 	width: 300px;
-	min-height: 123px;	
+    min-height: 123px;
+    margin-bottom: 20px;	
 }
 .category-item .button {
 	min-width: 135px;
@@ -500,15 +501,97 @@ h2 {
 	background: url("../img/icon-5.svg") no-repeat #ffc047 200px 40px;
 }
 .category-item-slider {	
-	width: 620px;
-	min-height: 266px;
-	margin: 20px 20px 0 0;
+    position: relative;
+    
+    width: 595px;
+    min-height: 220px;
+    background-color: #32425c;
+    
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 23px 0 23px 25px;
+}
+.slider-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 34px;
+    z-index: 100;
+    
+    width: 160px;
+    height: 18px;
+    text-align: center;
+    font-size: 0;
+    transform: translateX(-50%);
+  }
+.slider-controls i {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    padding: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+    /* background-color: red; */
+    margin: 1px;
+}
+.slider-controls i::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 1;
+    
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+.slider-controls .active::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    z-index: 2;
+    
+    width: 6px;
+    height: 6px;
+    margin: -6px;
+    
+    background-color: #ee3643;
+    border-radius: 50%;
+}
+
+.slider-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.slider-page {
+    display: none;
+}
+.slider-page:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 221px;
+}
+.slider-page:nth-child(1) {
+    background-image: url("../img/perfman.jpg");
+    background-repeat: no-repeat;
+    background-position: -25px -23px;
+}
+.slider-page:nth-child(2) {
+    background-image: url("../img/drillman.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 .category-item-slider h3{
-	margin: 0;
+    margin: 0;
+    margin-bottom: 2px;
 	font-weight: bold;
 	font-size: 36px;
-	line-height: 1;	
+	line-height: 36px;	
 	text-transform: uppercase;
 }
 .category-item-slider p{
@@ -516,19 +599,24 @@ h2 {
 	line-height: 24px;
 	margin: 0;	
 }
+.category-item-slider .button {
+    min-width: 195px;
+    margin-top: auto;
+    margin-left: 1px;	
+}
 .slider-button-back{
 	background: url("../img/icon-left.svg") no-repeat blue;
 }
 .slider-button-next{
 	background: url("../img/icon-right.svg") no-repeat blue;
 }
-.category-item-drills {
+/* .category-item-drills {
 	background: url("../img/drillman.jpg") no-repeat #222222;
 	min-height: 266px;
 }
 .category-item-perfs {
 	background: url("../img/perfman.jpg") no-repeat #222222;
-}
+} */
 
 /* ПОДЗАГИ С ПЛАШКАМИ для 2х секций на index */
 .headline-background {
@@ -1105,12 +1193,14 @@ button.filter-button {
     background: none;
     border: 1px solid #e5e5e5;
 }
+/* ---Текущую страницу красить по номеру в стилях или по классу в разметке?---  */
+.catalog-page-numbers li:nth-child(1) a,
 .catalog-page-numbers .catalog-current-page {
     background: #ee3643;
     border: 1px solid #ee3643;
     color: white;
 }
-.catalog-page-numbers li:last-child a {
+.catalog-page-numbers .catalog-nextpage {
     min-width: 138px;
 }
 .catalog-page-numbers a:hover {
@@ -1270,18 +1360,7 @@ button.filter-button {
 	min-height: 145px;
 	border: 1px solid #05ff65; /* #eaeaea */
 }
-.category-item-drills {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
-}
-.category-item-slider a {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-width: 195px;
-}
+
 .services .container {
 	display: flex;
 	flex-direction: column;
@@ -1551,7 +1630,6 @@ button.filter-button {
 /* .card-hover, */
 .googlemap-window,
 .form-emailus,
-.category-item-perfs,
 .slider-button-back,
 .slider-button-next,
 .services-background-warranty,
