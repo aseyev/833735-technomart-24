@@ -92,7 +92,7 @@
 	<main>
 		<section class="categories container">
 			<h2 class="visually-hidden">Рубрикатор сайта</h2>
-			<div class="category-item materials new">
+			<div class="category-item materials corner-new">
 				<h3>Материалы</h3>
 				<a class="button" href="#">на любой вкус</a>
 			</div>
@@ -128,11 +128,6 @@
 						<a class="button" href=".html">Открыть каталог</a>
 					</li>
 				</ul>
-				<!-- <div class="category-item-perfs"></div> 
-				<div class="category-item-drills"></div> -->
-	
-				<button class="slider-button-back" type="button">Назад</button>
-				<button class="slider-button-next" type="button">Вперед</button>
 			</div>
 			<div>
 				<div class="category-item discounts">
@@ -152,68 +147,61 @@
 				<h2>Популярные товары:</h2>				
 				<a class="button" href="#">все популярные товары</a>
 			</div>
+
+
 			<article class="catalog-item-card">
 				<div class="card-hover">
 					<!--отображение при наведении-->
 					<a href="#" class="button catalog-item-buy">Купить</a>
 					<a href="#" class="button catalog-item-bookmark">В закладки</a>
 				</div>
-				<div class="item-card">
-					<!--типовое отображение-->
-					<img src="img/BOSCH-BFG9000.jpg" class="item-card-img" width="218" height="170" alt="BOSCH BFG 9000">
-					<h4>Перфоратор BOSCH
-						BFG 9000</h4>
-					<span class="item-old-price">32500 Р.</span>
-					<span class="item-new-price">25500 Р.</span>
-				</div>
+				<!--типовое отображение-->
+				<img src="img/BOSCH-BFG9000.jpg" class="item-card-img" width="218" height="170" alt="BOSCH BFG 9000">
+				<h4>Перфоратор BOSCH
+					BFG 9000</h4>
+				<span class="item-old-price">32500 Р.</span>
+				<span class="item-new-price">25500 Р.</span>
 			</article>
+
 			<article class="catalog-item-card">
-				<!--рамочки-уголочки BOSCH BFG 3000-->
 				<div class="card-hover">
 					<!--отображение при наведении-->
 					<a href="#" class="button catalog-item-buy">Купить</a>
 					<a href="#" class="button catalog-item-bookmark">В закладки</a>
 				</div>
-				<div class="item-card">
-					<!--типовое отображение-->
-					<img src="img/BOSCH-BFG3000.jpg" class="item-card-img" width="218" height="170" alt="BOSCH BFG 3000">
-					<h4>Перфоратор BOSCH
-						BFG 3000</h4>
-					<span class="item-old-price">22500 Р.</span>
-					<span class="item-new-price">15500 Р.</span>
-				</div>
+				<!--типовое отображение-->
+				<img src="img/BOSCH-BFG3000.jpg" class="item-card-img" width="218" height="170" alt="BOSCH BFG 3000">
+				<h4>Перфоратор BOSCH 
+					BFG 3000</h4>
+				<span class="item-old-price">22500 Р.</span>
+				<span class="item-new-price">15500 Р.</span>
 			</article>
+
 			<article class="catalog-item-card">
-				<!--рамочки-уголочки BOSCH BFG 6000-->
 				<div class="card-hover">
 					<!--отображение при наведении-->
 					<a href="#" class="button catalog-item-buy">Купить</a>
 					<a href="#" class="button catalog-item-bookmark">В закладки</a>
 				</div>
-				<div class="item-card">
-					<!--типовое отображение-->
-					<img src="img/BOSCH-BFG6000.jpg" class="item-card-img" width="218" height="170" alt="BOSCH BFG 6000">
-					<h4>Перфоратор BOSCH
-						BFG 6000</h4>
-					<span class="item-old-price">30500 Р.</span>
-					<span class="item-new-price">25500 Р.</span>
-				</div>
+				<!--типовое отображение-->
+				<img src="img/BOSCH-BFG6000.jpg" class="item-card-img" width="218" height="170" alt="BOSCH BFG 6000">
+				<h4>Перфоратор BOSCH
+					BFG 6000</h4>
+				<span class="item-old-price">30500 Р.</span>
+				<span class="item-new-price">25500 Р.</span>
 			</article>
-			<article class="catalog-item-card corner-new">
-				<!--рамочки-уголочки BOSCH BFG 2000-->
+			<article class="catalog-item-card corner-new">			
 				<div class="card-hover">
 					<!--отображение при наведении-->
 					<a href="#" class="button catalog-item-buy">Купить</a>
 					<a href="#" class="button catalog-item-bookmark">В закладки</a>
 				</div>
-				<div class="item-card">
-					<!--типовое отображение-->
-					<img src="img/BOSCH-BFG2000.jpg" class="item-card-img" width="218" height="170" alt="BOSCH BFG 2000">
-					<h4>Перфоратор BOSCH
-						BFG 2000</h4>
-					<span class="item-new-price">12500 Р.</span>
-				</div>
-			</article>			
+				<!--типовое отображение-->
+				<img src="img/BOSCH-BFG2000.jpg" class="item-card-img" width="218" height="170" alt="BOSCH BFG 2000">
+				<h4>Перфоратор BOSCH
+					BFG 2000</h4>
+				<span class="item-new-price">12500 Р.</span>
+			</article>
 		</section>
 
 		<section class="popular-brands container">
@@ -305,27 +293,30 @@
 		</section>
 
 		<!--ОКНО с ГУГЛ-Картой-->
-		<div class="googlemap-window">
+		<section class="modal-window googlemap-window">
+			<button class="modal-close" type="button">Закрыть</button>
 			<a href="#"><img src="img/map-extended.png" width="940" height="446" 
 				alt="Гугл-карта проезда к офису компании по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
 			</a>
-			<button class="modal-close" type="button">Закрыть</button>
-		</div>
+		</section>
 
 		<!--ОКНО с Письмом-->
-		<form action="https://echo.htmlacademy.ru" method="post" class="modal-window form-emailus">
-			<h3 class="visually-hidden">Заблудились? Напишите нам</h3>
-			<button class="modal-close" type="button">Закрыть</button>	
-			<label for="emailus-username-surname">Ваше имя: </label>
-			<input type="text" id="emailus-username-surname" name="username" placeholder="Имя Фамилия">	
-			<label for="emailus-user-email">Ваш e-mail: </label>
-			<input type="email" id="emailus-user-email" name="user-email" placeholder="email@example.com">				
-			<label for="emailus-letter-text">Текст письма: </label>
-			<textarea id="emailus-letter-text" name="letter" rows="3">В свободной форме</textarea>
-			<div class="modal-window-bottom">
-				<button class="button form-button" type="submit">Отправить</button>	
-			</div>		
-		</form>
+		<section class="modal-window form-emailus">
+			<button class="modal-close" type="button">Закрыть</button>
+			<form action="https://echo.htmlacademy.ru" method="post">
+				<h3 class="visually-hidden">Есть вопросы? Напишите нам</h3>
+				<label for="emailus-username-surname">Ваше имя: </label>
+				<input type="text" id="emailus-username-surname" name="username" placeholder="Имя Фамилия">	
+				<label for="emailus-user-email">Ваш e-mail: </label>
+				<input type="email" id="emailus-user-email" name="user-email" placeholder="email@example.com">				
+				<label for="emailus-letter-text">Текст письма: </label>
+				<textarea id="emailus-letter-text" name="letter" rows="3">В свободной форме</textarea>
+				<div class="modal-window-bottom">
+					<button class="button form-button" type="submit">Отправить</button>	
+				</div>		
+			</form>		
+		</section>
+		
 	</main>
 
 	<footer class="main-footer">
