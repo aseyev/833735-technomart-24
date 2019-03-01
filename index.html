@@ -301,16 +301,22 @@
 		</section>
 
 		<!--ОКНО с Письмом-->
-		<section class="modal-window form-emailus">
+		<section class="modal-window window-emailus">
 			<button class="modal-close" type="button">Закрыть</button>
-			<form action="https://echo.htmlacademy.ru" method="post">
+			<form action="https://echo.htmlacademy.ru" method="post" class="modal-window-form">
 				<h3 class="visually-hidden">Есть вопросы? Напишите нам</h3>
-				<label for="emailus-username-surname">Ваше имя: </label>
-				<input type="text" id="emailus-username-surname" name="username" placeholder="Имя Фамилия">	
-				<label for="emailus-user-email">Ваш e-mail: </label>
-				<input type="email" id="emailus-user-email" name="user-email" placeholder="email@example.com">				
-				<label for="emailus-letter-text">Текст письма: </label>
-				<textarea id="emailus-letter-text" name="letter" rows="3">В свободной форме</textarea>
+				<div class="modal-form-block">
+					<div class="form-left-half">
+						<label for="emailus-username-surname">Ваше имя: </label>
+						<input type="text" id="emailus-username-surname" name="username" placeholder="Имя Фамилия">						
+					</div>
+					<div class="form-right-half">
+						<label for="emailus-user-email">Ваш e-mail: </label>
+						<input type="email" id="emailus-user-email" name="user-email" placeholder="email@example.com">								
+					</div>
+					<label for="emailus-letter-text">Текст письма: </label>
+					<textarea id="emailus-letter-text" name="letter" rows="3">В свободной форме</textarea>
+				</div>
 				<div class="modal-window-bottom">
 					<button class="button form-button" type="submit">Отправить</button>	
 				</div>		

@@ -855,9 +855,16 @@ h2 {
 	box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
 }
 .modal-window-bottom {
-	width: 620px;
-	min-height: 112px;
+	width: 460px;
+	/* min-height: 112px; */
 	background-color: #f4f4f4;
+	padding: 35
+	px 80px;
+	vertical-align: middle;
+}
+.form-button {
+	display: block;
+	width: 100%;
 }
 .form-emailus input, 
 .form-emailus textarea {
@@ -1657,50 +1664,95 @@ button.filter-button {
 }
 /* ===========================MODAL WINDOWS================================= */
 .modal-window {
+	position: fixed;
 	color: #000000;
-	background-color: #f8f3f0;
-	box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
+	background-color: #ffffff;
+	z-index: 20;
 }
+
 .modal-close {
 	position: absolute;
-	top: 0;
-	right: -34px;
+	top: 5px;
+	right: 5px;
+	width: 28px;
+	height: 28px;
 	
-	width: 22px;
-	height: 22px;
-  
 	font-size: 0;
-  
-	background-color: red;
+	
+	background-color: transparent;
 	border: 0;
-  
 	cursor: pointer;
 }
 .modal-close::before,
 .modal-close::after {
-  content: "";
+	content: "";
+	position: absolute;
+	top: 12px;
+	right: 0px;
+	width: 28px;
+	height: 4px;
+	background-color: #ee3643;
+	border-radius: 2px;
+}
+.modal-close::before {
+	transform: rotate(45deg);
+}
+.modal-close::after {
+	transform: rotate(-45deg);
+}
 
-  position: absolute;
+.window-emailus {
+	/* display: none; */
 
-  width: 19px;
-  height: 3px;
+	width: 620px;
+	min-height: 423px;
+	top: 120px;
+	right: 50%;
+	transform: translateX(310px);
+	box-shadow: 0px -7px 0px 0 #ee3643, 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
+}
+.modal-form-block {
+	margin: 47px 80px 37px;
+}
 
-  background-color: #d0d0d0;
+.form-left-half,
+.form-right-half {
+	display: inline-block;
+	width: 216px;
+}
+.form-left-half {
+	margin-right: 20px;
+}
+.modal-form-block input,
+.modal-form-block textarea {
+	display: block;
+	border: #d7dcde 2px solid;
+	border-radius: 3px;
+    /* width: 100%; */
+    font-size: 13px;
+    line-height: 18px;
+    font-family: "PT Sans","Arial",sans-serif;
+    color: #000;
+	outline: none;
+	
+	padding: 8px 14px 9px 14px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.modal-form-block input {
+	width: 186px;
+}
+.modal-form-block textarea {
+	width: 428px;
+	min-height: 95px;
 }
 .googlemap-window {
+	display: none;
 
 	width: 500px;
 	min-height: 430px;
-	padding: 40px 60px;
 	top: 120px;
 	left: 50%;
 	margin-left: 230px;
 }
-.form-emailus {
-	width: 500px;
-	min-height: 430px;
-	padding: 40px 60px;
-	top: 120px;
-	left: 50%;
-	margin-left: 230px;
-}
+
