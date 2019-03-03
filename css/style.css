@@ -707,8 +707,8 @@ h2 {
 	line-height: 20px;
 	background-color: #ffffff;
 	color: #000000;
-	margin-top: 11px;
-	margin-bottom: 11px;
+	margin-top: 8px;
+	margin-bottom: 12px;
 	width: 170px;
 }
 .catalog-item-card .item-old-price {
@@ -781,14 +781,17 @@ h2 {
 /* Секция Сервисы. На серой плашке во всю ширину */
 .services {
 	background-color: #f4f7f9;
-	min-height: 222px;
-	padding: 68px 0;
-	margin: 80px 0;
+	padding: 0;
+	padding-top: 65px;
+	margin-top: 62px;
+	margin-bottom: 79px;
 }
 .services h2,
 .about-technomart h2 {
 	color: #000000;
 	margin: 0;
+	margin-bottom: 24px;
+	padding: 0;
 }
 .services h3 {
 	font-size: 36px;
@@ -797,6 +800,8 @@ h2 {
 	text-align: left;
 	color: #32425c;
 	margin: 0;
+	margin-top: -2px;
+	margin-bottom: 24px;
 }
 .services p,
 .about-technomart p {
@@ -804,10 +809,26 @@ h2 {
 	font-size: 13px;
 	line-height: 24px;
 	color: #000000;
+	margin: 0;
+	padding: 0;
 }
+
 .services ul {
 	display: inline-block;
 	list-style: none;
+	font-size: 0px;
+}
+.services-list {
+	position: relative;
+}
+.services-list::after {
+	content: "";
+    position: absolute;
+    right: 0;
+    top: -40px;
+    width: 10px;
+    height: 250px;
+    background: url(../img/services-shadow.png) no-repeat;
 }
 .services-list a {	
 	font-weight: bold;
@@ -825,18 +846,7 @@ h2 {
 	background-color: #ffffff;
 	color: #32425c;	
 }
-.services-background-delivery {
-	background: url("../img/back-delivery.png") no-repeat;
-	width: 600px;
-}
-.services-background-warranty {
-	background: url("../img/back-warranty.png") no-repeat;
-	width: 600px;
-}
-.services-background-credit {
-	background: url("../img/back-credit.png") no-repeat;
-	width: 600px;
-}
+
 /* секция про Техномарт, все взял из предыдущей секции, тут только список */
 .about-technomart ul {
 	list-style: none;
@@ -858,8 +868,7 @@ h2 {
 	width: 460px;
 	/* min-height: 112px; */
 	background-color: #f4f4f4;
-	padding: 35
-	px 80px;
+	padding: 35px 80px;
 	vertical-align: middle;
 }
 .form-button {
@@ -904,27 +913,66 @@ h2 {
 .footer-nav-site a {
 	color: #ffffff;
 }
+.footer-topliner .top-footer-right {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-end;
+	width: 610px;
+	margin-top: 20px;
+}
+.top-footer-right .footer-nav-site,
+.top-footer-right .footer-nav-offers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	padding: 17px 0;
+}
+.top-footer-right a {
+	display: inline-block;
+	padding-left: 58px;
+}
 .top-footer-right a:active {
 	opacity: 0.5;
 }
 .footer-bottomliner {
-	min-height: 107px;
+	padding-top: 2px;
+	min-height: 105px;
 	background-color: #293449;
 	font-size: 16px;
 	line-height: 18px;
 }
+.footer-socials {
+	display: flex;
+	padding: 0;
+	min-width: 215px;
+}
+.footer-socials a {
+    display: inline-block;
+    margin: 2px;
+    width: 41px;
+    height: 40px;
+    font-size: 0;
+    border-radius: 50%;
+    vertical-align: top;
+    /* text-decoration: none; */
+}
 .footer-socials .vk {
-	background: url("../img/icon-vk.svg") no-repeat;
+	background: #212a3a url("../img/icon-vk.svg") no-repeat 50% 50%;
 }
 .footer-socials .fb {
-	background: url("../img/icon-fb.svg") no-repeat;
+	background: #212a3a url("../img/icon-fb.svg") no-repeat 50% 50%;
 }
 .footer-socials .insta {
-	background: url("../img/icon-insta.svg") no-repeat;
+	background: #212a3a url("../img/icon-insta.svg") no-repeat 50% 50%;
 }
 .footer-socials a:hover,
 .footer-socials a:active {
 	background-color: #ee3643;
+}
+.footer-email {
+	margin: auto 10px auto 42px;
 }
 .footer-email a:active {
 	color: #ee3643;
@@ -1010,8 +1058,10 @@ h2 {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-.catalog-perforators .headline-background{
+.catalog-perforators .headline-background {
 	background-color: #f2f6f8;
+	padding-top: 31px;
+    padding-bottom: 30px;
 }
 .form-filters-catalog .headline-background,
 .catalog-sorting.headline-background {
@@ -1172,7 +1222,7 @@ input[type="checkbox"]:checked + label::before {
 input[type="radio"]:checked + label::before {
 	content: '';
 	position: absolute;
-	top: -3px;
+	top: -2px;
 	left: -35px;	
 	width: 25px;
 	height: 25px;
@@ -1208,7 +1258,7 @@ button.filter-button {
     border: 1px solid #e5e5e5;
 }
 /* ---Текущую страницу красить по номеру в стилях или по классу в разметке?---  */
-.catalog-page-numbers li:nth-child(1) a,
+/* .catalog-page-numbers li:nth-child(1) a, */
 .catalog-page-numbers .catalog-current-page {
     background: #ee3643;
     border: 1px solid #ee3643;
@@ -1346,13 +1396,6 @@ button.filter-button {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-	
-/* .item-card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-} */
 
 .popular-brands {
 	display: flex;
@@ -1385,27 +1428,46 @@ button.filter-button {
 	margin: 0;
 	padding: 0;
 }
-.services p {
-	width: 430px;
-	margin-bottom: 75px;
+.services-header {
+	margin-bottom: 72px;
+	width: 400px;
 }
 .services-list-block {
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
+	font-size: 0px;
 }
-.services-list a {
-	display: flex;
-	align-items: center;
-	width: 217px;
-	min-height: 61px;
-	padding-left: 23px;
+.services-list label {
+	display: block;
+    margin: 0;
+    padding: 15px 0 17px 22px;
+    width: 218px;
+    font-size: 21px;
+    line-height: 30px;
+    font-weight: 600;
+    color: white;
+    background-color: #32425c;
+    box-shadow: inset 0 1px 0 0 #405069, inset 0 -1px 0 0 #293449;
+    cursor: pointer;
+}
+.services-list label:hover {
+	background-color: #293449;
+}
+.services-list label:active {
+	background-color: white;
+	color: #32425c;
+    box-shadow: none;
+}
+#services-1:checked ~ .services-list label[for=services-1], 
+#services-2:checked ~ .services-list label[for=services-2], 
+#services-3:checked ~ .services-list label[for=services-3] {
+    background-color: white;
+	color: #32425c;
+    box-shadow: none;
 }
 .services-right-block {
+	display: inline-block;
 	margin-left: 80px;
-}
-.services-right-block p {
-	width: 295px;
+	vertical-align: top;
+	width: 620px;
 }
 .about-technomart {
 	display: flex;
@@ -1413,24 +1475,65 @@ button.filter-button {
 	justify-content: space-between;
 	margin-bottom: 86px;
 }
-.about-technomart h2,
-.about-technomart p {
+.services-right-block .services-delivery,
+.services-right-block .services-warranty,
+.services-right-block .services-credit {
+	display: none;
+	min-height: 256px;
+	padding-bottom: 30px;
+}
+.services-delivery p {
+	width: 275px;
+}
+.services-warranty p {
+	width: 350px;
+}
+.services-credit p {
+	width: 300px;
+}
+/* ______________ТРИ СЛОЯ ДЛЯ ПЕРЕКЛЮЧЕНИЯ ВИДИМОСТИ УСЛУГ_______________ */
+#services-1:checked ~ .services-right-block .services-delivery {
+	display: block;
+	background: url("../img/back-delivery.png") no-repeat 152px 25px;
+}
+#services-2:checked ~ .services-right-block  .services-warranty {
+	display: block;
+	background: url("../img/back-warranty.png") no-repeat 152px 0;
+}
+#services-3:checked ~  .services-right-block .services-credit {
+	display: block;
+	background: url("../img/back-credit.png") no-repeat 152px 0;
+}
+
+.services-credit .button {
+	min-width: 195px;
+	margin-top: 30px;
+}
+.about-technomart h2 {
 	margin: 0;
-	margin-bottom: 20px;
+	margin-bottom: 22px;
+	letter-spacing: -0.1px;
+}
+.about-left-column p {
+	margin: 0;
+	margin-top: 3px;
+	margin-bottom: 21px;
+}
+.about-right-column p {
+	margin: 0;
+	margin-top: 3px;
+	margin-bottom: 33px;
 }
 .about-left-column,
 .about-right-column {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;	
+	justify-content: flex-start;	
 }
 .about-left-column {
 	width: 550px;
 	align-items: flex-start;	
 }
-/* .about-left-column .wideblock {
-	width: 530px;	
-} */
 .about-left-column .narrowblock {
 	align-self: flex-start;
 	width: 420px;
@@ -1438,26 +1541,43 @@ button.filter-button {
 .about-left-column ul {
 	margin: 0;
 	padding: 0;
+	padding-left: 36px;
 }
 .about-left-column li {
-	margin-bottom: 15px;
+	position: relative;
+	margin-bottom: 20px;
 }
-.about-left-column .button {
-	min-width: 220px;
-}
-.about-right-column {
-	align-items: stretch;
+.about-left-column li::before {
+	content: "";
+	position: absolute;
+	width: 25px;
+    height: 2px;
+    top: 9px;
+    left: -36px;    
+    background-color: #fb565a;
 }
 .about-right-column p {
-	align-self: flex-start;
 	width: 200px;
 }
+.about-left-column .button {
+	margin-top: auto;
+	min-width: 220px;
+}
 .about-right-column .button {
-	margin-top: 40px;
+	margin-top: 35px;
+}
+/* _________________ФУТЕР___________________ */
+.main-footer .logo-background {
+	min-height: 63px;
 }
 .footer-bottomliner {
 	display: flex;
 	align-items: center;
+}
+.footer-topliner-left p {
+	margin: 0;
+	margin-top: 33px;
+	margin-left: 3px;
 }
 .footer-topliner .container {
 	display: flex;
@@ -1468,31 +1588,10 @@ button.filter-button {
 	margin: 0;
 	padding: 0;
 }
-.footer-topliner-left {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	flex-wrap: wrap;
-	width: 400px;
-}
 .logo-background {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-.footer-topliner .top-footer-right {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-end;
-	width: 500px;
-}
-.top-footer-right .footer-nav-site,
-.top-footer-right .footer-nav-offers {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
 }
 .footer-bottomliner .container {
 	display: flex;
@@ -1502,19 +1601,17 @@ button.filter-button {
 .container .footer-topliner-left {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
+	flex-direction: column;
 }
-.footer-bottomliner-left,
-.footer-email {
-	margin: auto 0;
-
+.footer-bottomliner-left {
+	margin: auto;
+	margin-left: 0;
 }
 .footer-bottomliner p {
 	margin: 0;
 }
-.footer-socials {
-	display: flex;
-}
+
 /* ___________________________________STYLES FOR CATALOG MAIN____________________________________ */
 
 .catalog-perforators {
@@ -1702,7 +1799,7 @@ button.filter-button {
 }
 
 .window-emailus {
-	/* display: none; */
+	display: none;
 
 	width: 620px;
 	min-height: 423px;
@@ -1738,6 +1835,14 @@ button.filter-button {
 	padding: 8px 14px 9px 14px;
 	margin-top: 10px;
 	margin-bottom: 20px;
+}
+.modal-form-block input:hover,
+.modal-form-block textarea:hover {
+	border: #b5b5b5 2px solid;
+}
+.modal-form-block input:focus,
+.modal-form-block textarea:focus {
+	border: #ee3643 2px solid;
 }
 .modal-form-block input {
 	width: 186px;
