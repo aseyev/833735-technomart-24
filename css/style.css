@@ -1887,7 +1887,7 @@ button.filter-button {
 }
 /* _________ ORDER MODAL WINDOW SWITCH___________________________ */
 .window-order {
-	/* display: none; */
+	display: none;
 
 	width: 620px;
 	top: 120px;
@@ -1931,4 +1931,12 @@ button.filter-button {
 .window-order .order-close {
 	background: #ffffff;
 	color: #000000;
+}
+.modal-show {
+	display: block;
+	
+	animation: bounce 0.6s;
+}
+.modal-error {
+	animation: shake 0.6s;
 }

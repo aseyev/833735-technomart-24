@@ -406,6 +406,29 @@
 		</section>
 	</footer>
 	
+<script>
+	var openOrder = document.querySelector(".catalog-item-buy");
+//работает только с ервой карточкой!!!
+	var cart = document.querySelector(".window-order");
+	var closeOrder = cart.querySelector(".modal-close");
+	var closeOrder1 = cart.querySelector(".order-close");
+	
+	openOrder.addEventListener("click", function (evt) {
+		evt.preventDefault();
+		cart.classList.add("modal-show");
+	});
+	
+	closeOrder.addEventListener("click", function (evt) {
+		evt.preventDefault();
+		cart.classList.remove("modal-show");
+	});
+
+	closeOrder1.addEventListener("click", function (evt) {
+		evt.preventDefault();
+		cart.classList.remove("modal-show");
+	});
+
+</script>
 
 </body>
 
