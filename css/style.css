@@ -521,7 +521,7 @@ h2 {
     height: 18px;
     text-align: center;
     font-size: 0;
-  }
+}
 .slider-bullits label {
     position: relative;
     display: inline-block;
@@ -593,8 +593,51 @@ h2 {
     background-color: #ee3643;
     border-radius: 50%;
 }
-
-.category-item-slider h3{
+/* _______________________ ARROWS ____________________________ */
+.slider-arrows {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+    left: 25px;
+    top: 114px;
+    z-index: 20;
+    
+    width: 570px;
+    height: 40px;
+    text-align: center;
+    font-size: 0;
+}
+.slider-arrows label {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+}
+.slider-arrows .slider-arrow-left::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    
+    width: 22px;
+    height: 40px;
+    background: url("../img/icon-left.svg") no-repeat;
+}
+.slider-arrows .slider-arrow-right::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    
+    width: 22px;
+    height: 40px;
+    background: url("../img/icon-right.svg") no-repeat;
+}
+.category-item-slider h3 {
     margin: 0;
     margin-bottom: 2px;
 	font-weight: bold;
@@ -602,7 +645,7 @@ h2 {
 	line-height: 36px;	
 	text-transform: uppercase;
 }
-.category-item-slider p{
+.category-item-slider p {
 	font-size: 18px;
 	line-height: 24px;
 	margin: 0;	
@@ -861,12 +904,11 @@ h2 {
 	color: #000000;
 	background-color: #ffffff;
 	width: 620px;
-	min-height: 430px;
+	/* min-height: 430px; */
 	box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
 }
 .modal-window-bottom {
 	width: 460px;
-	/* min-height: 112px; */
 	background-color: #f4f4f4;
 	padding: 35px 80px;
 	vertical-align: middle;
@@ -1123,7 +1165,6 @@ h2 {
 fieldset.bottom-line {
 	border-bottom: 1px solid #d7dcde;
 	margin-bottom: 18px;
-	/* padding-bottom: 25px; */
 }
 .filters-column .double-scroll-pad {
 	position: relative;
@@ -1283,19 +1324,7 @@ button.filter-button {
 .catalog-remark h2 {
     margin-top: 0px;
 }
-/* МОДАЛЬНОЕ ОКНО ПОДТВЕРЖДЕНИЯ ЗАКАЗА */
-.window-order h2 {
-	font-size: 30px;
-	font-style: normal;
-	line-height: 30px;
-	text-align: center;
-	color: #000000;
-	text-transform: none;
-}
-.window-order .order-close {
-	background: #ffffff;
-	color: #000000;
-}
+
 /* ПАРА СЛОВ О ПЕРФОРАТОРАХ */
 .catalog-remark {
 	background: #f4f7f9;
@@ -1740,15 +1769,9 @@ button.filter-button {
 	padding: 0;
 }
 /* ___________________________MARKER__________________________________ */
-/* div,section,a,ul,li,p,footer,header{
-	outline: 1px solid red;
-} */
-/* .card-hover, */
-/* .googlemap-window, */
-/* .form-emailus, */
-.services-background-warranty,
+
+/* .services-background-warranty,
 .services-background-credit
-/* .window-order */
   {
 	position: absolute;
 	width: 1px;
@@ -1758,7 +1781,7 @@ button.filter-button {
 	padding: 0;
 	clip: rect(0 0 0 0);
 	overflow: hidden;
-}
+} */
 /* ===========================MODAL WINDOWS================================= */
 .modal-window {
 	position: fixed;
@@ -1797,12 +1820,11 @@ button.filter-button {
 .modal-close::after {
 	transform: rotate(-45deg);
 }
-
+/* _________EMAIL MODAL WINDOW SWITCH___________________________ */
 .window-emailus {
 	display: none;
 
 	width: 620px;
-	min-height: 423px;
 	top: 120px;
 	right: 50%;
 	transform: translateX(310px);
@@ -1825,7 +1847,6 @@ button.filter-button {
 	display: block;
 	border: #d7dcde 2px solid;
 	border-radius: 3px;
-    /* width: 100%; */
     font-size: 13px;
     line-height: 18px;
     font-family: "PT Sans","Arial",sans-serif;
@@ -1851,13 +1872,63 @@ button.filter-button {
 	width: 428px;
 	min-height: 95px;
 }
+/* _________GOOGLEMAP MODAL WINDOW SWITCH___________________________ */
 .googlemap-window {
 	display: none;
 
-	width: 500px;
-	min-height: 430px;
-	top: 120px;
+	width: 940px;
+	top: 140px;
 	left: 50%;
-	margin-left: 230px;
+	transform: translateX(-470px);
+	/* box-shadow: 0 0 14.7px 1.3px rgba(47, 42, 43, 0.5); */
+	box-shadow: 0 0 140px 1.3px rgba(47, 42, 43, 0.7);
+	font-size: 0;
+	line-height: 0;
 }
+/* _________ ORDER MODAL WINDOW SWITCH___________________________ */
+.window-order {
+	/* display: none; */
 
+	width: 620px;
+	top: 120px;
+	right: 50%;
+	transform: translateX(310px);
+	box-shadow: 0px -7px 0px 0 #ee3643, 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
+}
+.window-order .modal-window-bottom {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 26px 25px 27px 25px;
+	width: 570px;
+}
+.window-order .button {
+	width: 220px;
+	margin: 10px;
+}
+.window-order .order-confirmed {
+	position: relative;
+	font-size: 30px;
+	font-style: normal;
+	line-height: 30px;
+	text-align: center;
+	color: #000000;
+	text-transform: none;
+	margin-top: 66px;
+	letter-spacing: 0.1px;
+	padding-left: 55px;
+	margin-bottom: 69px;
+}
+.order-confirmed::before {
+	content: "";
+    position: absolute;
+    left: 82px;
+    top: -18px;
+    width: 66px;
+    height: 66px;
+    background: url(../img/icon-mark.svg) no-repeat;
+}
+.window-order .order-close {
+	background: #ffffff;
+	color: #000000;
+}
