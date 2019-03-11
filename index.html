@@ -35,7 +35,7 @@
 	
 		<div class="container"><!-- Все, что внутри серой плашки на весь экран -->
 			<div class="middle-liner">
-				<h1>Интернет-магазин строительных материалов и&nbspинструментов для ремонта</h1>
+				<h1>Интернет-магазин строительных материалов и&nbsp;инструментов для ремонта</h1>
 				<div class="header-center-block">
 					<a href="tel:+78125550555" class="phone-button">+7 (812) 555-05-55</a>
 					<p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
@@ -252,7 +252,7 @@
 						<div class="services-warranty">
 							<h3>Гарантия</h3>
 							<p>Если купленный у нас товар поломается или заискрит, <br>
-								а также в случае пожара, спровоцированного его возгаранием,
+								а также в случае пожара, спровоцированного его возгоранием,
 								вы всегда можете быть уверены в нашей гарантии. Мы обменяем
 								сгоревший товар на новый. <br>
 								Дом уж восстановите как-нибудь сами.
@@ -274,7 +274,7 @@
 			<div class="about-left-column">
 				<h2>Компания «Техномарт»</h2>
 				<p class="wideblock">Настоящий мужской шоппинг начинается здесь!
-					Огромный выбор товаров для ремонта и строительства
+					Огромный выбор товаров для ремонта и&nbsp;строительства
 					не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
 				<p class="narrowblock">Мы можем доставить ваш товар в самые отдаленные точки России!
 					Техномарт работает со многими транспортными компаниями: </p>
@@ -298,17 +298,26 @@
 
 		<!--ОКНО с ГУГЛ-Картой   width="940" height="446"-->
 		<section class="modal-window googlemap-window">
+			<h3 class="visually-hidden">Увеличенная карта проезда</h3>
 			<button class="modal-close" type="button">Закрыть</button>
-			<a href="#"><img src="img/map-extended.png" 
+			<a href="#">
+				<!-- <img src="img/map-extended.png" alt="Гугл-карта проезда к офису компании по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8"> -->
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533268!2d30.
+				320858716070596!3d59.938716481876156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310f
+				ca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsIN
+				Ch0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sth!4v1552322935850" 
+				width="940" height="446" frameborder="0" style="border:0" allowfullscreen 
 				alt="Гугл-карта проезда к офису компании по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
+			</iframe>
+				
 			</a>
 		</section>
 
 		<!--ОКНО с Письмом-->
 		<section class="modal-window window-emailus">
 			<button class="modal-close" type="button">Закрыть</button>
+			<h3 class="visually-hidden">Есть вопросы? Напишите нам</h3>
 			<form action="https://echo.htmlacademy.ru" method="post" class="modal-window-form">
-				<h3 class="visually-hidden">Есть вопросы? Напишите нам</h3>
 				<div class="modal-form-block">
 					<div class="form-left-half">
 						<label for="emailus-username-surname">Ваше имя: </label>
@@ -334,17 +343,15 @@
 		<section class="footer-topliner"><!--светло-синий фон-->
 			<div class="container">
 				<section class="footer-topliner-left">
-					<!--левая выключка-->
 					<a href="#" class="logo-background">
 						<img src="img/logo-technomart.svg" alt="Логотип Интернет-магазина «Техномарт»">
-					</a> <!-- почему этот лого мелкий?? -->
+					</a> 
 					<p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
 						+7 (812) 555-05-55
 					</p>
 				</section>
 
 				<section class="top-footer-right">
-					<!--выключка вправо-->
 					<ul class="footer-nav-site">
 						<!--белый шрифт-->
 						<li><a href="#">Компания</a></li>
@@ -409,6 +416,14 @@
 		  evt.preventDefault();
 		  emailus.classList.remove("modal-show");
 		});
+		window.addEventListener("keydown", function (evt) {
+			if (evt.keyCode === 27) {
+				evt.preventDefault();
+				if (emailus.classList.contains("modal-show")) {
+					emailus.classList.remove("modal-show");
+					}
+				}
+			});
 
 		openGmap.addEventListener("click", function (evt) {
 		  evt.preventDefault();
@@ -419,6 +434,15 @@
 		  evt.preventDefault();
 		  gmap.classList.remove("modal-show");
 		});
+
+		window.addEventListener("keydown", function (evt) {
+			if (evt.keyCode === 27) {
+				evt.preventDefault();
+				if (gmap.classList.contains("modal-show")) {
+					gmap.classList.remove("modal-show");
+					}
+				}
+			});
 		
 	</script>
 
