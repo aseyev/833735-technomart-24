@@ -300,17 +300,11 @@
 		<section class="modal-window googlemap-window">
 			<h3 class="visually-hidden">Увеличенная карта проезда</h3>
 			<button class="modal-close" type="button">Закрыть</button>
-			<a href="#">
-				<!-- <img src="img/map-extended.png" alt="Гугл-карта проезда к офису компании по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8"> -->
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533268!2d30.
-				320858716070596!3d59.938716481876156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310f
-				ca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsIN
-				Ch0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sth!4v1552322935850" 
-				width="940" height="446" frameborder="0" style="border:0" allowfullscreen 
-				alt="Гугл-карта проезда к офису компании по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
-			</iframe>
-				
-			</a>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533268!2d30.320858716070596!3d59.938716481876156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sth!4v1552322935850" width="940" height="446" style="border:0" allowfullscreen></iframe>
+			<!-- <a href="#">
+				<img src="img/map-extended.png" alt="Гугл-карта проезда к офису компании по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
+				frameborder="0" 			
+			</a> -->
 		</section>
 
 		<!--ОКНО с Письмом-->
@@ -380,10 +374,9 @@
 					<p>Все права защищены</p>
 				</div>
 				<ul class="footer-socials">
-						<!-- Техномарт ВКонтакте Техномарт Facebook Техномарт Instagram -->
-					<li><a class="vk" href="#">vk</a></li>		
-					<li><a class="fb" href="#">fb</a></li>
-					<li><a class="insta" href="#">ig</a></li>
+					<li><a class="vk" href="#">Техномарт ВКонтакте</a></li>		
+					<li><a class="fb" href="#">Техномарт Facebook</a></li>
+					<li><a class="insta" href="#">Техномарт Instagram</a></li>
 				</ul>
 				<div class="footer-email">
 					<p>Обратная связь:</p>
@@ -397,55 +390,7 @@
 			</div>			
 		</section>
 	</footer>
-	<script>
-		var openModal = document.querySelector(".emailus-open");
-		var openGmap = document.querySelector(".googlemap-open");
-		
-		var emailus = document.querySelector(".window-emailus");
-		var closeEmail = emailus.querySelector(".modal-close");
-
-		var gmap = document.querySelector(".googlemap-window");
-		var closeGmap = gmap.querySelector(".modal-close");
-		
-		openModal.addEventListener("click", function (evt) {
-		  evt.preventDefault();
-		  emailus.classList.add("modal-show");
-		});
-		
-		closeEmail.addEventListener("click", function (evt) {
-		  evt.preventDefault();
-		  emailus.classList.remove("modal-show");
-		});
-		window.addEventListener("keydown", function (evt) {
-			if (evt.keyCode === 27) {
-				evt.preventDefault();
-				if (emailus.classList.contains("modal-show")) {
-					emailus.classList.remove("modal-show");
-					}
-				}
-			});
-
-		openGmap.addEventListener("click", function (evt) {
-		  evt.preventDefault();
-		  gmap.classList.add("modal-show");
-		});
-		
-		closeGmap.addEventListener("click", function (evt) {
-		  evt.preventDefault();
-		  gmap.classList.remove("modal-show");
-		});
-
-		window.addEventListener("keydown", function (evt) {
-			if (evt.keyCode === 27) {
-				evt.preventDefault();
-				if (gmap.classList.contains("modal-show")) {
-					gmap.classList.remove("modal-show");
-					}
-				}
-			});
-		
-	</script>
-
+	<script src="js/modals.js"></script>
 </body>
 
 </html>

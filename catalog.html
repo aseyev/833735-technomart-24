@@ -389,10 +389,9 @@
 					<p>Все права защищены</p>
 				</div>
 				<ul class="footer-socials">
-						<!-- Техномарт ВКонтакте Техномарт Facebook Техномарт Instagram -->
-					<li><a class="vk" href="#">vk</a></li>		
-					<li><a class="fb" href="#">fb</a></li>
-					<li><a class="insta" href="#">ig</a></li>
+					<li><a class="vk" href="#">Техномарт ВКонтакте</a></li>		
+					<li><a class="fb" href="#">Техномарт Facebook</a></li>
+					<li><a class="insta" href="#">Техномарт Instagram</a></li>
 				</ul>
 				<div class="footer-email">
 					<p>Обратная связь:</p>
@@ -405,39 +404,7 @@
 			</div>			
 		</section>
 	</footer>
-	
-<script>
-	var openOrder = document.querySelector(".catalog-item-buy");
-//работает только с первой карточкой!!!
-	var cart = document.querySelector(".window-order");
-	var closeOrder = cart.querySelector(".modal-close");
-	var closeOrder1 = cart.querySelector(".order-close");
-	
-	openOrder.addEventListener("click", function (evt) {
-		evt.preventDefault();
-		cart.classList.add("modal-show");
-	});
-	
-	closeOrder.addEventListener("click", function (evt) {
-		evt.preventDefault();
-		cart.classList.remove("modal-show");
-	});
-
-	closeOrder1.addEventListener("click", function (evt) {
-		evt.preventDefault();
-		cart.classList.remove("modal-show");
-	});
-	window.addEventListener("keydown", function (evt) {
-			if (evt.keyCode === 27) {
-				evt.preventDefault();
-				if (cart.classList.contains("modal-show")) {
-					cart.classList.remove("modal-show");
-					}
-				}
-			});
-
-</script>
-
+	<script src="js/modals.js"></script>
 </body>
 
 </html>
