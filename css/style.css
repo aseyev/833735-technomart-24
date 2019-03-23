@@ -263,9 +263,9 @@ img {
 	border: 3px solid #ffffff; 
 	border-radius: 0;
 	padding-top: 10px;
+	padding-right: 50px;
 	padding-bottom: 8px;
 	padding-left: 70px;
-	padding-right: 50px;
 
 	color: #ee3643;
 	font-size: 21px;
@@ -360,9 +360,9 @@ a.phone-button::before {
 	color: #000000;
 	border: 0;
 	padding-top: 12.2px;
+	padding-right: 28px;
 	padding-bottom: 12px;	
 	padding-left: 46px;
-	padding-right: 28px;
 }
 .user-name .icon-user {
 	position: absolute;
@@ -384,7 +384,7 @@ a.phone-button::before {
 	padding: 0;
 	background: white;
 }
-.header-logout:hover .icon-logout path {
+.header-logout:hover path {
 	fill: #32425c;
 }
 .logged-functions {
@@ -826,22 +826,19 @@ h2 {
 	margin-bottom: 7px;
 }
 .catalog-item-card .item-new-price {
+	position: relative;
 	font-size: 17px;
 	line-height: 18px;
 	background-color: #ee3643;
 	color: #ffffff;	
 	text-transform: uppercase;
 	width: 80px;
-	margin: 10px auto;
-	margin-bottom: 20px;
 	padding: 10px 28px;
-	
-	color: white;
-	background: #ee3643;
 	border-radius: 3px;
-	margin-top: auto;
-
-	position: relative;
+	margin-top: auto;	
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;	
 }
 .catalog-item-card .item-new-price:after {
 	content: "";
@@ -1125,7 +1122,7 @@ h2 {
 	margin-right: 40px;
 	position: relative;
 }
-.breadcrumbs li:first-child {
+.breadcrumbs .breadcrumbs-home {
 	margin-right: 54px;
 }
 .breadcrumbs a {
@@ -1136,10 +1133,10 @@ h2 {
 	color: #000000;
 	text-transform: uppercase;
 }
-.breadcrumbs li:first-child a {
+.breadcrumbs-home a {
 	font-size: 0;
 }
-.breadcrumbs li:first-child a::before {
+.breadcrumbs-home a::before {
 	content: '';
 	position: absolute;
 	width: 15px;
@@ -1149,7 +1146,7 @@ h2 {
 	z-index: 10;
 	background: url("../img/icon-home.svg") no-repeat;
 }
-.breadcrumbs li:not(:first-child) a::before {
+.breadcrumbs-arrow a::before {
 	content: '';
 	position: absolute;
 	width: 8px;
@@ -1906,22 +1903,12 @@ button.filter-button {
 }
 .filter-minprice,
 .filter-maxprice {
-	width: 80px;
+	width: 95px;
 	min-height: 38px;
 	margin: 0;
 	padding: 0;
-	padding-left: 15px;
 	display: inline-block;
 	vertical-align: middle;
-	-moz-appearance: none; 
-		-webkit-appearance: none;
-			appearance: none;
-}
-.filter-minprice:hover,
-.filter-maxprice:hover {
-	-moz-appearance: none; 
-		-webkit-appearance: none;
-			appearance: none;
 }
 
 .column-catalog-perforators {
