@@ -44,54 +44,22 @@ if (gmap) {
         }
     });
 };
-// var cartOpen=document.querySelectorAll(".catalog-item-buy"),
-// cartPopup=document.querySelector(".modal-content-cart"),
-// cartClose=cartPopup.querySelector(".modal-content-close"),
-// cartContinue=cartPopup.querySelector(".btn-continue");
-// if(cartOpen&&cartPopup&&cartClose){
-//     for(var i=0;i<cartOpen.length;i++)
-//     cartOpen[i].addEventListener("click",
-//     function(a){
-//         a.preventDefault(),
-//         cartPopup.classList.add("modal-content-show")
-//     });
-//     cartClose.addEventListener("click",function(a)
-//     {a.preventDefault(),cartPopup.classList.remove("modal-content-show")
-// }),
-// cartContinue.addEventListener("click",function(a){a.preventDefault(),
-//     cartPopup.classList.remove("modal-content-show")}),
-//     window.addEventListener("keydown",function(a)
-//     {27===a.keyCode&&cartPopup.classList.contains("modal-content-show")&&cartPopup.classList.remove("modal-content-show")}
-//     )}
-//работает только с первой карточкой!!!
-var openOrder = document.querySelector(".catalog-item-buy");
-var cart = document.querySelector(".window-order");
-var closeOrder = cart.querySelector(".modal-close");
-var closeOrder1 = cart.querySelector(".order-close");
-    
-
-
-    
-
-    openOrder.addEventListener("click", function (evt) {
-		evt.preventDefault();
-		cart.classList.add("modal-show");
-	});
-	
-	closeOrder.addEventListener("click", function (evt) {
-		evt.preventDefault();
-		cart.classList.remove("modal-show");
-	});
-
-	closeOrder1.addEventListener("click", function (evt) {
-		evt.preventDefault();
-		cart.classList.remove("modal-show");
-	});
-	window.addEventListener("keydown", function (evt) {
-        if (evt.keyCode === 27) {
-            evt.preventDefault();
-            if (cart.classList.contains("modal-show")) {
-                cart.classList.remove("modal-show");
-            }
-        }
+var openOrder = document.querySelectorAll(".catalog-item-buy"),
+    cart = document.querySelector(".window-order"),
+    closeOrder = cart.querySelector(".modal-close"),
+closeOrder1=cart.querySelector(".order-close");
+if (openOrder && cart && closeOrder) {
+    for(var i=0; i<openOrder.length; i++)
+    openOrder[i].addEventListener("click",
+    function(a){
+        a.preventDefault(),
+        cart.classList.add("modal-show")
     });
+    closeOrder.addEventListener("click",function(evt)
+    {evt.preventDefault(),cart.classList.remove("modal-show")
+}),
+closeOrder1.addEventListener("click",function(a){a.preventDefault(),
+    cart.classList.remove("modal-show")}),
+    window.addEventListener("keydown",function(a)
+    {27===a.keyCode&&cart.classList.contains("modal-show")&&cart.classList.remove("modal-show")}
+    )}
